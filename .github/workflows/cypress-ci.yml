@@ -1,48 +1,56 @@
-name: Run Cypress Tests
+name: Run Cypress Tests Across Browsers and Deploy Report
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   cypress-tests:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        browser: [chrome]  # , firefox, electron - Add 'edge' if supported in your setup
+        resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '16'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
 
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y xvfb
-        npm install
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libgconf-2-4 libxi6
+          npm install
 
-    - name: Start Xvfb
-      run: |
-        export DISPLAY=:99
-        nohup Xvfb :99 -screen 0 1280x1024x24 &
+      - name: Start Xvfb
+        run: |
+          export DISPLAY=:99
+          nohup Xvfb :99 -screen 0 1280x1024x24 &
 
-    - name: Run Cypress Tests (Headless)
-      run: |
-        node cli.js --parallel --threads 4 --browser chrome --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser firefox --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser electron --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser edge --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser webkit --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+      - name: Run Cypress tests on ${{ matrix.browser }} with resolution ${{ matrix.resolution }}
+        env:
+          DISPLAY: ":99"
+        run: |
+          npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${{ matrix.resolution.split('x')[0] }},viewportHeight=${{ matrix.resolution.split('x')[1] }} --reporter mochawesome --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${{ matrix.resolution }}
 
-    - name: Deploy Cypress Reports to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      if: always()
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: cypress/results/
+      - name: Generate HTML Report
+        run: |
+          npx mochawesome-merge cypress/results/**/*.json > cypress/results/report.json
+          npx mochawesome-report-generator cypress/results/report.json -o cypress/results
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          folder: cypress/results  # Specify the folder containing the HTML report
+          target_branch: gh-pages  # This is the branch where the report will be deployed
+          commit_message: "Deploy Cypress test report to GitHub Pages"
+          user_name: 'GitHub Actions'
+          user_email: 'github-actions@users.noreply.github.com'

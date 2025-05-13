@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]  # Add more browsers as needed (e.g., firefox,electron, edge)
+        browser: [chrome, firefox]  # Add more browsers as needed (e.g., electron, edge)
         resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
 
     steps:
@@ -32,10 +32,10 @@ jobs:
           sudo apt-get install -y xvfb libxi6  # Removed libgconf-2-4 due to issues
           npm install
 
-      - name: Start Xvfb
+      - name: Start Xvfb with Resolution ${{ matrix.resolution }}
         run: |
           export DISPLAY=:99
-          nohup Xvfb :99 -screen 0 1280x1024x24 &
+          nohup Xvfb :99 -screen 0 ${matrix.resolution}x24 &  # Set resolution dynamically
           # Wait for Xvfb to initialize
           sleep 5
           # Check if Xvfb is running
@@ -44,13 +44,8 @@ jobs:
       - name: Run Cypress Tests (Headless)
         run: |
           export DISPLAY=:99
-          # Run Cypress tests without recording and parallel execution
-          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js"
-         # npx cypress run --headless --browser firefox --spec "cypress/e2e/**/*.cy.js"
-          # Uncomment the following if you'd like to test with additional browsers
-          # npx cypress run --headless --browser electron --spec "cypress/e2e/**/*.cy.js"
-          # npx cypress run --headless --browser edge --spec "cypress/e2e/**/*.cy.js"
-          # npx cypress run --headless --browser webkit --spec "cypress/e2e/**/*.cy.js"
+          # Run Cypress tests for the current browser and resolution
+          npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${{ matrix.resolution.split('x')[0] }},viewportHeight=${{ matrix.resolution.split('x')[1] }}
 
       - name: Generate HTML Report
         run: |

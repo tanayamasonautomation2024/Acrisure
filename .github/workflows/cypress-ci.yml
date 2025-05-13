@@ -12,6 +12,11 @@ jobs:
   cypress-tests:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        browser: [chrome]  # Add more browsers like firefox, electron
+        resolution: ['1920x1080', '1366x768', '375x667']
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,43 +29,42 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libxi6  # Avoid libgconf-2-4 for now
+          sudo apt-get install -y xvfb libxi6
           npm install
 
-      - name: Verify Xvfb Installation
-        run: |
-          echo "Checking Xvfb installation..."
-          which Xvfb  # This will check if Xvfb is installed
-
-      - name: Start Xvfb with resolution 1920x1080
+      - name: Start Xvfb
         run: |
           export DISPLAY=:99
-          echo "Starting Xvfb with resolution 1920x1080"
           nohup Xvfb :99 -screen 0 1920x1080x24 &
-          # Give Xvfb time to initialize
-          sleep 5
-          # Check if Xvfb is running
-          ps aux | grep Xvfb || (echo "Xvfb failed to start!" && exit 1)  # Fail early if Xvfb fails
+          sleep 3
 
-      - name: Run Cypress Tests (Headless)
+      - name: Run Cypress Tests - ${{ matrix.browser }} @ ${{ matrix.resolution }}
+        env:
+          DISPLAY: ":99"
         run: |
-          export DISPLAY=:99
-          echo "Running Cypress tests"
-          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js"
+          WIDTH=${{ matrix.resolution.split('x')[0] }}
+          HEIGHT=${{ matrix.resolution.split('x')[1] }}
+          npx cypress run \
+            --headless \
+            --browser ${{ matrix.browser }} \
+            --spec "cypress/e2e/**/*.cy.js" \
+            --config viewportWidth=$WIDTH,viewportHeight=$HEIGHT \
+            --reporter mochawesome \
+            --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${{ matrix.resolution }},overwrite=false,html=false,json=true
 
-      - name: Generate HTML Report
+      - name: Merge Mochawesome Reports
+        if: always()
         run: |
-          echo "Generating Mochawesome report"
-          npx mochawesome-merge cypress/results/**/*.json > cypress/results/report.json
-          npx mochawesome-report-generator cypress/results/report.json -o cypress/results
+          npx mochawesome-merge cypress/results/**/mochawesome*.json > cypress/results/merged-report.json
+          npx mochawesome-report-generator cypress/results/merged-report.json -o cypress/results/html
 
-      - name: Deploy Cypress Reports to GitHub Pages
+      - name: Deploy Cypress Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: cypress/results/
-          target_branch: gh-pages  # The branch where the report will be deployed
-          commit_message: "Deploy Cypress test report to GitHub Pages"
+          publish_dir: cypress/results/html
+          target_branch: gh-pages
+          commit_message: "Deploy Cypress test report"
           user_name: 'GitHub Actions'
           user_email: 'github-actions@users.noreply.github.com'

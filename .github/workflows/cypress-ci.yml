@@ -45,8 +45,8 @@ jobs:
         run: |
           export DISPLAY=:99
           # Run Cypress tests without recording and parallel execution
-          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js" --tag ${{ matrix.resolution }}
-         # npx cypress run --headless --browser firefox --spec "cypress/e2e/**/*.cy.js" --tag ${{ matrix.resolution }}
+          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js"
+         # npx cypress run --headless --browser firefox --spec "cypress/e2e/**/*.cy.js"
           # Uncomment the following if you'd like to test with additional browsers
           # npx cypress run --headless --browser electron --spec "cypress/e2e/**/*.cy.js"
           # npx cypress run --headless --browser edge --spec "cypress/e2e/**/*.cy.js"

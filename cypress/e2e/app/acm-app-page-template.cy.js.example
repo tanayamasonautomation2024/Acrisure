@@ -1,0 +1,16 @@
+const selectors = require("../../fixtures/app/selectors.json");
+const cy_selectors = require("../../fixtures/app/cy_selectors.json");
+const acm_constants = require("../../fixtures/app/constants.json");
+const config = require("../../../cypress.env.json");
+
+const currentEnv = config.sites.app.config.env[0].toUpperCase() + config.sites.app.config.env.slice(1);
+
+describe(`Acrisure Cloud Website - ${currentEnv} Environment`, () => {
+  describe("[PAGE NAME] - Functional Tests", () => {
+    it("First Test", () => {});
+  });
+
+  describe("[PAGE NAME] - Design Tests", () => {
+    it("First Test", () => {});
+  });
+});

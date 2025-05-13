@@ -1,0 +1,30 @@
+{
+  "cgl": {
+    "business_name": "ABC"  
+  },
+  "contact": {
+    "interested": "Employee",
+    "help": "Help"
+  },
+  "home_insurance": {
+    "street": "101 Broadway",
+    "unit":"2",
+    "city": "Brooklyn",
+    "state": "New York",
+    "zip": "11249",
+    "county": "New York",
+    "sq_ft": "2400",
+    "stories": "2",
+    "year_built": "2020",
+    "roofage": "2022",
+    "closing_date": "01012025",
+    "first_name": "Test",
+    "last_name": "Tester",
+    "date_of_birth": "02031990",
+    "phone": "2125551234",
+    "email": "test@ultranauts.co",
+    "purpose": "New purchase",
+    "areyouinteresting": "true",
+    "noofclaims":"2"
+  }
+}

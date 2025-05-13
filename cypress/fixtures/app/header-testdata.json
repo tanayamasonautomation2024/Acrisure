@@ -1,0 +1,105 @@
+{
+  "pages": ["", "mortgages"],
+  "pages_disabled": [
+    "personal-insurance",
+    "small-business-insurance",
+    "employee-benefit-services",
+    "about-acrisure",
+    "blog"    
+  ],
+  "items": [
+    {
+      "linkTitle": "About",
+      "expectedUrl": "about-acrisure"
+    },
+    {
+      "linkTitle": "Insights",
+      "expectedUrl": "blog"
+    },
+    {
+      "section": "Personal Solutions",
+      "cardTitle": "Mortgage Origination",
+      "expectedUrl": "mortgages"
+    },
+    {
+      "section": "Personal Solutions",
+      "cardTitle": "Personal Insurance",
+      "expectedUrl": "personal-insurance"
+    },
+    {
+      "section": "Personal Solutions",
+      "linkTitle": "Auto Insurance",
+      "expectedUrl": "auto-insurance"
+    },
+    {
+      "section": "Personal Solutions",
+      "linkTitle": "Life Insurance",
+      "expectedUrl": "life"
+    },
+    {
+      "section": "Personal Solutions",
+      "linkTitle": "Flood Insurance",
+      "expectedUrl": "flood-insurance"
+    },
+    {
+      "section": "Personal Solutions",
+      "linkTitle": "Health Insurance",
+      "expectedUrl": "health-insurance"
+    },
+    {
+      "section": "Personal Solutions",
+      "linkTitle": "Homeowners Insurance",
+      "expectedUrl": "home"
+    },
+    {
+      "section": "Business Solutions",
+      "cardTitle": "Business Insurance",
+      "expectedUrl": "small-business-insurance"
+    },
+    {
+      "section": "Business Solutions",
+      "cardTitle": "Employee Benefits",
+      "expectedUrl": "employee-benefit-services"
+    },
+    {
+      "section": "Business Solutions",
+      "cardTitle": "Business Solutions Overview",
+      "expectedUrl": "business-solutions"
+    },
+    {
+      "section": "Business Solutions",
+      "cardTitle": "Large Business Solutions",
+      "expectedUrl": "large-business-solutions"
+    },
+    {
+      "section": "Business Solutions",
+      "cardTitle": "Cybersecurity",
+      "expectedUrl": "cybersecurity"
+    },
+    {
+      "section": "Business Solutions",
+      "linkTitle": "Professional Liability Insurance",
+      "expectedUrl": "professional-liability-insurance"
+    },
+    {
+      "section": "Business Solutions",
+      "linkTitle": "Workers' Compensation Insurance",
+      "expectedUrl": "workers-compensation-insurance"
+    },
+    {
+      "section": "Business Solutions",
+      "linkTitle": "Business Owner's Policy",
+      "expectedUrl": "bop-insurance"
+    },
+    {
+      "section": "Business Solutions",
+      "linkTitle": "Commercial General Liability Insurance",
+      "expectedUrl": "commercial-general-liability-insurance"
+    },
+    {
+      "section": "Business Solutions",
+      "linkTitle": "Cyber Insurance",
+      "expectedUrl": "cyber-insurance"
+    }
+  ]
+}

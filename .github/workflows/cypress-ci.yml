@@ -1,0 +1,41 @@
+name: Run Cypress Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cypress-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'  # Or your required Node.js version
+
+    - name: Install dependencies
+      run: |
+        npm install
+
+    - name: Run Cypress Tests
+      run: |
+        # Run Cypress tests across all browsers and resolutions for all spec files
+        node cli.js --parallel --threads 4 --browser chrome --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser firefox --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser electron --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser edge --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser webkit --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+
+    - name: Upload Cypress Artifacts (HTML & XML reports)
+      uses: actions/upload-artifact@v2
+      with:
+        name: cypress-reports
+        path: cypress/results/

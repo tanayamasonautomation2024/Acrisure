@@ -1,0 +1,6 @@
+.vscode/
+node_modules/
+cypress/videos/
+cypress/screenshots/
+cypress.env.json
+cypress.config.js

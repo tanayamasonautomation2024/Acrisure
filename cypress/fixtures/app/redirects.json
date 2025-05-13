@@ -1,0 +1,278 @@
+{
+  "urls": [
+    {
+      "fromUrl": "https://www.acrisure.com/brands",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/quickinsured",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/industry-sectors",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/mergers-and-acquisitions",
+      "toUrl": "https://www.acrisure.com/contact-us"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/asset-management",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/request-a-quote",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/request-a-quote/confirmation",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/careers",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/cyber",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/cyber-thank-you",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/title-insurance",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/cyber-services",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/cyber-services-ibm-solutions",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/retirement-services",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/retirement-services/retirement-plan-services/investment-disclaimer",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/retirement-services/retirement-plan-services",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are/evolution-advisors",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are/community-impact",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are/brand-partnerships",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are/brand-partnerships/acrisure-arena",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are/brand-partnerships/acrisure-stadium",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/who-we-are/brand-partnerships/ubs-arena",
+      "toUrl": "https://www.acrisure.com/why-acrisure"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/commercial-insurance",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/commercial-insurance/confirmation",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/personal-insurance",
+      "toUrl": "URL for personal insurance TBD"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/employee-benefits",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/captive-solutions",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/london-wholesale",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/solutions/insurance/peo-solutions",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/ca-producer-license/acrisure-real-estate-services",
+      "toUrl": "https://www.acrisure.com/"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/ca-producer-license/us-privacy-policy",
+      "toUrl": "https://www.acrisure.com/"
+    }
+  ],
+  "vanity": [
+    {
+      "fromLink": "AAS-Pay",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=11a849cb-08d1-479f-be2d-408bd945af28&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    },
+    {
+      "fromLink": "AcrisureAmbassador",
+      "redirectUrl": "https://acrisure.com?utmSource=LionelRichie"
+    },
+    {
+      "fromLink": "aerospace",
+      "redirectUrl": "https://www.haltonhall.com?utm_source=acrisure"
+    },
+    { "fromLink": "Ahern", "redirectUrl": "https://www.aherninsurance.com/" },
+    {
+      "fromLink": "hatcheragency",
+      "redirectUrl": "https://www.hatcheragency.com/"
+    },
+    {
+      "fromLink": "Limitless-Home",
+      "redirectUrl": "https://www.youtube.com/playlist?list=PLQxz-Fszo0zA6w1PMRPWtHnQgzKsC2zhJ&jct=tzFce2vyo1kWUGhPp8z6sb1GSO7aVQ"
+    },
+    {
+      "fromLink": "newjersey-pay",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=2b21a485-88de-4ae5-895b-d26e931b7d43&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    },
+    {
+      "fromLink": "NewJersey-PayANJ",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=38c68ea4-f76f-46e6-b993-beb803389ba0&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    },
+    {
+      "fromLink": "newyork-pay",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=65c36c56-21c8-48a5-9199-b5519d3181b5&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    },
+    {
+      "fromLink": "newyork-paykss",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=3df1fbd8-3da0-4066-a2a4-c2d909a4596e&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    },
+    {
+      "fromLink": "newyork-payksw",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=06097ff3-a16d-4b1a-b541-d7279c46c08a&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    },
+    {
+      "fromLink": "south-pay",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=28c1b98b-b584-405e-b7e8-dcf7504005c6&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ==/"
+    },
+    { "fromLink": "tib", "redirectUrl": "https://www.tibinsurance.com/" },
+    {
+      "fromLink": "west-pay",
+      "redirectUrl": "https://payments.myappliedproducts.com/flow/hpp?token=c5dc1ab9-364d-491f-986f-bfe7091cd848&locale=en-US&c=eyJzaG93TG9nbyI6dHJ1ZSwic2hvd1RpdGxlIjp0cnVlLCJzaG93Q29weXJpZ2h0Ijp0cnVlfQ=="
+    }
+  ],
+  "blogs": [
+    {
+      "fromUrl": "https://www.acrisure.com/blog/can-you-borrow-{from-life-insurance",
+      "toUrl": "https://www.acrisure.com/life"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/what-is-business-insurance-for",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/what-does-surety-bond-mean",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/does-homeowners-insurance-cover-mold",
+      "toUrl": "https://www.acrisure.com/home"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/ransomware-101",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/what-is-risk-analytics",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/the-need-for-employee-identity-theft-protection",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/insurance-automation-what-to-know",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/do-you-need-car-repair-insurance",
+      "toUrl": "https://www.acrisure.com/auto"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/what-is-an-ioc",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/how-to-perform-cyber-risk-assessment",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/5-reasons-hackers-target-smes",
+      "toUrl": "https://www.acrisure.com/cyber-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/is-your-auto-repair-or-body-shop-business-covered-if-this-happens",
+      "toUrl": "https://www.acrisure.com/auto"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/spring-flooding-are-you-prepared",
+      "toUrl": "https://www.acrisure.com/flood-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/kidnap-and-ransom-insurance",
+      "toUrl": "https://www.acrisure.com/home"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/three-keys-to-prevent-workplace-harassment",
+      "toUrl": "https://www.acrisure.com/employee-benefit-services"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/signs-you-may-not-have-enough-business-interruption-coverage",
+      "toUrl": "https://www.acrisure.com/small-business-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/telemedicine-uniting-medical-care-convenience-and-cost-savings",
+      "toUrl": "https://personal.acrisure.com/health"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/gear-up-with-motorcycle-safety-tips",
+      "toUrl": "https://www.acrisure.com/auto"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/environmental-insurance-what-it-is-and-why-you-may-need-it",
+      "toUrl": "https://www.acrisure.com/flood-insurance"
+    },
+    {
+      "fromUrl": "https://www.acrisure.com/blog/mind-the-gap-why-homeowners-may-not-cover-your-high-value-collections",
+      "toUrl": "https://www.acrisure.com/home"
+    }
+  ]
+}

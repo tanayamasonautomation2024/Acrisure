@@ -12,11 +12,6 @@ jobs:
   cypress-tests:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        browser: [chrome]  # Start with only Chrome for now
-        resolution: ['1920x1080']  # Use just one resolution to simplify
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libxi6  # libgconf-2-4 removed due to issues
+          sudo apt-get install -y xvfb libxi6  # Avoid libgconf-2-4 for now
           npm install
 
       - name: Verify Xvfb Installation
@@ -38,11 +33,11 @@ jobs:
           which Xvfb
           Xvfb --version
 
-      - name: Start Xvfb with Resolution ${{ matrix.resolution }}
+      - name: Start Xvfb with resolution 1920x1080
         run: |
           export DISPLAY=:99
-          echo "Starting Xvfb with resolution ${matrix.resolution}"
-          nohup Xvfb :99 -screen 0 ${matrix.resolution}x24 &
+          echo "Starting Xvfb with resolution 1920x1080"
+          nohup Xvfb :99 -screen 0 1920x1080x24 &
           # Give Xvfb time to initialize
           sleep 5
           # Check if Xvfb is running
@@ -51,8 +46,8 @@ jobs:
       - name: Run Cypress Tests (Headless)
         run: |
           export DISPLAY=:99
-          echo "Running Cypress tests with ${matrix.browser} at resolution ${matrix.resolution}"
-          npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${{ matrix.resolution.split('x')[0] }},viewportHeight=${{ matrix.resolution.split('x')[1] }}
+          echo "Running Cypress tests"
+          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js"
 
       - name: Generate HTML Report
         run: |

@@ -24,18 +24,17 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run Cypress Tests
+    - name: Run Cypress Tests (Headless)
       run: |
-        node cli.js --parallel --threads 4 --browser chrome --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser firefox --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser electron --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser edge --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
-        node cli.js --parallel --threads 4 --browser webkit --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser chrome --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser firefox --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser electron --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser edge --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
+        node cli.js --parallel --threads 4 --browser webkit --headless --resolutions 1920x1080 1440x900 1366x768 800x600 768x1024 375x667 --html --xml --spec "cypress/e2e/**/*.cy.js"
 
     - name: Deploy Cypress Reports to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       if: always()
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        name: cypress-reports
-        path: cypress/results/
+        publish_dir: cypress/results/

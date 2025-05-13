@@ -14,8 +14,8 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]  # Add more browsers as needed (e.g.,firefox, electron, edge)
-        resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
+        browser: [chrome]  # Start with only Chrome for now
+        resolution: ['1920x1080']  # Use just one resolution to simplify
 
     steps:
       - name: Checkout code
@@ -29,15 +29,21 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libxi6  # libgconf-2-4 removed
+          sudo apt-get install -y xvfb libxi6  # libgconf-2-4 removed due to issues
           npm install
+
+      - name: Verify Xvfb Installation
+        run: |
+          echo "Checking Xvfb installation..."
+          which Xvfb
+          Xvfb --version
 
       - name: Start Xvfb with Resolution ${{ matrix.resolution }}
         run: |
           export DISPLAY=:99
           echo "Starting Xvfb with resolution ${matrix.resolution}"
           nohup Xvfb :99 -screen 0 ${matrix.resolution}x24 &
-          # Wait for Xvfb to initialize
+          # Give Xvfb time to initialize
           sleep 5
           # Check if Xvfb is running
           ps aux | grep Xvfb || (echo "Xvfb failed to start!" && exit 1)  # Fail early if Xvfb fails

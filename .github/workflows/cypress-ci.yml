@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome, firefox]  # Add more browsers as needed (e.g., electron, edge)
+        browser: [chrome]  # Add more browsers as needed (e.g.,firefox, electron, edge)
         resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
 
     steps:
@@ -29,26 +29,28 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libxi6  # Removed libgconf-2-4 due to issues
+          sudo apt-get install -y xvfb libxi6  # libgconf-2-4 removed
           npm install
 
       - name: Start Xvfb with Resolution ${{ matrix.resolution }}
         run: |
           export DISPLAY=:99
-          nohup Xvfb :99 -screen 0 ${matrix.resolution}x24 &  # Set resolution dynamically
+          echo "Starting Xvfb with resolution ${matrix.resolution}"
+          nohup Xvfb :99 -screen 0 ${matrix.resolution}x24 &
           # Wait for Xvfb to initialize
           sleep 5
           # Check if Xvfb is running
-          ps aux | grep Xvfb || exit 1
+          ps aux | grep Xvfb || (echo "Xvfb failed to start!" && exit 1)  # Fail early if Xvfb fails
 
       - name: Run Cypress Tests (Headless)
         run: |
           export DISPLAY=:99
-          # Run Cypress tests for the current browser and resolution
+          echo "Running Cypress tests with ${matrix.browser} at resolution ${matrix.resolution}"
           npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${{ matrix.resolution.split('x')[0] }},viewportHeight=${{ matrix.resolution.split('x')[1] }}
 
       - name: Generate HTML Report
         run: |
+          echo "Generating Mochawesome report"
           npx mochawesome-merge cypress/results/**/*.json > cypress/results/report.json
           npx mochawesome-report-generator cypress/results/report.json -o cypress/results
 

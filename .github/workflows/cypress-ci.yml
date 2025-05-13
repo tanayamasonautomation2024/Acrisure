@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]  # Add more browsers like firefox, electron
+        browser: [chrome]  # You can add firefox or electron if supported
         resolution: ['1920x1080', '1366x768', '375x667']
 
     steps:
@@ -41,16 +41,20 @@ jobs:
       - name: Run Cypress Tests - ${{ matrix.browser }} @ ${{ matrix.resolution }}
         env:
           DISPLAY: ":99"
+        shell: bash
         run: |
-          WIDTH=${{ matrix.resolution.split('x')[0] }}
-          HEIGHT=${{ matrix.resolution.split('x')[1] }}
+          RES="${{ matrix.resolution }}"
+          WIDTH="${RES%x*}"
+          HEIGHT="${RES#*x}"
+          echo "Running tests at ${WIDTH}x${HEIGHT} on ${{ matrix.browser }}"
+
           npx cypress run \
             --headless \
             --browser ${{ matrix.browser }} \
             --spec "cypress/e2e/**/*.cy.js" \
             --config viewportWidth=$WIDTH,viewportHeight=$HEIGHT \
             --reporter mochawesome \
-            --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${{ matrix.resolution }},overwrite=false,html=false,json=true
+            --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${RES},overwrite=false,html=false,json=true
 
       - name: Merge Mochawesome Reports
         if: always()
@@ -59,8 +63,8 @@ jobs:
           npx mochawesome-report-generator cypress/results/merged-report.json -o cypress/results/html
 
       - name: Deploy Cypress Report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
         if: always()
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: cypress/results/html

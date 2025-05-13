@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]  # Add other browsers (firefox,electron, edge, etc.) as needed
+        browser: [chrome]  # Add more browsers as needed (e.g.,firefox, electron, edge)
         resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
 
     steps:
@@ -44,13 +44,13 @@ jobs:
       - name: Run Cypress Tests (Headless) in Parallel
         run: |
           export DISPLAY=:99
-          # Run Cypress tests with recording and parallel execution
-          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
-          npx cypress run --headless --browser firefox --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # Run Cypress tests without recording and parallel execution
+          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js" --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          npx cypress run --headless --browser firefox --spec "cypress/e2e/**/*.cy.js" --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
           # Uncomment the following if you'd like to test with additional browsers
-          # npx cypress run --headless --browser electron --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
-          # npx cypress run --headless --browser edge --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
-          # npx cypress run --headless --browser webkit --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # npx cypress run --headless --browser electron --spec "cypress/e2e/**/*.cy.js" --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # npx cypress run --headless --browser edge --spec "cypress/e2e/**/*.cy.js" --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # npx cypress run --headless --browser webkit --spec "cypress/e2e/**/*.cy.js" --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
 
       - name: Generate HTML Report
         run: |

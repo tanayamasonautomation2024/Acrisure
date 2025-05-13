@@ -1,4 +1,4 @@
-name: Run Cypress Tests
+name: Run Cypress Tests and Deploy Report
 
 on:
   push:
@@ -12,6 +12,11 @@ jobs:
   cypress-tests:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        browser: [chrome]  # Add other browsers (firefox,electron, edge, etc.) as needed
+        resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,23 +29,33 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libxi6  # Removed libgconf-2-4
+          sudo apt-get install -y xvfb libxi6  # Removed libgconf-2-4 due to issues
           npm install
 
       - name: Start Xvfb
         run: |
           export DISPLAY=:99
           nohup Xvfb :99 -screen 0 1280x1024x24 &
+          # Wait for Xvfb to initialize
+          sleep 5
+          # Check if Xvfb is running
+          ps aux | grep Xvfb || exit 1
 
-      - name: Run Cypress Tests (Headless)
+      - name: Run Cypress Tests (Headless) in Parallel
         run: |
           export DISPLAY=:99
-          npx cypress run --parallel --headless --browser chrome --spec "cypress/e2e/**/*.cy.js"
-          npx cypress run --parallel --headless --browser firefox --spec "cypress/e2e/**/*.cy.js"
-          # Uncomment other browsers as necessary
-          # npx cypress run --parallel --headless --browser electron --spec "cypress/e2e/**/*.cy.js"
-          # npx cypress run --parallel --headless --browser edge --spec "cypress/e2e/**/*.cy.js"
-          # npx cypress run --parallel --headless --browser webkit --spec "cypress/e2e/**/*.cy.js"
+          # Run Cypress tests with recording and parallel execution
+          npx cypress run --headless --browser chrome --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          npx cypress run --headless --browser firefox --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # Uncomment the following if you'd like to test with additional browsers
+          # npx cypress run --headless --browser electron --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # npx cypress run --headless --browser edge --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+          # npx cypress run --headless --browser webkit --spec "cypress/e2e/**/*.cy.js" --record --key ${{ secrets.CYPRESS_RECORD_KEY }} --parallel --ci-build-id $GITHUB_RUN_ID --tag ${{ matrix.resolution }}
+
+      - name: Generate HTML Report
+        run: |
+          npx mochawesome-merge cypress/results/**/*.json > cypress/results/report.json
+          npx mochawesome-report-generator cypress/results/report.json -o cypress/results
 
       - name: Deploy Cypress Reports to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -48,3 +63,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: cypress/results/
+          target_branch: gh-pages  # The branch where the report will be deployed
+          commit_message: "Deploy Cypress test report to GitHub Pages"
+          user_name: 'GitHub Actions'
+          user_email: 'github-actions@users.noreply.github.com'

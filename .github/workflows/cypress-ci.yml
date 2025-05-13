@@ -1,63 +1,42 @@
-name: Run Cypress Tests Across Browsers and Deploy Report
 
+name: Run Cypress Tests
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
-
+    branches:
+      - main
 jobs:
   cypress-tests:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        browser: [chrome]  # Add other browsers (firefox, electron, edge) if supported
-        resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '16'
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y xvfb libgconf-2-4 libxi6
-          npm install
-
-      - name: Start Xvfb
-        run: |
-          export DISPLAY=:99
-          nohup Xvfb :99 -screen 0 1280x1024x24 &
-          # Wait for Xvfb to fully initialize
-          sleep 5
-          # Check if Xvfb is running
-          ps aux | grep Xvfb || exit 1
-
-      - name: Run Cypress tests on ${{ matrix.browser }} with resolution ${{ matrix.resolution }}
-        env:
-          DISPLAY: ":99"
-        run: |
-          viewportWidth=${{ matrix.resolution.split('x')[0] }}
-          viewportHeight=${{ matrix.resolution.split('x')[1] }}
-          echo "Running Cypress tests on ${{ matrix.browser }} with resolution ${viewportWidth}x${viewportHeight}"
-          npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${viewportWidth},viewportHeight=${viewportHeight} --reporter mochawesome --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${{ matrix.resolution }}
-
-      - name: Generate HTML Report
-        run: |
-          npx mochawesome-merge cypress/results/**/*.json > cypress/results/report.json
-          npx mochawesome-report-generator cypress/results/report.json -o cypress/results
-
-      - name: Deploy report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          folder: cypress/results  # Ensure this folder contains the generated HTML report
-          target_branch: gh-pages  # The branch where the report will be deployed
-          commit_message: "Deploy Cypress test report to GitHub Pages"
-          user_name: 'GitHub Actions'
-          user_email: 'github-actions@users.noreply.github.com'
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '16'
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb libgconf-2-4 libxi6
+        npm install
+    - name: Start Xvfb
+      run: |
+        export DISPLAY=:99
+        nohup Xvfb :99 -screen 0 1280x1024x24 &
+    - name: Run Cypress Tests (Headless)
+      run: |
+        export DISPLAY=:99
+        npx cypress run --parallel --headless --browser chrome --spec "cypress/e2e/**/*.cy.js"
+        npx cypress run --parallel --headless --browser firefox --spec "cypress/e2e/**/*.cy.js"
+       # npx cypress run --parallel --headless --browser electron --spec "cypress/e2e/**/*.cy.js"
+        #npx cypress run --parallel --headless --browser edge --spec "cypress/e2e/**/*.cy.js"
+        #npx cypress run --parallel --headless --browser webkit --spec "cypress/e2e/**/*.cy.js"
+    - name: Deploy Cypress Reports to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      if: always()
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: cypress/results/

@@ -22,7 +22,15 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      run: npm install
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+        npm install
+
+    - name: Start Xvfb
+      run: |
+        export DISPLAY=:99
+        nohup Xvfb :99 -screen 0 1280x1024x24 &
 
     - name: Run Cypress Tests (Headless)
       run: |

@@ -30,8 +30,7 @@ jobs:
       - name: Verify Xvfb Installation
         run: |
           echo "Checking Xvfb installation..."
-          which Xvfb
-          Xvfb --version
+          which Xvfb  # This will check if Xvfb is installed
 
       - name: Start Xvfb with resolution 1920x1080
         run: |

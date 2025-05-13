@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]  # , firefox, electron - Add 'edge' if supported in your setup
+        browser: [chrome]  # Add other browsers (firefox, electron, edge) if supported
         resolution: ['1920x1080', '1366x768', '375x667']  # Add more resolutions as needed
 
     steps:
@@ -34,12 +34,19 @@ jobs:
         run: |
           export DISPLAY=:99
           nohup Xvfb :99 -screen 0 1280x1024x24 &
+          # Wait for Xvfb to fully initialize
+          sleep 5
+          # Check if Xvfb is running
+          ps aux | grep Xvfb || exit 1
 
       - name: Run Cypress tests on ${{ matrix.browser }} with resolution ${{ matrix.resolution }}
         env:
           DISPLAY: ":99"
         run: |
-          npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${{ matrix.resolution.split('x')[0] }},viewportHeight=${{ matrix.resolution.split('x')[1] }} --reporter mochawesome --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${{ matrix.resolution }}
+          viewportWidth=${{ matrix.resolution.split('x')[0] }}
+          viewportHeight=${{ matrix.resolution.split('x')[1] }}
+          echo "Running Cypress tests on ${{ matrix.browser }} with resolution ${viewportWidth}x${viewportHeight}"
+          npx cypress run --headless --browser ${{ matrix.browser }} --spec "cypress/e2e/**/*.cy.js" --config viewportWidth=${viewportWidth},viewportHeight=${viewportHeight} --reporter mochawesome --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${{ matrix.resolution }}
 
       - name: Generate HTML Report
         run: |
@@ -49,8 +56,8 @@ jobs:
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          folder: cypress/results  # Specify the folder containing the HTML report
-          target_branch: gh-pages  # This is the branch where the report will be deployed
+          folder: cypress/results  # Ensure this folder contains the generated HTML report
+          target_branch: gh-pages  # The branch where the report will be deployed
           commit_message: "Deploy Cypress test report to GitHub Pages"
           user_name: 'GitHub Actions'
           user_email: 'github-actions@users.noreply.github.com'

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T09:29:24.835Z",
+    "end": "2025-05-14T09:30:44.263Z",
+    "duration": 79428,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9bd323b9-2f29-44ec-8282-0a14510cda13",
+      "title": "",
+      "fullFile": "cypress/e2e/app/newsBlogFetch.cy.js",
+      "file": "cypress/e2e/app/newsBlogFetch.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c95ea2d1-3d56-45cd-96a6-e868e135db27",
+          "title": "Get Urls",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get Urls: News",
+              "fullTitle": "Get Urls Get Urls: News",
+              "timedOut": null,
+              "duration": 43211,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "getUrls({\n  baseUrl: \"news\",\n  limit: 50\n});",
+              "err": {},
+              "uuid": "3c4f235e-bb38-4248-b061-1103c33266fa",
+              "parentUUID": "c95ea2d1-3d56-45cd-96a6-e868e135db27",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get Urls: Blog",
+              "fullTitle": "Get Urls Get Urls: Blog",
+              "timedOut": null,
+              "duration": 34439,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "getUrls({\n  baseUrl: \"blog\",\n  limit: 50\n});",
+              "err": {},
+              "uuid": "974363ba-95d3-49fb-ae71-cbdc43428580",
+              "parentUUID": "c95ea2d1-3d56-45cd-96a6-e868e135db27",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3c4f235e-bb38-4248-b061-1103c33266fa",
+            "974363ba-95d3-49fb-ae71-cbdc43428580"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 77650,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T09:54:27.324Z",
+    "end": "2025-05-14T09:55:27.852Z",
+    "duration": 60528,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "be97de71-1bfb-4ce5-ab8e-105cfc4d07f6",
+      "title": "",
+      "fullFile": "cypress/e2e/app/reg-west.cy.js",
+      "file": "cypress/e2e/app/reg-west.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d77a71b7-0958-4853-801f-67288b4e7484",
+          "title": "Acrisure Cloud Website - Dev Environment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "b85d2e5b-5941-47e4-ada6-415b3ae27a5f",
+              "title": "Acrisure West - Design Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate Acrisure West",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Acrisure West - Design Tests Validate Acrisure West",
+                  "timedOut": null,
+                  "duration": 58561,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visitSite(\"app\", \"west\");\ncy.url().should(\"include\", \"west\");\n/* ---------------------------------------------------------\n * Acrisure West Hero Component\n * ---------------------------------------------------------\n */\n{\n  // hero2 section over hero image\n  cy.get(cy_selectors.west.hero2_section_hero_component).should(\"be.visible\");\n  cy.get(cy_selectors.west.hero2_section_caption).should(\"have.text\", acm_constants.west.hero2_section_caption);\n  cy.get(cy_selectors.west.hero2_section_h2_header).should(\"have.text\", acm_constants.west.hero2_section_h2_header);\n  cy.get(cy_selectors.west.hero2_section_body_text).should(\"have.text\", acm_constants.west.hero2_section_body_text);\n  cy.get(cy_selectors.west.hero2_section_primary_button).should(\"be.visible\");\n  cy.get(cy_selectors.west.hero2_section_primary_button).click({\n    force: true\n  });\n  cy.wait(5000);\n  cy.get(cy_selectors.west.webform_component_container).should(\"be.visible\");\n  cy.get(cy_selectors.west.hero2_section_hero_component).scrollIntoView();\n  cy.get(cy_selectors.west.hero2_section_secondary_button).should(\"be.visible\");\n  cy.get(cy_selectors.west.hero2_section_secondary_button).click({\n    force: true\n  });\n  cy.title().should('eq', 'Business Solutions');\n  cy.wait(2000);\n  cy.xpath(selectors.common.onetrust1).click({\n    force: true\n  });\n  cy.go('back');\n  cy.location('pathname').should('eq', '/west');\n  cy.wait(2000);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* --------------------------------------------------\n * Client Resources - Accordion component\n * --------------------------------------------------\n */\n{\n  cy.get(cy_selectors.west.accordion_component).scrollIntoView();\n  // Client Resources (Caption and Header)\n  cy.get(cy_selectors.west.accordion_component_caption).should(\"have.text\", acm_constants.west.accordion_component_caption);\n  cy.get(cy_selectors.west.accordion_component_header).should(\"have.text\", acm_constants.west.accordion_component_header);\n  cy.get(cy_selectors.west.accordion_component_load_more).should(\"have.text\", acm_constants.west.accordion_component_load_more);\n  cy.wait(1000);\n  cy.get(cy_selectors.west.accordion_component_load_more).click({\n    force: true\n  });\n  cy.wait(1000);\n  /* \n    First close the first expanded tab. Then for each tab, expand the tab and\n    confirm the contents within each tab\n    */\n  cy.get(cy_selectors.west.client_resources_expanded_tab).scrollIntoView({\n    offset: {\n      top: -60,\n      left: 0\n    }\n  }).find(cy_selectors.west.client_resources_panel_header);\n  //.click({ scrollBehavior: false });\n  cy.get(cy_selectors.west.client_resources_regular_tab).each(($ele, panelIndex) => {\n    cy.wrap($ele).find(cy_selectors.west.client_resources_panel_header).scrollIntoView({\n      offset: {\n        top: -80,\n        left: 0\n      }\n    }).click({\n      scrollBehavior: false\n    });\n    // Confirm the tab text\n    cy.wrap($ele).find(cy_selectors.west.client_resources_panel_header_text).should(\"have.text\", acm_constants.west.client_resources_section_i_panel_headers[panelIndex]);\n    // Confirm each link point text\n    cy.wrap($ele).find(cy_selectors.west.client_resources_panel_links).each(($ele, linkIndex) => {\n      const linkArray = acm_constants.west[`client_resources_section_i_panel_header_${panelIndex + 1}_links`];\n      cy.wrap($ele).should(\"have.text\", linkArray[linkIndex]);\n    });\n    cy.wait(1500);\n  });\n}\n/* --------------------------------------------------------------------\n * Acrisure West - webform component container\n * --------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.west.webform_component_container).scrollIntoView();\n  cy.wait(1500);\n  cy.get(cy_selectors.west.webform_component_title).should(\"have.text\", acm_constants.west.webform_component_title);\n  cy.get(cy_selectors.west.webform_component_body_text).should(\"have.text\", acm_constants.west.webform_component_body_text);\n  cy.get(cy_selectors.west.webform_first_name_label).should(\"have.text\", acm_constants.west.webform_first_name_label);\n  cy.get(cy_selectors.west.webform_first_name_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.west.webform_first_name_placeholder);\n  cy.get(cy_selectors.west.webform_last_name_label).should(\"have.text\", acm_constants.west.webform_last_name_label);\n  cy.get(cy_selectors.west.webform_last_name_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.west.webform_last_name_placeholder);\n  cy.get(cy_selectors.west.webform_email_label).should(\"have.text\", acm_constants.west.webform_email_label);\n  cy.get(cy_selectors.west.webform_email_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.west.webform_email_placeholder);\n  cy.get(cy_selectors.west.webform_state_label).should(\"have.text\", acm_constants.west.webform_state_label);\n  cy.get(cy_selectors.west.webform_state_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.west.webform_state_placeholder);\n  cy.get(cy_selectors.west.webform_comments_label).should(\"have.text\", acm_constants.west.webform_comments_label);\n  cy.get(cy_selectors.west.webform_submit_button).should(\"have.text\", acm_constants.west.webform_submit_button);\n  // cy.get(cy_selectors.west.Webform_response_recorded_title)\n  //   .should(\"have.text\", acm_constants.west.Webform_response_recorded_title);\n  // cy.get(cy_selectors.west.Webform_response_recorded_message)\n  //   .should(\"have.text\", acm_constants.west.Webform_response_recorded_message);\n}\n/* --------------------------------------------------------------------\n * Acrisure West - promo cards\n * --------------------------------------------------------------------\n */\ncy.get(cy_selectors.west.learn_about_acrisure_header).scrollIntoView();\nif (isMobile) {\n  cy.scrollTo(0, 50);\n  cy.get(cy_selectors.west.learn_about_acrisure_header).scrollIntoView();\n}\ncy.get(cy_selectors.west.learn_about_acrisure_header).should(\"be.visible\");\ncy.get(cy_selectors.west.learn_more_about_us_link).should(\"be.visible\");\ncy.get(cy_selectors.west.learn_more_about_us_link).click({\n  force: true\n});\ncy.title().should('eq', 'About Us');\ncy.wait(3000);\ncy.go('back');\ncy.wait(3000);\ncy.get(cy_selectors.west.meet_the_team_header).scrollIntoView();\ncy.get(cy_selectors.west.meet_the_team_header).should(\"be.visible\");\ncy.get(cy_selectors.west.meet_the_team_link).should(\"be.visible\");\ncy.get(cy_selectors.west.meet_the_team_link).click({\n  force: true\n});\ncy.title().should('eq', \"Acrisure's Leadership Team\");\ncy.wait(3000);\ncy.go('back');\ncy.wait(2000);",
+                  "err": {},
+                  "uuid": "bcffbb81-08c9-4028-89ab-098a323e0426",
+                  "parentUUID": "b85d2e5b-5941-47e4-ada6-415b3ae27a5f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bcffbb81-08c9-4028-89ab-098a323e0426"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 58561,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

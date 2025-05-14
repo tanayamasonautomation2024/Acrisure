@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-14T09:55:37.688Z",
+    "end": "2025-05-14T09:56:45.153Z",
+    "duration": 67465,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a816eaaf-4a6f-4b45-8ba5-c95833cc61d0",
+      "title": "",
+      "fullFile": "cypress/e2e/app/small-business-insurance.cy.js",
+      "file": "cypress/e2e/app/small-business-insurance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5790e6a1-b45b-4969-8159-13bca77ac1cd",
+          "title": "Acrisure Cloud Website - Dev Environment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "ed2b72e5-ed3a-414e-ab57-1d82042c87ba",
+              "title": "Small Business Insurance - Design Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate Small Business Insurance Page",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Small Business Insurance - Design Tests Validate Small Business Insurance Page",
+                  "timedOut": null,
+                  "duration": 65554,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "\"../screenshots/small-business-insurance.cy.js/Acrisure Cloud Website - Dev Environment -- Small Business Insurance - Design Tests -- Validate Small Business Insurance Page (failed).png\"",
+                  "code": "cy.visitSite(\"app\", \"small-business-insurance\");\ncy.url().should(\"include\", \"small-business-insurance\");\ncy.xpath(selectors.main_container, {\n  timeout: 10000\n}).should(\"exist\");\n/* ----------------------------------------------------------\n * Small Business Insurance Splash Component - Text and Image\n * ----------------------------------------------------------\n */\n{\n  // Left Hand Text (Caption/Header/Body Text)\n  cy.get(cy_selectors.small_business_insurance.hero_splash_caption).should(\"have.text\", acm_constants.small_business_insurance.hero_splash_caption);\n  cy.get(cy_selectors.small_business_insurance.hero_splash_header).should(\"have.text\", acm_constants.small_business_insurance.hero_splash_header);\n  cy.get(cy_selectors.small_business_insurance.hero_splash_body_text).should(\"have.text\", acm_constants.small_business_insurance.hero_splash_body_text);\n  // Graphic Image\n  cy.get(cy_selectors.small_business_insurance.hero_splash_image).should(\"be.visible\");\n  cy.get(cy_selectors.small_business_insurance.hero_splash_pill_title0).should(\"have.text\", acm_constants.small_business_insurance.hero_splash_image_title0);\n  cy.get(cy_selectors.small_business_insurance.hero_splash_pill_title1).should(\"have.text\", acm_constants.small_business_insurance.hero_splash_image_title1);\n}\n/* ------------------------------------------------------\n * Small Business Insurance Hero Component - Why Acrisure\n * ------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.small_business_insurance.hero2_component_caption).scrollIntoView();\n  // Caption\n  cy.get(cy_selectors.small_business_insurance.hero2_component_caption).should(\"have.text\", \"Why Acrisure\");\n  // Hero Image and Corner Cut Container\n  cy.get(cy_selectors.small_business_insurance.hero2_component_image).should(\"be.visible\");\n  cy.get(cy_selectors.small_business_insurance.hero2_component_cornercut_image).should(\"be.visible\");\n  cy.get(cy_selectors.small_business_insurance.hero2_component_cornercut_text).should(\"have.text\", acm_constants.small_business_insurance.hero2_component_cornercut_text);\n  cy.get(cy_selectors.small_business_insurance.hero2_component_h2_header).scrollIntoView();\n  cy.get(cy_selectors.small_business_insurance.hero2_component_h2_header).should(\"have.text\", acm_constants.small_business_insurance.hero2_component_h2_header);\n  cy.get(cy_selectors.small_business_insurance.hero2_component_body_text).contains(acm_constants.small_business_insurance.hero2_component_body_text);\n  cy.get(cy_selectors.small_business_insurance.hero2_component_primary_button).should(\"have.text\", acm_constants.small_business_insurance.hero2_component_primary_button);\n}\n//cy.xpath(selectors.common.onetrust1).click({ force: true });\n/* -----------------------------------------------------------------------\n * Small Business Insurance Desktop Coverage Component - Business Coverage\n * -----------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.small_business_insurance.coverage_component).scrollIntoView();\n  // Busines Coverage Caption\n  cy.get(cy_selectors.small_business_insurance.coverage_component_caption).should(\"have.text\", acm_constants.small_business_insurance.coverage_component_caption);\n  cy.get(cy_selectors.small_business_insurance.coverage_component_root).scrollIntoView();\n  // Top Content Text (header and body text)\n  cy.get(cy_selectors.small_business_insurance.coverage_component_h3_header).should(\"have.text\", acm_constants.small_business_insurance.coverage_component_h3_header);\n  cy.get(cy_selectors.small_business_insurance.coverage_component_body_text).contains(acm_constants.small_business_insurance.coverage_component_body_text);\n  {\n    // Business Coverage Cards (Button, Header, Body Text)\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    }).find(cy_selectors.small_business_insurance.business_coverage_card).each(($ele, coverageCardIndex) => {\n      //if(coverageCardIndex === 0){              \n      //cy.wrap($ele).click({ scrollBehavior: false });\n      //cy.wait(5000);\n      //cy.go('back')\n      //cy.wait(5000);\n      //}\n      // cy.wrap($ele)\n      //   .find(cy_selectors.small_business_insurance.business_coverage_card_button)\n      //   .should(\"be.visible\")\n      //   .scrollIntoView({ offset: { top: -120, left: 0 } })\n      //   //.click({ scrollBehavior: false });\n      // cy.wait(750);\n      //cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView();\n      //cy.wait(5000);\n      cy.wrap($ele).find(cy_selectors.small_business_insurance.business_coverage_card_h6_headers).should(\"have.text\", acm_constants.small_business_insurance.business_coverage_card_h6_headers[coverageCardIndex]);\n      cy.wrap($ele).find(cy_selectors.small_business_insurance.business_coverage_card_body_text).should(\"have.text\", acm_constants.small_business_insurance.business_coverage_card_body_text[coverageCardIndex]);\n      cy.wrap($ele).find(cy_selectors.small_business_insurance.business_coverage_card_button).scrollIntoView({\n        offset: {\n          top: -120,\n          left: 0\n        }\n      });\n      //.click({ scrollBehavior: false });\n      cy.wait(1500);\n      // cy.wrap($ele)\n      //   .find(cy_selectors.small_business_insurance.business_coverage_card_h6_headers)\n      //   .should(\"be.visible\");\n      if (!(isTablet || isMobile)) {\n        cy.wrap($ele).find(cy_selectors.small_business_insurance.business_coverage_card_body_text).should(\"be.visible\");\n      }\n    });\n    // Business Insurance Coverage - Card Navigations \n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_button1).click({\n      force: true\n    });\n    cy.title().should('eq', 'Commercial General Liability Insurance (CGL) | Request A Quote');\n    cy.go('back');\n    cy.wait(2000);\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_button2).click({\n      force: true\n    });\n    cy.title().should('eq', 'Professional Liability Insurance | Request A Free Quote');\n    cy.go('back');\n    cy.wait(2000);\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_button3).click({\n      force: true\n    });\n    cy.title().should('eq', \"Business Owner's Policy | Request A Personalized Quote\");\n    cy.go('back');\n    cy.wait(2000);\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_button4).click({\n      force: true\n    });\n    cy.title().should('eq', 'Cyber Insurance | Request A Personalized Quote');\n    cy.go('back');\n    cy.wait(2000);\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_container).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.get(cy_selectors.small_business_insurance.business_coverage_card_button5).click({\n      force: true\n    });\n    cy.title().should('eq', \"Workers' Comp Insurance | Request A Personalized Quote\");\n    cy.go('back');\n    cy.wait(2000);\n    /* --------------------------------------------------------------\n    * Small Business Insurance Logo Parade Component - Company Logos\n    * --------------------------------------------------------------\n    */\n    // Logo Text\n    cy.wait(3000);\n    cy.get(cy_selectors.small_business_insurance.logo_parade_body_text).scrollIntoView();\n    cy.wait(3000);\n    cy.get(cy_selectors.small_business_insurance.logo_parade_body_text).should(\"have.text\", acm_constants.small_business_insurance.logo_parade_body_text);\n    // Confirm Order of Logos as it displays on the app\n    cy.get(cy_selectors.small_business_insurance.logo_list).children().then($listEl => {\n      const getIMG = el => Array.from(el.children)[0];\n      const getALTTtext = img => img.getAttribute(\"alt\");\n      return Cypress._.map($listEl, el => getALTTtext(getIMG(el)));\n    }).as(\"imageArray\");\n    cy.get(\"@imageArray\").then(array => {\n      expect(array).to.include.ordered.members(acm_constants.small_business_insurance.company_logos, \"Checking order of company logos\");\n    });\n  }\n}\n//cy.xpath(selectors.common.onetrust1).click({ force: true });\n/* ---------------------------------------------------------\n * Small Business Insurance Solutions Component - Industries\n * ---------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.small_business_insurance.solutions_component).scrollIntoView();\n  if (isTablet || isMobile) {\n    cy.wait(2000);\n    cy.get(cy_selectors.small_business_insurance.solutions_component).scrollIntoView({\n      offset: {\n        top: -50,\n        left: 0\n      }\n    });\n    cy.wait(1000);\n  }\n  // Industries Caption\n  cy.get(cy_selectors.small_business_insurance.solutions_component_caption).should(\"have.text\", acm_constants.small_business_insurance.solutions_component_caption);\n  // Inner Content (Header, Industry List, and See More Button)\n  cy.get(cy_selectors.small_business_insurance.industries_h2_header).scrollIntoView({\n    offset: {\n      top: -50,\n      left: 0\n    }\n  });\n  cy.get(cy_selectors.small_business_insurance.industries_h2_header).should(\"have.text\", acm_constants.small_business_insurance.industries_h2_header);\n  ////////////////// Expand the Industry list fully and validate the contents /////////////////////////////////////\n  // if(isMobile){\n  //   cy.get(cy_selectors.small_business_insurance.industry_button)\n  //   .should(\n  //     \"have.text\",\n  //     acm_constants.small_business_insurance.industry_button_see_more_text\n  //   )\n  //   .scrollIntoView({ offset: { top: -150, left: 0 } })\n  //   .click({ scrollBehavior: false });\n  // }\n  // else {\n  //   cy.get(cy_selectors.small_business_insurance.industry_button)\n  //   .should(\n  //     \"have.text\",\n  //     acm_constants.small_business_insurance.industry_button_see_more_text\n  //   )\n  //   .click({ scrollBehavior: false });\n  // }\n  // Traverse all Industry Lists once fully expanded\n  //cy.get(\".solution-component .MuiList-root.MuiList-padding\")\n  cy.get(\".accordion-list\").children().each(($industry, index) => {\n    cy.wrap($industry).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.wrap($industry).find(cy_selectors.small_business_insurance.industry_list_h6_header).scrollIntoView({\n      offset: {\n        top: -50,\n        left: 0\n      }\n    }).should(\"have.text\", acm_constants.small_business_insurance.industry_list_h6_headers[index]);\n    cy.wrap($industry).find(cy_selectors.small_business_insurance.industry_list_body_text).should(\"have.text\", acm_constants.small_business_insurance.industry_list_body_texts[index]);\n  });\n  // cy.get(cy_selectors.small_business_insurance.industry_button)\n  //   .should(\"have.text\", acm_constants.small_business_insurance.industry_button_see_less_text);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* --------------------------------------------------\n * Small Business Insurance Accordion Component - FAQ\n * --------------------------------------------------\n */\n{\n  cy.get(cy_selectors.small_business_insurance.accordion_component).scrollIntoView();\n  // FAQ Text (Caption and Header)\n  cy.get(cy_selectors.small_business_insurance.accordion_component_caption).should(\"have.text\", acm_constants.small_business_insurance.accordion_component_caption);\n  cy.get(cy_selectors.small_business_insurance.faq_header).should(\"have.text\", acm_constants.small_business_insurance.faq_header);\n  cy.get(cy_selectors.small_business_insurance.faq_load_more).should(\"have.text\", acm_constants.small_business_insurance.faq_load_more);\n  cy.wait(10000);\n  cy.get(cy_selectors.small_business_insurance.faq_load_more).click({\n    force: true\n  });\n  cy.wait(10000);\n  /* \n    Handle then main section of the FAQ Tabs. (Late April Update: FAQs only have\n    one section of FAQs rather than two)\n     First close the first expanded tab. Then for each tab, expand the tab and\n    confirm the contents within each tab\n    */\n  cy.get(cy_selectors.small_business_insurance.faq_expanded_tab).scrollIntoView({\n    offset: {\n      top: -60,\n      left: 0\n    }\n  }).find(cy_selectors.small_business_insurance.faq_panel_header);\n  //.click({ scrollBehavior: false });\n  cy.wait(10000);\n  cy.get(cy_selectors.small_business_insurance.faq_regular_tab).each(($ele, panelIndex) => {\n    cy.wrap($ele).find(cy_selectors.small_business_insurance.faq_panel_header).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    }).click({\n      scrollBehavior: false\n    });\n    // Confirm the tab text\n    cy.wrap($ele).find(cy_selectors.small_business_insurance.faq_panel_header_text).should(\"have.text\", acm_constants.small_business_insurance.faq_section_i_panel_headers[panelIndex]);\n    // Confirm each bullet point text\n    cy.wrap($ele).find(cy_selectors.small_business_insurance.faq_panel_bullet_points).each(($ele, bulletIndex) => {\n      const bulletArray = acm_constants.small_business_insurance[`faq_section_i_panel_header_${panelIndex + 1}_bullet_points`];\n      cy.wrap($ele).should(\"have.text\", bulletArray[bulletIndex]);\n    });\n    cy.wait(1500);\n  });\n}\n/* -----------------------------------------------------------------------\n * Small Business Insurance Promotion Component - Full Image and Container\n * -----------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.small_business_insurance.promotion_component).scrollIntoView({\n    offset: {\n      top: -70,\n      left: 0\n    }\n  }).should(\"be.visible\");\n  cy.get(cy_selectors.small_business_insurance.promotion_card_text).should(\"have.text\", acm_constants.small_business_insurance.promotion_card_text);\n  cy.get(cy_selectors.small_business_insurance.promotion_card_button).should(\"have.text\", acm_constants.small_business_insurance.promotion_card_button);\n  cy.get(cy_selectors.small_business_insurance.promotion_card_button).click({\n    force: true\n  });\n  cy.title().should('eq', 'Insurance, Cybersecurity and Business Solutions Insights');\n  cy.go('back');\n  cy.wait(2000);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* --------------------------------------------------------------------\n * Small Business Insurance Insights Component - Insights and Resources\n * --------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.small_business_insurance.insights_component).scrollIntoView();\n  // Insights Text (Caption, Header, and Body Text)\n  cy.get(cy_selectors.small_business_insurance.insights_caption).should(\"have.text\", acm_constants.small_business_insurance.insights_caption);\n  cy.get(cy_selectors.small_business_insurance.insights_h4_header).should(\"have.text\", acm_constants.small_business_insurance.insights_h4_header);\n  cy.get(cy_selectors.small_business_insurance.insights_body_text).should(\"have.text\", acm_constants.small_business_insurance.insights_body_text);\n  // Resource Cards (Check each image and card title)\n  cy.get(cy_selectors.small_business_insurance.resource_card).each(($ele, cardIndex) => {\n    if (isMobile && cardIndex > 0) {\n      cy.get(cy_selectors.small_business_insurance.resource_next_card_button).scrollIntoView({\n        offset: {\n          top: -550,\n          left: 0\n        }\n      }).click({\n        scrollBehavior: false\n      });\n    }\n    if (isTablet && cardIndex > 3) {\n      cy.get(cy_selectors.small_business_insurance.resource_next_card_button).scrollIntoView({\n        offset: {\n          top: -550,\n          left: 0\n        }\n      }).click({\n        scrollBehavior: false\n      });\n    }\n    if (isLargeDesktop && cardIndex > 3) {\n      cy.get(cy_selectors.small_business_insurance.resource_next_card_button).scrollIntoView({\n        offset: {\n          top: -800,\n          left: 0\n        }\n      }).click({\n        scrollBehavior: false\n      });\n    }\n    cy.wrap($ele).find(cy_selectors.small_business_insurance.resource_card_image).should(\"be.visible\");\n    cy.wrap($ele).find(cy_selectors.small_business_insurance.resource_card_h7_header).should(\"be.visible\").should(\"have.text\", acm_constants.small_business_insurance.resource_article_titles[cardIndex]);\n  });\n  // Read More Button\n  cy.get(cy_selectors.small_business_insurance.read_more_button).should(\"have.text\", acm_constants.small_business_insurance.read_more_button);\n}",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 60000ms: expected '<span.caption>' to have text 'SMALL AND MID-SIZED BUSINESS INSURANCE', but the text was 'SMALL AND MID-SIZED BUSINESS INSURANCE Test'",
+                    "estack": "AssertionError: Timed out retrying after 60000ms: expected '<span.caption>' to have text 'SMALL AND MID-SIZED BUSINESS INSURANCE', but the text was 'SMALL AND MID-SIZED BUSINESS INSURANCE Test'\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/small-business-insurance.cy.js:55:11)",
+                    "diff": "- 'SMALL AND MID-SIZED BUSINESS INSURANCE Test'\n+ 'SMALL AND MID-SIZED BUSINESS INSURANCE'\n"
+                  },
+                  "uuid": "493cdddd-5ca4-4e5d-ab53-66ee2999215a",
+                  "parentUUID": "ed2b72e5-ed3a-414e-ab57-1d82042c87ba",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "493cdddd-5ca4-4e5d-ab53-66ee2999215a"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 65554,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

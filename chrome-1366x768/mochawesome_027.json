@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T09:32:47.362Z",
+    "end": "2025-05-14T09:32:56.188Z",
+    "duration": 8826,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "eca244ac-1f20-48d4-b39c-70a7e1562ec2",
+      "title": "",
+      "fullFile": "cypress/e2e/app/privacy-center.cy.js",
+      "file": "cypress/e2e/app/privacy-center.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9d422a34-4cb3-4da3-b302-7e9c49c56d19",
+          "title": "Privacy Center",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Privacy center page components",
+              "fullTitle": "Privacy Center Privacy center page components",
+              "timedOut": null,
+              "duration": 7146,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"privacy\");\n// Main Header\ncy.xpath(selectors.privacy_center.main_header).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.main_description).should(\"be.visible\");\n// Acrisure Privacy Policies and Customer Notices section\ncy.xpath(selectors.privacy_center.header_section1).scrollIntoView();\ncy.xpath(selectors.privacy_center.header_section1).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_us_privacy).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_customer_notice).should(\"be.visible\");\n// Data Subject Privacy Requests section\ncy.xpath(selectors.privacy_center.header_section2).scrollIntoView();\ncy.xpath(selectors.privacy_center.header_section2).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_us_except_ca).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_ca_residents).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_caifipa).should(\"be.visible\");\n// Data Subject Privacy Requests section\ncy.xpath(selectors.privacy_center.header_section3).scrollIntoView();\ncy.xpath(selectors.privacy_center.header_section3).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_privacy_choices).should(\"exist\");\n// FAQ section\ncy.xpath(selectors.privacy_center.faq1_header).scrollIntoView();\ncy.xpath(selectors.privacy_center.faq1_header).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq1_bullet1).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq2_header).click({\n  force: true\n});\ncy.xpath(selectors.privacy_center.faq2_bullet1).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq2_bullet2).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq3_header).click({\n  force: true\n});\ncy.xpath(selectors.privacy_center.faq3_bullet1).should(\"be.visible\");",
+              "err": {},
+              "uuid": "80f970c3-9323-4775-8ae3-8fe3ffd72e71",
+              "parentUUID": "9d422a34-4cb3-4da3-b302-7e9c49c56d19",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "80f970c3-9323-4775-8ae3-8fe3ffd72e71"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7146,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T09:56:46.635Z",
+    "end": "2025-05-14T09:56:55.965Z",
+    "duration": 9330,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d6d0c18b-9043-4c20-80cd-948f53611da9",
+      "title": "",
+      "fullFile": "cypress/e2e/app/terms-of-use.cy.js",
+      "file": "cypress/e2e/app/terms-of-use.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ee69a51c-2738-4201-ac09-9ba585d2607f",
+          "title": "Terms of Use",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Terms of use page components",
+              "fullTitle": "Terms of Use Terms of use page components",
+              "timedOut": null,
+              "duration": 7156,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"terms-of-use\");\n// Main Header\ncy.xpath(selectors.terms_of_use.main_header).should(\"be.visible\");\ncy.xpath(selectors.terms_of_use.main_description).should(\"be.visible\");\n// Terms Sections\ncy.xpath(selectors.terms_of_use.term_content).scrollIntoView();\ncy.xpath(selectors.terms_of_use.term_description1).should(\"be.visible\");\ncy.xpath(selectors.terms_of_use.term_description2).should(\"be.visible\");\nfor (let i = 1; i <= 12; i++) {\n  cy.xpath(selectors.terms_of_use[`section${i}`]).scrollIntoView().should(\"be.visible\");\n  // Check the privacy policy link in the 1st section\n  //cy.xpath(selectors.common.onetrust1).click({ force: true });\n  if (i === 1) {\n    cy.xpath(selectors.terms_of_use.section1_desc).should(\"be.visible\");\n    //  Check the mail to link in the 2nd section\n  } else if (i === 2) {\n    cy.xpath(selectors.terms_of_use.section2_1_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.section2_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.term_content).scrollIntoView({\n      offset: {\n        top: 1000,\n        left: 0\n      }\n    });\n    cy.xpath(selectors.terms_of_use.section2_3_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_4_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_5_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.term_content).scrollIntoView({\n      offset: {\n        top: 1600,\n        left: 0\n      }\n    });\n    cy.xpath(selectors.terms_of_use.section2_3_5_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_5_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_3_6_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_4_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section2_5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.term_content).scrollIntoView({\n      offset: {\n        top: 2100,\n        left: 0\n      }\n    });\n    cy.xpath(selectors.terms_of_use.section2_6_desc).should(\"be.visible\");\n    //  Check the mail to link in the 3rd section\n  } else if (i === 3) {\n    cy.xpath(selectors.terms_of_use.section3_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.section3_desc).should(\"be.visible\");\n    //  Check the mail to link in the 4th section\n  } else if (i === 4) {\n    cy.xpath(selectors.terms_of_use.section4_1_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.section4_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.term_content).scrollIntoView({\n      offset: {\n        top: 2600,\n        left: 0\n      }\n    });\n    cy.xpath(selectors.terms_of_use.section4_1_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_4_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_6_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_7_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_8_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_1_9_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section4_2_desc).should(\"be.visible\");\n    //  Check the mail to link in the 5th section\n  } else if (i === 5) {\n    cy.xpath(selectors.terms_of_use.section5_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.privacy_policy).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section5a_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section5b_desc).should(\"be.visible\");\n    //  Check the mail to link in the 6th section\n  } else if (i === 6) {\n    cy.xpath(selectors.terms_of_use.section6_1_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.section6_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section6_2_desc).should(\"be.visible\");\n    //  Check the mail to link in the 7th section\n  } else if (i === 7) {\n    cy.xpath(selectors.terms_of_use.section7_1_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.law_mail_to1).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_4_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_2_6_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section7_4_desc).should(\"be.visible\");\n    //  Check the mail to link in the 8th section\n  } else if (i === 8) {\n    //cy.xpath(selectors.terms_of_use.section7_4_desc).scrollIntoView();\n    //cy.xpath(selectors.terms_of_use.section8_desc).should(\"exist\");\n    //cy.xpath(selectors.terms_of_use.section8a_desc).should(\"be.visible\");\n    //cy.xpath(selectors.terms_of_use.section8b_desc).should(\"be.visible\");        \n    //  Check the mail to link in the 9th section\n  } else if (i === 9) {\n    cy.xpath(selectors.terms_of_use.section9_1_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.section9_2_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section9_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section9_4_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section9_5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section9_5_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section9_5_2_desc).should(\"be.visible\");\n    //  Check the mail to link in the 10th section\n  } else if (i === 10) {\n    cy.xpath(selectors.terms_of_use.section10_1_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section10_2_desc).should(\"be.visible\");\n    //cy.xpath(selectors.terms_of_use.section10_3_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section10_4_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section10_5_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section10_6_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section10_7_desc).should(\"be.visible\");\n    //  Check the mail to link in the 11th section\n  } else if (i === 11) {\n    cy.xpath(selectors.terms_of_use.disclosure).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.disclosure).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section11_desc).should(\"be.visible\");\n    cy.xpath(selectors.terms_of_use.section11a_desc).should(\"be.visible\");\n    //  Check the mail to link in the 12th section\n  } else if (i === 12) {\n    cy.xpath(selectors.terms_of_use.section12_desc).scrollIntoView();\n    cy.xpath(selectors.terms_of_use.section12_desc).should(\"be.visible\");\n  }\n}\ncy.xpath(selectors.terms_of_use.law_mail_to2).should(\"be.visible\");",
+              "err": {},
+              "uuid": "a6d6047d-67a8-487e-96e8-e49f565ce24f",
+              "parentUUID": "ee69a51c-2738-4201-ac09-9ba585d2607f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a6d6047d-67a8-487e-96e8-e49f565ce24f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7156,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

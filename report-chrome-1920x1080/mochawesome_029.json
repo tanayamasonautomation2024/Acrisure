@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-14T16:17:34.870Z",
-    "end": "2025-05-14T16:18:18.251Z",
-    "duration": 43381,
+    "start": "2025-05-14T19:45:18.281Z",
+    "end": "2025-05-14T19:45:51.751Z",
+    "duration": 33470,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0ce8aac1-69cb-40a2-8d66-14e4121922c1",
+      "uuid": "c7d3d88c-0123-4957-b9d8-a56e8535a8d4",
       "title": "",
       "fullFile": "cypress/e2e/app/professional-liability.cy.js",
       "file": "cypress/e2e/app/professional-liability.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6d0399ca-b236-4093-9d24-177fc02979d5",
+          "uuid": "681afe79-435d-4294-9a53-3fe0580db1ff",
           "title": "Professional Liability Insurance",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validate professional liability insurance page",
               "fullTitle": "Professional Liability Insurance Validate professional liability insurance page",
               "timedOut": null,
-              "duration": 41341,
+              "duration": 31678,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visitSite(\"app\", \"professional-liability-insurance\");\n// Main section\ncy.xpath(proLiability.heading_sm).should(\"be.visible\");\ncy.xpath(proLiability.heading_lg).should(\"be.visible\");\ncy.get(proLiability.caption).should(\"be.visible\");\ncy.xpath(proLiability.pill_professional).should(\"be.visible\");\ncy.xpath(proLiability.pill_protection).should(\"be.visible\");\n// Get Quote\ncy.xpath(selectors.common.card_quick_quote).scrollIntoView();\ncy.xpath(proLiability.quotes_in_minutes).should(\"be.visible\");\ncy.xpath(proLiability.quick_quote_lg).should(\"be.visible\");\ncy.xpath(proLiability.getaquote_button).should(\"be.visible\");\n// Professional liability insurance\ncy.xpath(proLiability.what_is_eo_heading_sm).scrollIntoView();\ncy.xpath(proLiability.what_is_eo_heading_sm).should(\"be.visible\");\ncy.xpath(proLiability.what_is_eo_heading_lg).should(\"be.visible\");\ncy.xpath(proLiability.what_is_eo_part_1).should(\"be.visible\");\ncy.get(proLiability.what_is_eo_part_2).should(\"be.visible\");\ncy.get(proLiability.what_is_eo_part_3).should(\"be.visible\");\ncy.get(proLiability.what_is_eo_part_4).should(\"be.visible\");\ncy.get(proLiability.what_is_eo_part_5).should(\"be.visible\");\ncy.xpath(proLiability.learn_more).should(\"be.visible\");\ncy.xpath(proLiability.pill_errors).should(\"be.visible\");\ncy.xpath(proLiability.pill_omissions).should(\"be.visible\");\n// Why Acrisure\ncy.xpath(selectors.common.card_why1).scrollIntoView();\ncy.xpath(selectors.common.pill_options).should(\"be.visible\");\ncy.xpath(selectors.common.pill_easy).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure1).should(\"be.visible\");\ncy.xpath(proLiability.why_caption_1).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure2).should(\"be.visible\");\ncy.xpath(proLiability.why_caption_2).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure3).should(\"be.visible\");\ncy.xpath(proLiability.why_caption_3).should(\"be.visible\");\n// FAQ\ncy.xpath(selectors.common.card_faq).scrollIntoView();\ncy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\ncy.xpath(selectors.common.faq_header).should(\"be.visible\");\ncy.xpath(proLiability.faq_question_1).should(\"be.visible\");\ncy.xpath(proLiability.faq_question_2).should(\"be.visible\");\ncy.xpath(proLiability.faq_question_3).should(\"be.visible\");\ncy.xpath(proLiability.faq_question_4).should(\"be.visible\");\ncy.xpath(proLiability.faq_question_5).should(\"be.visible\");\ncy.xpath(proLiability.faq_question_6).should(\"be.visible\");\n// Expand all FAQ sections\nfor (let i = 1; i < 6; i++) {\n  cy.xpath(proLiability.faq_accordion_icon).eq(i).scrollIntoView().click({\n    force: true\n  });\n}\ncy.xpath(proLiability.faq_question_body).its(\"length\").should(\"eq\", 6);\n// Collapse all FAQ sections\nfor (let i = 1; i < 6; i++) {\n  cy.xpath(proLiability.faq_accordion_icon).eq(i).scrollIntoView().click({\n    force: true\n  });\n  cy.xpath(proLiability.faq_question_body).eq(i).should(\"not.be.visible\");\n}",
               "err": {},
-              "uuid": "b50bcfbd-c5dd-4d7c-aa8c-499215179d32",
-              "parentUUID": "6d0399ca-b236-4093-9d24-177fc02979d5",
+              "uuid": "afb2f5fa-8bbd-4116-a7c2-424ade0e9914",
+              "parentUUID": "681afe79-435d-4294-9a53-3fe0580db1ff",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b50bcfbd-c5dd-4d7c-aa8c-499215179d32"
+            "afb2f5fa-8bbd-4116-a7c2-424ade0e9914"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 41341,
+          "duration": 31678,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

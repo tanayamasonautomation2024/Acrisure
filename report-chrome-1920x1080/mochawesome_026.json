@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T16:13:10.166Z",
-    "end": "2025-05-14T16:15:47.835Z",
-    "duration": 157669,
+    "start": "2025-05-14T19:42:03.989Z",
+    "end": "2025-05-14T19:44:24.971Z",
+    "duration": 140982,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "79c8238a-c1ac-4018-b9e3-542775daaa7e",
+      "uuid": "f5eb6cf1-2368-4e6f-bae7-7e1ebecbd3df",
       "title": "",
       "fullFile": "cypress/e2e/app/personal-insurance.cy.js",
       "file": "cypress/e2e/app/personal-insurance.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e5815217-0db3-43b3-ada8-4031772d5e15",
+          "uuid": "914c3675-b383-413e-8c76-48ba9e21b855",
           "title": "Personal Insurance",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validate personal insurance page components",
               "fullTitle": "Personal Insurance Validate personal insurance page components",
               "timedOut": null,
-              "duration": 26754,
+              "duration": 18268,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "// const isNotLargeDesktop = Cypress.config().viewportWidth < 1441 \n//                       && Cypress.config().viewportWidth >= 1200;\n// const isTablet = Cypress.config().viewportWidth < 1200 \n//               && Cypress.config().viewportWidth >= 768;\n// const isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"personal-insurance\");\n// Main header section\ncy.xpath(selectors.personal.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.personal.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.personal.caption).should(\"be.visible\");\n// Insurance cards\ncy.xpath(selectors.personal.grid_feature).scrollIntoView();\nconst cards = isMobile ? [\"home\"] : [\"auto\", \"home\", \"life\", \"flood\"];\nfor (const card of cards) {\n  validateCard(card);\n}\n// Compare Companies\ncy.xpath(selectors.personal.compare_heading).should(\"be.visible\");\n// Why Acrisure\n// if (!isMobile) {\n//   cy.xpath(selectors.personal.pill_coverage).should(\"be.visible\");\n//   cy.xpath(selectors.personal.pill_prices).should(\"be.visible\");\n// }   \ncy.xpath(selectors.common.card_why1).scrollIntoView();\ncy.xpath(selectors.personal.pill_coverage).should(\"be.visible\");\ncy.xpath(selectors.personal.pill_prices).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure1).should(\"be.visible\");\ncy.xpath(selectors.personal.why_caption_1).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure2).should(\"be.visible\");\ncy.xpath(selectors.personal.why_caption_2).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure3).should(\"be.visible\");\ncy.xpath(selectors.personal.why_caption_3).should(\"be.visible\");\n// FAQ\ncy.xpath(selectors.personal.faq_header).scrollIntoView();\ncy.xpath(selectors.personal.faq_header).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_question_1).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_1).should(\"be.visible\");\ncy.xpath(selectors.personal.faq_bullet_1).should(\"be.visible\");\ncy.xpath(selectors.personal.faq_bullet_2).should(\"be.visible\");\ncy.xpath(selectors.personal.faq_bullet_3).should(\"be.visible\");\ncy.xpath(selectors.personal.faq_bullet_4).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_bullet_5).scrollIntoView();\ncy.xpath(selectors.personal.faq_bullet_5).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_question_2).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_2).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_question_3).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_3).should(\"be.visible\");\ncy.xpath(selectors.personal.faq_question_4).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_4).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_question_5).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_5).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_question_6).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_6).should(\"be.visible\");\n//cy.xpath(selectors.personal.faq_load_more_btn).scrollIntoView();\ncy.xpath(selectors.personal.faq_load_more_btn).should(\"be.visible\");\ncy.xpath(selectors.personal.faq_load_more_btn).click();\ncy.xpath(selectors.personal.faq_question_7).scrollIntoView();\ncy.xpath(selectors.personal.faq_question_7).should(\"be.visible\");\n// Explore\ncy.xpath(selectors.personal.explore_home_header).scrollIntoView();\ncy.xpath(selectors.personal.explore_home_header).should(\"be.visible\");\n//cy.xpath(selectors.personal.explore_home_link).scrollIntoView();\ncy.xpath(selectors.personal.explore_home_link).should(\"be.visible\");\ncy.xpath(selectors.personal.explore_auto_header).scrollIntoView();\ncy.xpath(selectors.personal.explore_auto_header).should(\"be.visible\");\n//cy.xpath(selectors.personal.explore_auto_link).scrollIntoView();\ncy.xpath(selectors.personal.explore_auto_link).should(\"be.visible\");",
               "err": {},
-              "uuid": "14c22a11-ea53-4b44-b1c9-1a3e2cb67358",
-              "parentUUID": "e5815217-0db3-43b3-ada8-4031772d5e15",
+              "uuid": "96c3c44b-765d-4126-90b1-8bc7fc8b475f",
+              "parentUUID": "914c3675-b383-413e-8c76-48ba9e21b855",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Validate personal insurance page functionality",
               "fullTitle": "Personal Insurance Validate personal insurance page functionality",
               "timedOut": null,
-              "duration": 129066,
+              "duration": 120607,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -69,22 +69,22 @@
                 "estack": "AssertionError: expected 404 to equal 200\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/personal-insurance.cy.js:123:28)\n    at getRet (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119616:20)\n    at tryCatcher (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119627:66)\n    at Context.then (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119878:21)",
                 "diff": "- 404\n+ 200\n"
               },
-              "uuid": "a1cb877e-87e8-4f97-8d21-fd7b9a02803b",
-              "parentUUID": "e5815217-0db3-43b3-ada8-4031772d5e15",
+              "uuid": "74eb6dfc-b1e4-4073-8b45-cd3dd94507da",
+              "parentUUID": "914c3675-b383-413e-8c76-48ba9e21b855",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "14c22a11-ea53-4b44-b1c9-1a3e2cb67358"
+            "96c3c44b-765d-4126-90b1-8bc7fc8b475f"
           ],
           "failures": [
-            "a1cb877e-87e8-4f97-8d21-fd7b9a02803b"
+            "74eb6dfc-b1e4-4073-8b45-cd3dd94507da"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 155820,
+          "duration": 138875,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -118,7 +118,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

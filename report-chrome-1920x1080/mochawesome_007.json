@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-05-14T13:15:36.807Z",
-    "end": "2025-05-14T13:16:55.471Z",
-    "duration": 78664,
+    "failures": 0,
+    "start": "2025-05-14T16:58:25.883Z",
+    "end": "2025-05-14T16:58:44.496Z",
+    "duration": 18613,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e1f7587d-00ee-4a85-80b8-45e780d4f0ea",
+      "uuid": "40271a81-f726-4a6d-bafd-c5581a053b56",
       "title": "",
       "fullFile": "cypress/e2e/app/cyber.cy.js",
       "file": "cypress/e2e/app/cyber.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "339b3085-da45-4731-b27a-38c1760d2a56",
+          "uuid": "7fbdc711-8e70-45ac-90d7-aad8d3b84cff",
           "title": "Cyber Insurance",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Validate cyber insurance page",
               "fullTitle": "Cyber Insurance Validate cyber insurance page",
               "timedOut": null,
-              "duration": 77032,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 16669,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
-              "context": "\"../screenshots/cyber.cy.js/Cyber Insurance -- Validate cyber insurance page (failed).png\"",
+              "context": null,
               "code": "const isLargeDesktop = Cypress.config().viewportWidth < 2000 && Cypress.config().viewportWidth >= 1441;\nconst isTablet = Cypress.config().viewportWidth < 1441 && Cypress.config().viewportWidth >= 768;\nconst isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"cyber-insurance\");\n// Splash\ncy.xpath(cyber.heading_sm).should(\"be.visible\");\ncy.xpath(cyber.heading_lg).should(\"be.visible\");\ncy.get(cyber.caption).should(\"be.visible\");\ncy.xpath(cyber.pill_connectingto).should(\"be.visible\");\ncy.xpath(cyber.pill_cybercoverage).should(\"be.visible\");\n// Get Quote\ncy.xpath(cyber.quotes_component).scrollIntoView({\n  offset: {\n    top: -1000,\n    left: 0\n  }\n});\ncy.xpath(cyber.quotes_in_minutes).should(\"be.visible\");\ncy.get(cyber.quotes_text_large).should(\"be.visible\");\n// What is cyber insurance\ncy.xpath(cyber.what_is_cyber_heading_sm).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.xpath(cyber.what_is_cyber_heading_sm).should(\"be.visible\");\ncy.xpath(cyber.what_is_cyber_heading_lg).should(\"be.visible\");\ncy.get(cyber.what_is_cyber).should(\"be.visible\");\ncy.xpath(cyber.learn_more).should(\"be.visible\");\ncy.xpath(cyber.pill_connected).should(\"be.visible\");\ncy.xpath(cyber.pill_covered).should(\"be.visible\");\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n// FAQ\ncy.xpath(cyber.faq_header).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.xpath(cyber.faq_header).should(\"be.visible\");\ncy.xpath(cyber.faq_question_1).scrollIntoView().should(\"be.visible\");\ncy.xpath(cyber.faq_question_2).scrollIntoView().should(\"be.visible\");\ncy.xpath(cyber.faq_question_3).scrollIntoView().should(\"be.visible\");\ncy.xpath(cyber.faq_question_4).scrollIntoView().should(\"be.visible\");\ncy.xpath(cyber.faq_question_5).scrollIntoView().should(\"be.visible\");\ncy.xpath(cyber.faq_question_6).scrollIntoView().should(\"be.visible\");\n// Expand all FAQ sections\nfor (let i = 1; i < 6; i++) {\n  cy.xpath(cyber.faq_accordion_icon).eq(i).scrollIntoView().click({\n    force: true\n  });\n}\ncy.xpath(cyber.faq_question_body).its(\"length\").should(\"eq\", 6);\n// Collapse all FAQ sections\nfor (let i = 1; i < 6; i++) {\n  cy.xpath(cyber.faq_accordion_icon).eq(i).scrollIntoView().click({\n    force: true\n  });\n  cy.wait(1000);\n  cy.xpath(cyber.faq_question_body).eq(i).should(\"not.be.visible\");\n}\ncy.xpath(selectors.common.card_insights).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\nif (isMobile) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView({\n    offset: {\n      top: -100,\n      left: 0\n    }\n  });\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(cyber.more_resources).should(\"exist\");\n  cy.xpath(cyber.insights_caption).should(\"exist\");\n  cy.xpath(cyber.read_more).scrollIntoView({\n    offset: {\n      top: -400,\n      left: 0\n    }\n  });\n  cy.xpath(cyber.card_reducecyber).should(\"exist\");\n  cy.xpath(cyber.nextbutton).click({\n    force: true\n  });\n  cy.xpath(cyber.cyberattack).should(\"exist\");\n  cy.xpath(cyber.nextbutton).click({\n    force: true\n  });\n  cy.xpath(cyber.cybertips).should(\"exist\");\n  cy.xpath(cyber.nextbutton).click({\n    force: true\n  });\n  cy.xpath(cyber.cyberchecklist).should(\"exist\");\n  cy.xpath(cyber.nextbutton).click({\n    force: true\n  });\n  cy.xpath(cyber.waystoprevent).should(\"exist\");\n  cy.xpath(cyber.read_more).should(\"exist\");\n}\nif (isTablet) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView({\n    offset: {\n      top: -50,\n      left: 0\n    }\n  });\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(cyber.more_resources).should(\"exist\");\n  cy.xpath(cyber.insights_caption).should(\"exist\");\n  cy.xpath(cyber.read_more).scrollIntoView({\n    offset: {\n      top: -400,\n      left: 0\n    }\n  });\n  cy.xpath(cyber.card_reducecyber).should(\"exist\");\n  cy.xpath(cyber.cyberattack).should(\"exist\");\n  cy.xpath(cyber.cybertips).should(\"exist\");\n  //cy.xpath(cyber.nextbutton).click({ force: true });        \n  cy.xpath(cyber.cyberchecklist).should(\"exist\");\n  cy.xpath(cyber.nextbutton).click({\n    force: true\n  });\n  cy.xpath(cyber.waystoprevent).should(\"exist\");\n  cy.xpath(cyber.read_more).should(\"exist\");\n}\nif (isLargeDesktop) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView({\n    offset: {\n      top: -80,\n      left: 0\n    }\n  });\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(cyber.more_resources).should(\"exist\");\n  cy.xpath(cyber.insights_caption).should(\"exist\");\n  cy.xpath(cyber.read_more).scrollIntoView({\n    offset: {\n      top: -400,\n      left: 0\n    }\n  });\n  cy.xpath(cyber.card_reducecyber).should(\"exist\");\n  cy.xpath(cyber.cyberattack).should(\"exist\");\n  cy.xpath(cyber.cybertips).should(\"exist\");\n  cy.xpath(cyber.cyberchecklist).should(\"exist\");\n  cy.xpath(cyber.waystoprevent).should(\"exist\");\n  cy.xpath(cyber.read_more).should(\"exist\");\n}\n// Explore\ncy.xpath(selectors.common.card_explore).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.xpath(cyber.explore_workers_header).should(\"be.visible\");\ncy.xpath(cyber.explore_workers_link).should(\"be.visible\");\ncy.xpath(cyber.explore_bop_header).should(\"be.visible\");\ncy.xpath(cyber.explore_bop_link).should(\"be.visible\");",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/cyber.cy.js:34:7)",
-                "diff": null
-              },
-              "uuid": "ce56dbe2-6642-4622-843d-65d335fb1600",
-              "parentUUID": "339b3085-da45-4731-b27a-38c1760d2a56",
+              "err": {},
+              "uuid": "299dd1a7-fd34-4fa9-8476-fc12de399ee7",
+              "parentUUID": "7fbdc711-8e70-45ac-90d7-aad8d3b84cff",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "ce56dbe2-6642-4622-843d-65d335fb1600"
+          "passes": [
+            "299dd1a7-fd34-4fa9-8476-fc12de399ee7"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 77032,
+          "duration": 16669,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -98,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

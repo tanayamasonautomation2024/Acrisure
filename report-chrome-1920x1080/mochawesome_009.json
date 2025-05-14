@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T13:18:43.826Z",
-    "end": "2025-05-14T13:20:17.954Z",
-    "duration": 94128,
+    "start": "2025-05-14T16:59:51.296Z",
+    "end": "2025-05-14T17:01:20.442Z",
+    "duration": 89146,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "bb899217-1a24-47c3-aca7-403cce72dd1f",
+      "uuid": "16e40809-ca91-4b98-94ba-8395084e7b4f",
       "title": "",
       "fullFile": "cypress/e2e/app/flood-insurance.cy.js",
       "file": "cypress/e2e/app/flood-insurance.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "97801a85-0673-4c9b-9e14-8eb20db32203",
+          "uuid": "d209fdfd-7390-47f6-99fe-d0551df06a21",
           "title": "Flood Insurance (Personal)",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validate flood insurance page components",
               "fullTitle": "Flood Insurance (Personal) Validate flood insurance page components",
               "timedOut": null,
-              "duration": 75199,
+              "duration": 78629,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -47,12 +47,12 @@
               "context": "\"../screenshots/flood-insurance.cy.js/Flood Insurance (Personal) -- Validate flood insurance page components (failed).png\"",
               "code": "//const isMobile = Cypress.config().viewportWidth <= 1200;\nconst isLargeDesktop = Cypress.config().viewportWidth < 2000 && Cypress.config().viewportWidth >= 1441;\nconst isTablet = Cypress.config().viewportWidth < 1441 && Cypress.config().viewportWidth >= 768;\nconst isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"flood-insurance\");\ncy.xpath(selectors.flood.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.flood.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.flood.caption).should(\"be.visible\");\n// Quick quote\ncy.xpath(selectors.common.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.flood.quick_quote_sm).should(\"be.visible\");\ncy.xpath(selectors.flood.quick_quote_lg).should(\"be.visible\");\ncy.xpath(selectors.flood.address).type(form_data.home_insurance.street, {\n  force: true\n});\n//cy.xpath(selectors.flood.address_option1).click();\ncy.xpath(selectors.flood.get_a_quote).should(\"be.visible\");\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\nif (!isMobile) {\n  // Coverage\n  cy.xpath(selectors.flood.coverage_heading_sm1).scrollIntoView();\n  cy.xpath(selectors.flood.coverage_heading_sm1).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_heading_lg1).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_caption1).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_building_heading).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_building_caption).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_contents_button1).click();\n  cy.xpath(selectors.flood.coverage_contents_heading).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_contents_caption).should(\"be.visible\");\n  // Why Acrisure\n  cy.xpath(selectors.common.card_why1).scrollIntoView();\n  cy.xpath(selectors.common.pill_options).should(\"be.visible\");\n  cy.xpath(selectors.common.pill_easy).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure1).should(\"be.visible\");\n  cy.xpath(selectors.flood.why_caption_1).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure2).should(\"be.visible\");\n  cy.xpath(selectors.flood.why_caption_2).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure3).should(\"be.visible\");\n  cy.xpath(selectors.flood.why_caption_3).should(\"be.visible\");\n  // FAQ\n  cy.xpath(selectors.common.card_faq).scrollIntoView();\n  cy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.faq_header).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_1).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_bullet_1).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_bullet_2).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_bullet_3).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_2).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_3).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_4).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_5).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_6).should(\"be.visible\");\n  cy.xpath(selectors.common.faq_load_more_btn).should(\"be.visible\");\n  cy.xpath(selectors.common.faq_load_more_btn).click({\n    force: true\n  });\n  cy.xpath(selectors.flood.faq_question_7).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_8).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_9).should(\"be.visible\");\n  // Insights\n  cy.xpath(selectors.flood.card_insights).scrollIntoView();\n  cy.xpath(selectors.flood.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.flood.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.flood.insight_card_insurance).should(\"be.visible\");\n  cy.xpath(selectors.flood.insight_card_cost).should(\"be.visible\");\n  cy.xpath(selectors.flood.insight_card_agent).should(\"be.visible\");\n  cy.xpath(selectors.flood.insight_card_broker1).should(\"be.visible\");\n  cy.xpath(selectors.flood.insight_card_broker).should(\"be.visible\");\n  //cy.xpath(selectors.flood.insight_card_insurance).should(\"be.visible\");\n  cy.xpath(selectors.flood.read_more).should(\"be.visible\");\n  if (isTablet) {\n    cy.xpath(selectors.common.nextbutton).click({\n      force: true\n    });\n    cy.xpath(selectors.flood.insight_card_insurance).should(\"be.visible\");\n    cy.wait(5000);\n  }\n  if (isLargeDesktop) {\n    //cy.xpath(selectors.common.nextbutton).click({ force: true });\n    cy.xpath(selectors.flood.insight_card_insurance).should(\"be.visible\");\n  }\n  // Explore\n  cy.xpath(selectors.flood.card_explore).scrollIntoView();\n  // Scroll and wait for the animation to finish\n  //cy.xpath(selectors.flood.explore_home).scrollIntoView();\n  cy.xpath(selectors.flood.explore_home).should(\"be.visible\");\n  cy.xpath(selectors.flood.explore_auto).should(\"be.visible\");\n}\nif (isMobile) {\n  // Coverage\n  cy.xpath(selectors.flood.coverage_heading_sm).scrollIntoView({\n    offset: {\n      top: -100,\n      left: 0\n    }\n  });\n  cy.xpath(selectors.flood.coverage_heading_sm).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_heading_lg).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_caption).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_building_heading).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_building_caption).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_contents_button).click();\n  cy.xpath(selectors.flood.coverage_contents_heading).should(\"be.visible\");\n  cy.xpath(selectors.flood.coverage_contents_caption).should(\"be.visible\");\n  // Why Acrisure\n  cy.xpath(selectors.common.card_why1).scrollIntoView();\n  cy.xpath(selectors.common.pill_options).should(\"be.visible\");\n  cy.xpath(selectors.common.pill_easy).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure1).should(\"be.visible\");\n  cy.xpath(selectors.flood.why_caption_1).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure2).should(\"be.visible\");\n  cy.xpath(selectors.flood.why_caption_2).should(\"be.visible\");\n  cy.xpath(selectors.common.why_acrisure3).should(\"be.visible\");\n  cy.xpath(selectors.flood.why_caption_3).should(\"be.visible\");\n  // FAQ\n  cy.xpath(selectors.common.card_faq).scrollIntoView();\n  cy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.faq_header).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_1).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_bullet_1).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_bullet_2).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_bullet_3).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_2).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_3).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_4).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_5).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_6).should(\"be.visible\");\n  cy.xpath(selectors.common.faq_load_more_btn).should(\"be.visible\");\n  cy.xpath(selectors.common.faq_load_more_btn).click({\n    force: true\n  });\n  cy.xpath(selectors.flood.faq_question_7).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_8).should(\"be.visible\");\n  cy.xpath(selectors.flood.faq_question_9).should(\"be.visible\");\n  // Insights\n  cy.xpath(selectors.flood.card_insights).scrollIntoView();\n  cy.xpath(selectors.flood.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.flood.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.flood.insight_card_cost).should(\"be.visible\");\n  cy.xpath(selectors.common.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.flood.insight_card_agent).should(\"be.visible\");\n  cy.xpath(selectors.common.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.flood.insight_card_broker1).should(\"be.visible\");\n  cy.xpath(selectors.common.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.flood.insight_card_broker).should(\"be.visible\");\n  cy.xpath(selectors.common.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.flood.insight_card_insurance).should(\"be.visible\");\n  cy.xpath(selectors.flood.read_more).should(\"be.visible\");\n  // Explore\n  //cy.xpath(selectors.flood.card_explore).scrollIntoView();\n  // Scroll and wait for the animation to finish     \n  cy.xpath(selectors.flood.explore_home).scrollIntoView();\n  cy.xpath(selectors.flood.explore_home).should(\"be.visible\");\n  cy.xpath(selectors.flood.explore_auto).should(\"be.visible\");\n}",
               "err": {
-                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/flood-insurance.cy.js:28:7)",
+                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//div[@class = 'h7' and text() = 'test new']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//div[@class = 'h7' and text() = 'test new']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/flood-insurance.cy.js:77:53)",
                 "diff": null
               },
-              "uuid": "c4ae81f2-5fca-4f90-8c87-df54aede5046",
-              "parentUUID": "97801a85-0673-4c9b-9e14-8eb20db32203",
+              "uuid": "3e8a8f92-309e-4045-bc46-e1dbbf5d4fa6",
+              "parentUUID": "d209fdfd-7390-47f6-99fe-d0551df06a21",
               "isHook": false,
               "skipped": false
             },
@@ -60,31 +60,31 @@
               "title": "Validate flood insurance quick quote",
               "fullTitle": "Flood Insurance (Personal) Validate flood insurance quick quote",
               "timedOut": null,
-              "duration": 17099,
+              "duration": 8409,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"flood-insurance\");\ncy.xpath(selectors.flood.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.flood.address).type(form_data.home_insurance.street, {\n  force: true\n});\n//cy.xpath(selectors.flood.address_option1).click();\ncy.xpath(selectors.flood.get_a_quote).click({\n  force: true\n});\nconst altwayUrl = envUtil.getAltwayUrl();\ncy.origin(altwayUrl, {\n  args: {\n    altwayUrl\n  }\n}, ({\n  altwayUrl\n}) => {\n  cy.url().should(\"include\", `${altwayUrl}/flood`);\n});",
               "err": {},
-              "uuid": "72752a52-9bf4-4990-ae76-67275f37bd1b",
-              "parentUUID": "97801a85-0673-4c9b-9e14-8eb20db32203",
+              "uuid": "912c6bac-b080-4577-bf6b-fe2bb45359d2",
+              "parentUUID": "d209fdfd-7390-47f6-99fe-d0551df06a21",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "72752a52-9bf4-4990-ae76-67275f37bd1b"
+            "912c6bac-b080-4577-bf6b-fe2bb45359d2"
           ],
           "failures": [
-            "c4ae81f2-5fca-4f90-8c87-df54aede5046"
+            "3e8a8f92-309e-4045-bc46-e1dbbf5d4fa6"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 92298,
+          "duration": 87038,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -118,7 +118,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

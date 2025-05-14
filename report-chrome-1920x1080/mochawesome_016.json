@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T15:02:20.465Z",
-    "end": "2025-05-14T15:03:36.122Z",
-    "duration": 75657,
+    "start": "2025-05-14T18:32:15.603Z",
+    "end": "2025-05-14T18:33:31.219Z",
+    "duration": 75616,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0460eae7-02c7-4cf7-b4ab-e33414b964ca",
+      "uuid": "8cc5782d-7326-4a81-898b-5267597126c6",
       "title": "",
       "fullFile": "cypress/e2e/app/in-skilled-trades.cy.js",
       "file": "cypress/e2e/app/in-skilled-trades.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a41abb23-fb07-47de-8ab6-de68d451a885",
+          "uuid": "a1cf97a9-2b51-4165-933f-8c6a95f165cd",
           "title": "Acrisure Cloud Website - Dev Environment",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "3b277c4e-40b7-4a99-b723-98aca201584d",
+              "uuid": "6377f461-4c40-40f3-952f-6e6db3d9c3f8",
               "title": "Skilled Trades - Design Tests",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Validate Skilled Trades Page",
                   "fullTitle": "Acrisure Cloud Website - Dev Environment Skilled Trades - Design Tests Validate Skilled Trades Page",
                   "timedOut": null,
-                  "duration": 73654,
+                  "duration": 73729,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -60,8 +60,8 @@
                     "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/in-skilled-trades.cy.js:68:9)",
                     "diff": null
                   },
-                  "uuid": "43083d3b-c831-4726-9a29-ac59487fcbbb",
-                  "parentUUID": "3b277c4e-40b7-4a99-b723-98aca201584d",
+                  "uuid": "0a9f8635-33d3-4779-93a5-68af4de120ba",
+                  "parentUUID": "6377f461-4c40-40f3-952f-6e6db3d9c3f8",
                   "isHook": false,
                   "skipped": false
                 }
@@ -69,11 +69,11 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "43083d3b-c831-4726-9a29-ac59487fcbbb"
+                "0a9f8635-33d3-4779-93a5-68af4de120ba"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 73654,
+              "duration": 73729,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -117,7 +117,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

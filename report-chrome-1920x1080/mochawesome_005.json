@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-14T13:13:43.899Z",
-    "end": "2025-05-14T13:14:17.664Z",
-    "duration": 33765,
+    "start": "2025-05-14T16:56:05.401Z",
+    "end": "2025-05-14T16:56:21.757Z",
+    "duration": 16356,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c7540a9e-38cc-4d81-867c-c6f276d995bb",
+      "uuid": "bcbd3871-b706-44fe-9248-e18a71ac14ed",
       "title": "",
       "fullFile": "cypress/e2e/app/contact-us.cy.js",
       "file": "cypress/e2e/app/contact-us.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "999b44af-c6e7-4265-b088-6e0fc28fb921",
+          "uuid": "69252779-7cd2-4a8b-b2d3-d9aac12e7017",
           "title": "Contact Us Page",
           "fullFile": "",
           "file": "",
@@ -38,17 +38,17 @@
               "title": "Validate Contact Us page components",
               "fullTitle": "Contact Us Page Validate Contact Us page components",
               "timedOut": null,
-              "duration": 16511,
+              "duration": 7551,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"contact-us\");\n// Main section\ncy.xpath(selectors.contact_us.header_hello).should(\"be.visible\");\ncy.xpath(selectors.contact_us.caption).should(\"be.visible\");\n// Contact Us Form\ncy.xpath(selectors.contact_us.card_form).scrollIntoView();\ncy.xpath(selectors.contact_us.header_sm).should(\"be.visible\");\ncy.xpath(selectors.contact_us.header_lg).should(\"be.visible\");\ncy.xpath(selectors.contact_us.body_text).should(\"be.visible\");\ncy.xpath(selectors.contact_us.first_name_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.first_name_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.last_name_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.last_name_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.email_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.email_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.phone_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.phone_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.city_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.city_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.state_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.state_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.interested_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.interested_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.help_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.help_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.btn_submit).should(\"be.visible\");\n// Careers\ncy.xpath(selectors.contact_us.card_careers).scrollIntoView();\ncy.xpath(selectors.contact_us.join_team).should(\"be.visible\");\ncy.xpath(selectors.contact_us.explore_carriers).should(\"be.visible\");\ncy.xpath(selectors.contact_us.pill_network).should(\"be.visible\");",
               "err": {},
-              "uuid": "17e915d7-5dd2-40f8-b8f0-0fac88aef1df",
-              "parentUUID": "999b44af-c6e7-4265-b088-6e0fc28fb921",
+              "uuid": "de548400-6221-4dcb-89ba-948343014255",
+              "parentUUID": "69252779-7cd2-4a8b-b2d3-d9aac12e7017",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +56,30 @@
               "title": "Validate Contact Us form submission",
               "fullTitle": "Contact Us Page Validate Contact Us form submission",
               "timedOut": null,
-              "duration": 15651,
+              "duration": 6945,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"contact-us\");\ncy.xpath(selectors.contact_us.card_form).scrollIntoView();\ncy.xpath(selectors.contact_us.first_name_input).type(form_data.home_insurance.first_name, {\n  force: true\n});\ncy.xpath(selectors.contact_us.last_name_input).type(form_data.home_insurance.last_name, {\n  force: true\n});\ncy.xpath(selectors.contact_us.email_input).type(form_data.home_insurance.email, {\n  force: true\n});\ncy.xpath(selectors.contact_us.phone_input).type(form_data.home_insurance.phone, {\n  force: true\n});\ncy.xpath(selectors.contact_us.city_input).type(form_data.home_insurance.city, {\n  force: true\n});\ncy.xpath(selectors.contact_us.state_input).type(form_data.home_insurance.state, {\n  force: true\n});\ncy.xpath(selectors.home_insurance.select_first_option).click();\ncy.xpath(selectors.contact_us.interested_input).type(form_data.contact.interested, {\n  force: true\n});\ncy.xpath(selectors.home_insurance.select_first_option).click();\ncy.xpath(selectors.contact_us.help_input).type(form_data.contact.help, {\n  force: true\n});\ncy.xpath(selectors.contact_us.btn_submit).click({\n  force: true\n});\ncy.xpath(selectors.contact_us.response_recorded).should(\"be.visible\");\ncy.xpath(selectors.contact_us.response_recorded_desc).should(\"be.visible\");",
               "err": {},
-              "uuid": "953fa953-9ced-4b6b-b41a-a57a6f091a31",
-              "parentUUID": "999b44af-c6e7-4265-b088-6e0fc28fb921",
+              "uuid": "2ef1154a-9cc9-45ea-9216-4c15ed1addb8",
+              "parentUUID": "69252779-7cd2-4a8b-b2d3-d9aac12e7017",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "17e915d7-5dd2-40f8-b8f0-0fac88aef1df",
-            "953fa953-9ced-4b6b-b41a-a57a6f091a31"
+            "de548400-6221-4dcb-89ba-948343014255",
+            "2ef1154a-9cc9-45ea-9216-4c15ed1addb8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 32162,
+          "duration": 14496,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -113,7 +113,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T14:59:46.352Z",
-    "end": "2025-05-14T15:01:02.265Z",
-    "duration": 75913,
+    "start": "2025-05-14T18:29:49.840Z",
+    "end": "2025-05-14T18:30:57.082Z",
+    "duration": 67242,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "88f9831d-d530-48af-a112-c0d74965fa52",
+      "uuid": "07101e37-9a75-4e1e-bc31-e70265c6e797",
       "title": "",
       "fullFile": "cypress/e2e/app/in-construction.cy.js",
       "file": "cypress/e2e/app/in-construction.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7eb87d68-5b1f-4715-93bb-f718a161c8de",
+          "uuid": "54f6f6c1-d9f5-4a08-ac71-f091f3029952",
           "title": "Acrisure Cloud Website - Dev Environment",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "512c9166-7e23-46e6-a499-db5376ef60da",
+              "uuid": "17e5606b-788c-4d4f-862b-47b41333eccc",
               "title": "Construction - Design Tests",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Validate Construction Page",
                   "fullTitle": "Acrisure Cloud Website - Dev Environment Construction - Design Tests Validate Construction Page",
                   "timedOut": null,
-                  "duration": 73917,
+                  "duration": 65448,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -60,8 +60,8 @@
                     "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `.hero-section > a`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/in-construction.cy.js:64:74)",
                     "diff": null
                   },
-                  "uuid": "29a09d6b-336e-4841-ac0c-b2c9ce3528ab",
-                  "parentUUID": "512c9166-7e23-46e6-a499-db5376ef60da",
+                  "uuid": "e3ae3cdc-9ef3-4496-a7d0-dadcfb786fff",
+                  "parentUUID": "17e5606b-788c-4d4f-862b-47b41333eccc",
                   "isHook": false,
                   "skipped": false
                 }
@@ -69,11 +69,11 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "29a09d6b-336e-4841-ac0c-b2c9ce3528ab"
+                "e3ae3cdc-9ef3-4496-a7d0-dadcfb786fff"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 73917,
+              "duration": 65448,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -117,7 +117,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-14T15:56:13.837Z",
-    "end": "2025-05-14T15:57:21.619Z",
-    "duration": 67782,
+    "start": "2025-05-14T19:25:55.202Z",
+    "end": "2025-05-14T19:26:46.715Z",
+    "duration": 51513,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "639735fe-756b-4f3b-87ec-1a5eae3689b6",
+      "uuid": "103b9b95-f6c8-4453-b210-990f0151d92d",
       "title": "",
       "fullFile": "cypress/e2e/app/mortgages.cy.js",
       "file": "cypress/e2e/app/mortgages.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3952d274-e213-44f2-88a2-45100da945e6",
+          "uuid": "b6a6c55b-82ad-4f6d-bae0-ebc28361e677",
           "title": "Mortgage origination",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validate mortgage origination page components",
               "fullTitle": "Mortgage origination Validate mortgage origination page components",
               "timedOut": null,
-              "duration": 50333,
+              "duration": 42893,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const isLargeDesktop = Cypress.config().viewportWidth < 2000 && Cypress.config().viewportWidth >= 1441;\nconst isTablet = Cypress.config().viewportWidth < 1441 && Cypress.config().viewportWidth >= 768;\nconst isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"mortgages\");\n// Main section\ncy.xpath(selectors.mortgages.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.mortgages.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.mortgages.caption1).should(\"be.visible\");\ncy.xpath(selectors.mortgages.caption2).should(\"be.visible\");\ncy.xpath(selectors.mortgages.pill_personalized).should(\"be.visible\");\ncy.xpath(selectors.mortgages.pill_mortgages).should(\"be.visible\");\n// Learn More\ncy.xpath(selectors.mortgages.card_form).scrollIntoView();\ncy.xpath(selectors.mortgages.learn_more).should(\"be.visible\");\ncy.xpath(selectors.mortgages.learn_caption).should(\"be.visible\");\ncy.xpath(selectors.mortgages.first_name).should(\"be.visible\");\ncy.xpath(selectors.mortgages.last_name).should(\"be.visible\");\ncy.xpath(selectors.mortgages.email).should(\"be.visible\");\ncy.xpath(selectors.mortgages.phone).should(\"be.visible\");\ncy.xpath(selectors.mortgages.state).should(\"be.visible\");\ncy.xpath(selectors.mortgages.purpose).should(\"be.visible\");\ncy.xpath(selectors.mortgages.submit).should(\"be.visible\");\n// Mortgage Solutions\n//cy.xpath(selectors.common.card_coverage).scrollIntoView();\n//cy.xpath(selectors.common.card_why1).scrollIntoView();\nif (!isMobile) {\n  cy.xpath(selectors.mortgages.solutions_heading_sm1).scrollIntoView();\n  cy.xpath(selectors.mortgages.solutions_heading_sm1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.solutions_heading_lg1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.mortgage_orig1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.purchase_heading).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.purchase_caption).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.coverage_contents_button1).click();\n  cy.xpath(selectors.mortgages.refinance_heading).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.refinance_caption1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.coverage_contents_button2).click();\n  cy.xpath(selectors.mortgages.renovate_heading).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.renovate_caption1).should(\"be.visible\");\n}\nif (isMobile) {\n  cy.xpath(selectors.mortgages.solutions_heading_sm).scrollIntoView();\n  cy.xpath(selectors.mortgages.solutions_heading_sm).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.solutions_heading_lg).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.mortgage_orig).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.purchase_heading).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.purchase_caption).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.coverage_contents_button_mob1).click();\n  cy.xpath(selectors.mortgages.refinance_heading).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.refinance_caption).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.coverage_contents_button_mob2).click();\n  cy.xpath(selectors.mortgages.renovate_heading).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.renovate_caption).should(\"be.visible\");\n}\n// Why Acrisure\ncy.xpath(selectors.common.card_why1).scrollIntoView();\ncy.xpath(selectors.mortgages.pill_gotthis).should(\"be.visible\");\ncy.xpath(selectors.mortgages.pill_gotyou).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\ncy.xpath(selectors.mortgages.why_header1).should(\"be.visible\");\ncy.xpath(selectors.mortgages.why_description1).should(\"be.visible\");\ncy.xpath(selectors.mortgages.why_header2).should(\"be.visible\");\ncy.xpath(selectors.mortgages.why_description2).should(\"be.visible\");\ncy.xpath(selectors.mortgages.why_header3).should(\"be.visible\");\ncy.xpath(selectors.mortgages.why_description3).should(\"be.visible\");\n// FAQ\ncy.xpath(selectors.common.card_faq).scrollIntoView();\ncy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\ncy.xpath(selectors.common.faq_header).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_1).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_bullet_1).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_bullet_2).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_bullet_3).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_bullet_4).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_bullet_5).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_bullet_6).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_2).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_3).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_4).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_5).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_6).should(\"be.visible\");\ncy.xpath(selectors.common.faq_load_more_btn).should(\"be.visible\");\ncy.xpath(selectors.common.faq_load_more_btn).click({\n  force: true\n});\ncy.xpath(selectors.mortgages.faq_question_7).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_8).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_9).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_10).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_11).should(\"be.visible\");\ncy.xpath(selectors.mortgages.faq_question_12).should(\"be.visible\");\n// Insights\ncy.xpath(selectors.common.card_insights).scrollIntoView();\ncy.xpath(selectors.common.insights_sm).should(\"be.visible\");\ncy.xpath(selectors.common.more_resources).should(\"be.visible\");\ncy.xpath(selectors.mortgages.insights_caption).should(\"be.visible\");\ncy.xpath(selectors.common.read_more).should(\"be.visible\");\nif (isMobile) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_agent).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.mortgages.insight_card_broker).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.mortgages.insight_card_broker1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.mortgages.insight_card_types).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.mortgages.insight_card_benefits).should(\"be.visible\");\n}\nif (isTablet) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_agent).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_broker).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_broker1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_types).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.mortgages.insight_card_benefits).should(\"be.visible\");\n}\nif (isLargeDesktop) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_agent).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_broker).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_broker1).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_types).should(\"be.visible\");\n  cy.xpath(selectors.mortgages.insight_card_benefits).should(\"be.visible\");\n}\n// Explore\ncy.xpath(selectors.common.card_explore).scrollIntoView();\ncy.xpath(selectors.mortgages.explore_home_header).should(\"be.visible\");\ncy.xpath(selectors.mortgages.explore_home_link).should(\"be.visible\");\ncy.xpath(selectors.mortgages.explore_life_header).should(\"be.visible\");\ncy.xpath(selectors.mortgages.explore_life_link).should(\"be.visible\");",
               "err": {},
-              "uuid": "ecb46a32-caff-4234-b53e-87a4c60821aa",
-              "parentUUID": "3952d274-e213-44f2-88a2-45100da945e6",
+              "uuid": "9c233b01-e916-4b09-9b21-0e59ae6422ca",
+              "parentUUID": "b6a6c55b-82ad-4f6d-bae0-ebc28361e677",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +56,30 @@
               "title": "Validate mortgage origination form submission",
               "fullTitle": "Mortgage origination Validate mortgage origination form submission",
               "timedOut": null,
-              "duration": 15464,
+              "duration": 6711,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"mortgages\");\n// Complete & validate form\ncy.xpath(selectors.mortgages.card_form).scrollIntoView();\ncy.xpath(selectors.mortgages.first_name).type(form_data.home_insurance.first_name, {\n  force: true\n});\ncy.xpath(selectors.mortgages.last_name).type(form_data.home_insurance.last_name, {\n  force: true\n});\ncy.xpath(selectors.mortgages.email).type(form_data.home_insurance.email, {\n  force: true\n});\ncy.xpath(selectors.mortgages.phone).type(form_data.home_insurance.phone, {\n  force: true\n});\ncy.xpath(selectors.mortgages.state).type(form_data.home_insurance.state, {\n  force: true\n});\ncy.xpath(selectors.home_insurance.select_first_option).click({\n  force: true\n});\ncy.xpath(selectors.mortgages.purpose).type(form_data.home_insurance.purpose, {\n  force: true\n});\ncy.xpath(selectors.home_insurance.select_first_option).click({\n  force: true\n});",
               "err": {},
-              "uuid": "a9b3e431-f256-4467-935a-5ea824377dd6",
-              "parentUUID": "3952d274-e213-44f2-88a2-45100da945e6",
+              "uuid": "d6c315e7-93b3-4281-aa65-fc6ef6ed10af",
+              "parentUUID": "b6a6c55b-82ad-4f6d-bae0-ebc28361e677",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "ecb46a32-caff-4234-b53e-87a4c60821aa",
-            "a9b3e431-f256-4467-935a-5ea824377dd6"
+            "9c233b01-e916-4b09-9b21-0e59ae6422ca",
+            "d6c315e7-93b3-4281-aa65-fc6ef6ed10af"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 65797,
+          "duration": 49604,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -113,7 +113,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

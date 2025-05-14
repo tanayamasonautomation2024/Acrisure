@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T15:01:03.707Z",
-    "end": "2025-05-14T15:02:18.868Z",
-    "duration": 75161,
+    "start": "2025-05-14T18:30:58.608Z",
+    "end": "2025-05-14T18:32:14.013Z",
+    "duration": 75405,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "099eca2f-cf95-4e61-b856-dd72120402df",
+      "uuid": "d0eb585a-e8d5-4426-a0f1-4b0fc1354b1f",
       "title": "",
       "fullFile": "cypress/e2e/app/in-manufacturing.cy.js",
       "file": "cypress/e2e/app/in-manufacturing.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "052fb63f-711e-4a1d-9cb6-f63466b6bf4f",
+          "uuid": "11ccced9-8624-47c5-878b-e282a828d7da",
           "title": "Acrisure Cloud Website - Dev Environment",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "13cabad7-d8e5-40c7-9d0b-ccde56c01757",
+              "uuid": "5afb0a53-c26a-4371-9de2-bcca74c78943",
               "title": "Manufacturing - Design Tests",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Validate Manufacturing Page",
                   "fullTitle": "Acrisure Cloud Website - Dev Environment Manufacturing - Design Tests Validate Manufacturing Page",
                   "timedOut": null,
-                  "duration": 73568,
+                  "duration": 73633,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -60,8 +60,8 @@
                     "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/in-manufacturing.cy.js:68:9)",
                     "diff": null
                   },
-                  "uuid": "273b5b9c-a2d9-4fc6-84a0-7aec0dfe293f",
-                  "parentUUID": "13cabad7-d8e5-40c7-9d0b-ccde56c01757",
+                  "uuid": "bc98f16e-b30b-460d-9722-084963be8f54",
+                  "parentUUID": "5afb0a53-c26a-4371-9de2-bcca74c78943",
                   "isHook": false,
                   "skipped": false
                 }
@@ -69,11 +69,11 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "273b5b9c-a2d9-4fc6-84a0-7aec0dfe293f"
+                "bc98f16e-b30b-460d-9722-084963be8f54"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 73568,
+              "duration": 73633,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -117,7 +117,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

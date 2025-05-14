@@ -2,14 +2,14 @@
   "stats": {
     "suites": 2,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-05-14T16:21:10.621Z",
-    "end": "2025-05-14T16:22:38.202Z",
-    "duration": 87581,
+    "failures": 0,
+    "start": "2025-05-14T19:47:34.994Z",
+    "end": "2025-05-14T19:47:57.023Z",
+    "duration": 22029,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "95cbad43-db76-4e02-8e71-b60821bf74ba",
+      "uuid": "5d7a10d6-8c69-477a-911e-cfc5fb88de3d",
       "title": "",
       "fullFile": "cypress/e2e/app/re-bcp-disclosure.cy.js",
       "file": "cypress/e2e/app/re-bcp-disclosure.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "406cbf2e-0d89-4ce1-9f35-5717d37d5830",
+          "uuid": "fa9022c4-fdd0-4d3d-8304-3178e3102449",
           "title": "Acrisure Cloud Website - Dev Environment",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "cf8df32d-2d88-44df-83ed-754b3e93a5cf",
+              "uuid": "a6251fec-942f-473b-afd7-8cde4dc32276",
               "title": "BOP-Disclosure - Design Tests",
               "fullFile": "",
               "file": "",
@@ -47,33 +47,29 @@
                   "title": "Validate BOP-Disclosure Page",
                   "fullTitle": "Acrisure Cloud Website - Dev Environment BOP-Disclosure - Design Tests Validate BOP-Disclosure Page",
                   "timedOut": null,
-                  "duration": 85861,
-                  "state": "failed",
-                  "speed": null,
-                  "pass": false,
-                  "fail": true,
+                  "duration": 20346,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
                   "pending": false,
-                  "context": "\"../screenshots/re-bcp-disclosure.cy.js/Acrisure Cloud Website - Dev Environment -- BOP-Disclosure - Design Tests -- Validate BOP-Disclosure Page (failed).png\"",
+                  "context": null,
                   "code": "cy.visitSite(\"app\", \"reinsurance\");\ncy.url().should(\"include\", \"reinsurance\");\ncy.xpath(selectors.main_container, {\n  timeout: 10000\n}).should(\"exist\");\n/* ================================\n * BOP-Disclosure Webpage\n * ================================\n */\ncy.get(cy_selectors.reinsurance.corporate_advisory_header).scrollIntoView();\nif (isMobile) {\n  cy.scrollTo(0, 50);\n  cy.get(cy_selectors.reinsurance.corporate_advisory_header).scrollIntoView();\n}\ncy.get(cy_selectors.reinsurance.corporate_advisory_explore_link).should(\"be.visible\");\ncy.get(cy_selectors.reinsurance.corporate_advisory_explore_link).click({\n  force: true\n});\ncy.title().should('eq', 'Acrisure Re Corporate Advisory & Solutions');\ncy.wait(5000);\ncy.get(cy_selectors.corporate_advisory.acrisurere_disclaimer).scrollIntoView();\ncy.get(cy_selectors.corporate_advisory.bcp_disclosure).should(\"have.text\", acm_constants.corporate_advisory.bcp_disclosure);\ncy.get(cy_selectors.corporate_advisory.bcp_disclosure).click({\n  force: true\n});\ncy.title().should('eq', \"BCP Disclosure\");\ncy.wait(5000);\n/* ----------------------------------------------------------\n * BOP-Disclosure Splash Component - Text and Image\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.bopdisclosure.hero_splash_caption).should(\"have.text\", acm_constants.bopdisclosure.hero_splash_caption);\n  cy.get(cy_selectors.bopdisclosure.hero_splash_header).should(\"have.text\", acm_constants.bopdisclosure.hero_splash_header);\n  cy.get(cy_selectors.bopdisclosure.hero_splash_body_text).should(\"have.text\", acm_constants.bopdisclosure.hero_splash_body_text);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* ----------------------------------------------------------\n * BOP-Disclosure - Paragraph\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para1).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para1);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para2).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para2);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para3).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para3);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para4).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para4);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para5).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para5);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para6).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para6);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para7).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para7);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para8).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para8);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para9).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para9);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para10).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para10);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para11).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para11);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para12).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para12);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para13).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para13);\n  cy.get(cy_selectors.bopdisclosure.bcp_body_para14).should(\"have.text\", acm_constants.bopdisclosure.bcp_body_para14);\n  cy.get(cy_selectors.bopdisclosure.acrisurere_privacy_policy_link).should(\"have.text\", acm_constants.bopdisclosure.acrisurere_privacy_policy_link);\n  cy.get(cy_selectors.bopdisclosure.acrisurere_privacy_policy_link).click({\n    force: true\n  });\n  cy.title().should('eq', \"Acrisure Re group Privacy Policy\");\n  cy.go('back');\n  cy.wait(3000);\n}",
-                  "err": {
-                    "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.",
-                    "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//button[text() = 'I UNDERSTAND']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/re-bcp-disclosure.cy.js:84:9)",
-                    "diff": null
-                  },
-                  "uuid": "e1cef436-0adc-40a7-ab51-282757cf39b8",
-                  "parentUUID": "cf8df32d-2d88-44df-83ed-754b3e93a5cf",
+                  "err": {},
+                  "uuid": "66685ada-bf60-47b3-85a3-fd84cb25c557",
+                  "parentUUID": "a6251fec-942f-473b-afd7-8cde4dc32276",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [],
-              "failures": [
-                "e1cef436-0adc-40a7-ab51-282757cf39b8"
+              "passes": [
+                "66685ada-bf60-47b3-85a3-fd84cb25c557"
               ],
+              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 85861,
+              "duration": 20346,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -117,7 +113,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

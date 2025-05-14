@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-14T15:53:01.807Z",
-    "end": "2025-05-14T15:53:19.501Z",
-    "duration": 17694,
+    "start": "2025-05-14T19:23:18.318Z",
+    "end": "2025-05-14T19:23:27.036Z",
+    "duration": 8718,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1b6bdcf5-cefd-4c96-a6b2-6e6a582044dd",
+      "uuid": "d1e90813-8cb0-459c-9c3d-39471a79ef41",
       "title": "",
       "fullFile": "cypress/e2e/app/legal.cy.js",
       "file": "cypress/e2e/app/legal.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7eac516c-fd89-452a-a850-b6046740a0c4",
+          "uuid": "27a829f7-f0c7-4ed0-a45b-f64c4ec7955f",
           "title": "Legal Notice",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Validate legal notice page components",
               "fullTitle": "Legal Notice Validate legal notice page components",
               "timedOut": null,
-              "duration": 16030,
+              "duration": 6844,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"legal\");\ncy.xpath(selectors.legal.main_header).should(\"be.visible\");\n// Products and services\ncy.xpath(selectors.legal.link_products).scrollIntoView().click();\ncy.xpath(selectors.legal.header_products).should(\"be.visible\");\n// U.S. Producer Compensation Disclosure\ncy.xpath(selectors.legal.link_us_producer).click();\ncy.xpath(selectors.legal.header_us_producer).should(\"be.visible\");\n// California Producer License\ncy.xpath(selectors.legal.link_ca_producer).click();\ncy.xpath(selectors.legal.header_ca_producer).should(\"be.visible\");\ncy.xpath(selectors.legal.link_ca_license).should(\"be.visible\");\ncy.xpath(selectors.legal.link_ca_license_disclosure).should(\"be.visible\");\n// Disclosure and Agreement to Conduct Electronic Transactions\ncy.xpath(selectors.legal.link_transactions).click();\ncy.xpath(selectors.legal.header_transactions).should(\"be.visible\");\n// Acrisure International Holdings Limited – UK Tax Strategy\ncy.xpath(selectors.legal.link_uk_strategy).click();\ncy.xpath(selectors.legal.header_uk).should(\"be.visible\");\n// Acrisure International - Section 54 Modern Slavery Act Statement\ncy.xpath(selectors.legal.link_section54).click();\ncy.xpath(selectors.legal.header_section54).should(\"be.visible\");",
               "err": {},
-              "uuid": "2df6e8d5-9ea6-4cbb-b53c-4224ebe7161e",
-              "parentUUID": "7eac516c-fd89-452a-a850-b6046740a0c4",
+              "uuid": "de7fb60a-2d5c-48b3-bcdc-2209a52bc6fa",
+              "parentUUID": "27a829f7-f0c7-4ed0-a45b-f64c4ec7955f",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "2df6e8d5-9ea6-4cbb-b53c-4224ebe7161e"
+            "de7fb60a-2d5c-48b3-bcdc-2209a52bc6fa"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 16030,
+          "duration": 6844,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

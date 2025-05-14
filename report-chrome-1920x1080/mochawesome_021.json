@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T15:53:20.961Z",
-    "end": "2025-05-14T15:54:55.227Z",
-    "duration": 94266,
+    "start": "2025-05-14T19:23:28.425Z",
+    "end": "2025-05-14T19:24:44.357Z",
+    "duration": 75932,
     "testsRegistered": 2,
     "passPercent": 50,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "144b6fb1-213c-45c4-b4f5-b30769797e4f",
+      "uuid": "bfe08f6a-9500-4675-8fd1-f93c2bcdd44d",
       "title": "",
       "fullFile": "cypress/e2e/app/life-insurance.cy.js",
       "file": "cypress/e2e/app/life-insurance.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d8e925b7-b5d7-4faa-8621-168d468f14fe",
+          "uuid": "02f19ae2-61bc-4a2b-be11-c4cd9cdcda20",
           "title": "Life Insurance",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validate life insurance page components",
               "fullTitle": "Life Insurance Validate life insurance page components",
               "timedOut": null,
-              "duration": 74329,
+              "duration": 65690,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//p[contains(text(), 'Term life insurance for more')]`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/life-insurance.cy.js:18:40)",
                 "diff": null
               },
-              "uuid": "1fd06a4f-11f3-4955-99da-f0efe3394e1c",
-              "parentUUID": "d8e925b7-b5d7-4faa-8621-168d468f14fe",
+              "uuid": "7f925758-e1b2-4aa3-8717-59788dfa762f",
+              "parentUUID": "02f19ae2-61bc-4a2b-be11-c4cd9cdcda20",
               "isHook": false,
               "skipped": false
             },
@@ -60,31 +60,31 @@
               "title": "Validate life insurance quote flow",
               "fullTitle": "Life Insurance Validate life insurance quote flow",
               "timedOut": null,
-              "duration": 17963,
+              "duration": 7915,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"life-insurance\");\ncy.xpath(selectors.life.state_select).type(form_data.home_insurance.state, {\n  force: true\n});\ncy.xpath(selectors.flood.address_option1).click();\ncy.xpath(selectors.life.get_a_quote).click({\n  force: true\n});\nconst altwayUrl = envUtil.getAltwayUrl();\ncy.origin(altwayUrl, {\n  args: {\n    altwayUrl\n  }\n}, ({\n  altwayUrl\n}) => {\n  cy.url().should(\"include\", `${altwayUrl}/life`);\n});",
               "err": {},
-              "uuid": "f51cf60a-e518-4717-8864-15ebcc4168c9",
-              "parentUUID": "d8e925b7-b5d7-4faa-8621-168d468f14fe",
+              "uuid": "fd2fccfb-8e77-4629-834a-b94fadead0f1",
+              "parentUUID": "02f19ae2-61bc-4a2b-be11-c4cd9cdcda20",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f51cf60a-e518-4717-8864-15ebcc4168c9"
+            "fd2fccfb-8e77-4629-834a-b94fadead0f1"
           ],
           "failures": [
-            "1fd06a4f-11f3-4955-99da-f0efe3394e1c"
+            "7f925758-e1b2-4aa3-8717-59788dfa762f"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 92292,
+          "duration": 73605,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -118,7 +118,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

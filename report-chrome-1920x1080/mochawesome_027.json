@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-14T16:15:49.175Z",
-    "end": "2025-05-14T16:16:06.312Z",
-    "duration": 17137,
+    "start": "2025-05-14T19:44:26.375Z",
+    "end": "2025-05-14T19:44:35.319Z",
+    "duration": 8944,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "30aa13eb-c928-4b98-a70f-20e6ff304e7c",
+      "uuid": "2686e859-c72b-4420-a59c-52fd86f689c8",
       "title": "",
       "fullFile": "cypress/e2e/app/privacy-center.cy.js",
       "file": "cypress/e2e/app/privacy-center.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "47af39e2-cdd2-446c-b49b-462fca1e4f63",
+          "uuid": "4fd8e2aa-3db0-4ecb-bc23-f6b2d407cff4",
           "title": "Privacy Center",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,29 @@
               "title": "Privacy center page components",
               "fullTitle": "Privacy Center Privacy center page components",
               "timedOut": null,
-              "duration": 15436,
+              "duration": 7016,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"privacy\");\n// Main Header\ncy.xpath(selectors.privacy_center.main_header).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.main_description).should(\"be.visible\");\n// Acrisure Privacy Policies and Customer Notices section\ncy.xpath(selectors.privacy_center.header_section1).scrollIntoView();\ncy.xpath(selectors.privacy_center.header_section1).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_us_privacy).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_customer_notice).should(\"be.visible\");\n// Data Subject Privacy Requests section\ncy.xpath(selectors.privacy_center.header_section2).scrollIntoView();\ncy.xpath(selectors.privacy_center.header_section2).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_us_except_ca).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_ca_residents).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_caifipa).should(\"be.visible\");\n// Data Subject Privacy Requests section\ncy.xpath(selectors.privacy_center.header_section3).scrollIntoView();\ncy.xpath(selectors.privacy_center.header_section3).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.link_privacy_choices).should(\"exist\");\n// FAQ section\ncy.xpath(selectors.privacy_center.faq1_header).scrollIntoView();\ncy.xpath(selectors.privacy_center.faq1_header).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq1_bullet1).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq2_header).click({\n  force: true\n});\ncy.xpath(selectors.privacy_center.faq2_bullet1).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq2_bullet2).should(\"be.visible\");\ncy.xpath(selectors.privacy_center.faq3_header).click({\n  force: true\n});\ncy.xpath(selectors.privacy_center.faq3_bullet1).should(\"be.visible\");",
               "err": {},
-              "uuid": "51657ad4-9713-4df9-9605-3d7617f8f6f4",
-              "parentUUID": "47af39e2-cdd2-446c-b49b-462fca1e4f63",
+              "uuid": "e7a75bb9-5f76-4563-9178-64cc45520b8c",
+              "parentUUID": "4fd8e2aa-3db0-4ecb-bc23-f6b2d407cff4",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "51657ad4-9713-4df9-9605-3d7617f8f6f4"
+            "e7a75bb9-5f76-4563-9178-64cc45520b8c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 15436,
+          "duration": 7016,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +94,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

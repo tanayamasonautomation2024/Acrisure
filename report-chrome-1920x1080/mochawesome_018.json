@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2025-05-14T15:04:54.438Z",
-    "end": "2025-05-14T15:06:10.058Z",
-    "duration": 75620,
+    "start": "2025-05-14T18:34:49.531Z",
+    "end": "2025-05-14T18:35:56.869Z",
+    "duration": 67338,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "90439188-0d9a-41f0-8b08-075e0c6f5380",
+      "uuid": "72c0e557-128e-4370-b8be-2cddaf5685c7",
       "title": "",
       "fullFile": "cypress/e2e/app/large-business-solutions.cy.js",
       "file": "cypress/e2e/app/large-business-solutions.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "12729ee5-c6ee-4934-8c26-c1208c6b2497",
+          "uuid": "771dc577-7518-4d46-852b-32fbd2158b78",
           "title": "Acrisure Cloud Website - Dev Environment",
           "fullFile": "",
           "file": "",
@@ -36,7 +36,7 @@
           "tests": [],
           "suites": [
             {
-              "uuid": "6acbeda2-5573-4a01-8ba2-1ff9933b971f",
+              "uuid": "9e233ca0-e8a8-46cb-9cfb-8d2bc89af7ad",
               "title": "Large Business Solutions - Design Tests",
               "fullFile": "",
               "file": "",
@@ -47,7 +47,7 @@
                   "title": "Validate Large Business Solutions Page",
                   "fullTitle": "Acrisure Cloud Website - Dev Environment Large Business Solutions - Design Tests Validate Large Business Solutions Page",
                   "timedOut": null,
-                  "duration": 73941,
+                  "duration": 65643,
                   "state": "failed",
                   "speed": null,
                   "pass": false,
@@ -60,8 +60,8 @@
                     "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `.medium-body-text`, but never found it. Queried from:\n\n              > <div#construction.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiAccordion-root.MuiAccordion-rounded.MuiAccordion-gutters.LightBlue_10.css-1aj41gs>\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/large-business-solutions.cy.js:163:15)\n    at Context.callback (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119851:26)\n    at getRet (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119616:20)\n    at tryCatcher (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:4285:29)\n    at thenFn (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119627:66)\n    at yieldItem (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119859:16)\n    at tryCatcher (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:6446:18)",
                     "diff": null
                   },
-                  "uuid": "ae058932-b32f-40c8-b573-f0257d801e21",
-                  "parentUUID": "6acbeda2-5573-4a01-8ba2-1ff9933b971f",
+                  "uuid": "12e1cb96-37d6-4882-b697-ae631c3fa390",
+                  "parentUUID": "9e233ca0-e8a8-46cb-9cfb-8d2bc89af7ad",
                   "isHook": false,
                   "skipped": false
                 }
@@ -69,11 +69,11 @@
               "suites": [],
               "passes": [],
               "failures": [
-                "ae058932-b32f-40c8-b573-f0257d801e21"
+                "12e1cb96-37d6-4882-b697-ae631c3fa390"
               ],
               "pending": [],
               "skipped": [],
-              "duration": 73941,
+              "duration": 65643,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -117,7 +117,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

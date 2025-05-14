@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2025-05-14T13:12:41.277Z",
-    "end": "2025-05-14T13:13:42.615Z",
-    "duration": 61338,
+    "start": "2025-05-14T16:55:26.338Z",
+    "end": "2025-05-14T16:56:04.105Z",
+    "duration": 37767,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1417df9c-60f1-4718-bb8c-19e36fa0de68",
+      "uuid": "03c7a52f-5f91-4d1e-a510-94df2b7274d3",
       "title": "",
       "fullFile": "cypress/e2e/app/cgl-insurance.cy.js",
       "file": "cypress/e2e/app/cgl-insurance.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1ac76496-893f-4b9f-bb64-6a5a5e6c42f2",
+          "uuid": "306a7191-967f-4371-b697-68e81e42a659",
           "title": "Commercial General Liability Insurance",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Validate CGL page components",
               "fullTitle": "Commercial General Liability Insurance Validate CGL page components",
               "timedOut": null,
-              "duration": 37273,
+              "duration": 27918,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "cy.visitSite(\"app\", \"commercial-general-liability-insurance\");\n// Main section\ncy.wait(4000);\ncy.xpath(selectors.cgl.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.cgl.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.cgl.caption).should(\"be.visible\");\ncy.xpath(selectors.cgl.pill_caution).should(\"be.visible\");\ncy.xpath(selectors.cgl.pill_coverage).should(\"be.visible\");\n// Quick quotes\ncy.wait(4000);\ncy.xpath(selectors.cgl.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.cgl.quick_quotes).should(\"be.visible\");\ncy.xpath(selectors.cgl.get_personalized).should(\"be.visible\");\ncy.xpath(selectors.common.get_a_quote).should(\"be.visible\");\n// What is CGL?\ncy.wait(4000);\ncy.xpath(selectors.cgl.what_header).scrollIntoView();\ncy.xpath(selectors.cgl.pill_hard_work).should(\"be.visible\");\ncy.xpath(selectors.cgl.pill_protected).should(\"be.visible\");\ncy.xpath(selectors.cgl.what_header).should(\"be.visible\");\ncy.xpath(selectors.cgl.what_is_cgl).should(\"be.visible\");\ncy.xpath(selectors.cgl.what_caption).should(\"be.visible\");\ncy.xpath(selectors.cgl.learn_more).should(\"be.visible\");\n// Why Acrisure\ncy.wait(4000);\ncy.xpath(selectors.cgl.pill_options).scrollIntoView();\ncy.xpath(selectors.cgl.pill_options).should(\"be.visible\");\ncy.xpath(selectors.cgl.pill_choice).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure1).should(\"be.visible\");\ncy.xpath(selectors.cgl.why_caption_1).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure2).should(\"exist\");\ncy.xpath(selectors.cgl.why_caption_2).should(\"exist\");\ncy.xpath(selectors.common.why_acrisure3).should(\"exist\");\ncy.xpath(selectors.cgl.why_caption_3).should(\"exist\");\n// FAQ\ncy.wait(4000);\ncy.xpath(selectors.cgl.card_faq).scrollIntoView();\ncy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\ncy.xpath(selectors.common.faq_header).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_question_1).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_bullet_1).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_question_2).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_question_3).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_question_4).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_question_5).should(\"be.visible\");\ncy.xpath(selectors.cgl.faq_question_6).should(\"be.visible\");",
               "err": {},
-              "uuid": "99813d66-1243-49f0-a645-bdea57d053d0",
-              "parentUUID": "1ac76496-893f-4b9f-bb64-6a5a5e6c42f2",
+              "uuid": "2ac1aef1-98a1-4937-852a-aa48faefb358",
+              "parentUUID": "306a7191-967f-4371-b697-68e81e42a659",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +56,30 @@
               "title": "Validate CGL quote flow",
               "fullTitle": "Commercial General Liability Insurance Validate CGL quote flow",
               "timedOut": null,
-              "duration": 16288,
+              "duration": 7800,
               "state": "passed",
-              "speed": "slow",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.visitSite(\"app\", \"commercial-general-liability-insurance\");\ncy.xpath(selectors.common.get_a_quote).click({\n  force: true\n});",
               "err": {},
-              "uuid": "c5f0c781-530f-4d18-a6a1-5c00cac36604",
-              "parentUUID": "1ac76496-893f-4b9f-bb64-6a5a5e6c42f2",
+              "uuid": "844873de-08eb-4b2c-9ba5-d42d79b2776f",
+              "parentUUID": "306a7191-967f-4371-b697-68e81e42a659",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "99813d66-1243-49f0-a645-bdea57d053d0",
-            "c5f0c781-530f-4d18-a6a1-5c00cac36604"
+            "2ac1aef1-98a1-4937-852a-aa48faefb358",
+            "844873de-08eb-4b2c-9ba5-d42d79b2776f"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 53561,
+          "duration": 35718,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -113,7 +113,7 @@
     },
     "marge": {
       "options": {
-        "reportDir": "cypress/results/chrome-1920x1080",
+        "reportDir": "cypress/results/report-chrome-1920x1080",
         "overwrite": false,
         "html": false,
         "json": true

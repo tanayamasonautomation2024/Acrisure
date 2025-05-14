@@ -9,20 +9,18 @@ on:
       - main
 
 jobs:
-  cypress-tests:
+  test-matrix:
+    name: Run Cypress - ${{ matrix.browser }} @ ${{ matrix.resolution }}
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         browser: [chrome]
-        resolution: ['1920x1080', '1366x768', '375x667']
+        resolution: ['1920x1080', '1366x768', '1440x900', '375x667']
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '16'
 
@@ -38,18 +36,18 @@ jobs:
           nohup Xvfb :99 -screen 0 1920x1080x24 &
           sleep 3
 
-      - name: Run Cypress Tests - ${{ matrix.browser }} @ ${{ matrix.resolution }}
+      - name: Run Cypress Tests
         env:
           DISPLAY: ":99"
-        shell: bash
         run: |
           RES="${{ matrix.resolution }}"
           WIDTH="${RES%x*}"
           HEIGHT="${RES#*x}"
           REPORT_DIR="cypress/results/${{ matrix.browser }}-${RES}"
 
+          mkdir -p $REPORT_DIR
           echo "Running tests at ${WIDTH}x${HEIGHT} on ${{ matrix.browser }}"
-          
+
           npx cypress run \
             --headless \
             --browser ${{ matrix.browser }} \
@@ -58,12 +56,35 @@ jobs:
             --reporter mochawesome \
             --reporter-options reportDir=${REPORT_DIR},overwrite=false,html=false,json=true
 
-          echo "Generating HTML report for $REPORT_DIR"
           npx mochawesome-merge ${REPORT_DIR}/mochawesome*.json > ${REPORT_DIR}/merged.json
           npx mochawesome-report-generator ${REPORT_DIR}/merged.json -o ${REPORT_DIR}/html
 
-      - name: Create index.html for navigation
-        if: always()
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ matrix.browser }}-${{ matrix.resolution }}
+          path: cypress/results/${{ matrix.browser }}-${{ matrix.resolution }}
+
+  generate-and-publish-report:
+    name: Generate Index & Publish Reports
+    runs-on: ubuntu-latest
+    needs: test-matrix
+    if: always()
+
+    steps:
+      - name: Download all test reports
+        uses: actions/download-artifact@v4
+        with:
+          path: all-results
+
+      - name: Reorganize downloaded reports
+        run: |
+          mkdir -p cypress/results
+          for dir in all-results/*; do
+            mv "$dir" "cypress/results/$(basename "$dir")"
+          done
+
+      - name: Create index.html
         run: |
           mkdir -p cypress/results/html
           echo "<html><body><h1>Cypress Test Reports</h1><ul>" > cypress/results/html/index.html
@@ -73,14 +94,13 @@ jobs:
           done
           echo "</ul></body></html>" >> cypress/results/html/index.html
 
-      - name: Publish test reports
+      - name: Publish reports to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
-        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: cypress/results
-          commit_message: "Deploy separate Cypress test reports"
+          commit_message: "Deploy all Cypress test reports"
           user_name: 'GitHub Actions'
           user_email: 'github-actions@users.noreply.github.com'
           force: true

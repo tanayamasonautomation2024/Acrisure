@@ -40,6 +40,7 @@ jobs:
         env:
           DISPLAY: ":99"
         run: |
+          set +e
           RES="${{ matrix.resolution }}"
           WIDTH="${RES%x*}"
           HEIGHT="${RES#*x}"
@@ -56,10 +57,17 @@ jobs:
             --reporter mochawesome \
             --reporter-options reportDir=${REPORT_DIR},overwrite=false,html=false,json=true
 
+          EXIT_CODE=$?
+          echo "Cypress exited with code $EXIT_CODE"
+
+          echo "Generating Mochawesome HTML report..."
           npx mochawesome-merge ${REPORT_DIR}/mochawesome*.json > ${REPORT_DIR}/merged.json
           npx mochawesome-report-generator ${REPORT_DIR}/merged.json -o ${REPORT_DIR}/html
 
+          exit $EXIT_CODE
+
       - name: Upload Test Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: report-${{ matrix.browser }}-${{ matrix.resolution }}
@@ -77,9 +85,13 @@ jobs:
         with:
           path: all-results
 
+      - name: List downloaded artifacts
+        run: ls -R all-results || echo "No artifacts downloaded"
+
       - name: Reorganize downloaded reports
         run: |
           mkdir -p cypress/results
+          shopt -s nullglob
           for dir in all-results/*; do
             mv "$dir" "cypress/results/$(basename "$dir")"
           done

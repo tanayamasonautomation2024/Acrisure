@@ -1,0 +1,250 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-05-14T14:41:37.364Z",
+    "end": "2025-05-14T14:45:16.318Z",
+    "duration": 218954,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e57a0b44-cab5-4e31-92a3-76e37e0f21f9",
+      "title": "",
+      "fullFile": "cypress/e2e/app/homepage.cy.js",
+      "file": "cypress/e2e/app/homepage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e58aff66-567f-48b3-a40f-5f545799a8b2",
+          "title": "Acrisure Cloud Website - Dev Environment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "6e4ab467-642d-4126-8559-f0c0f1a54b17",
+              "title": "Homepage - Functional Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Can visit the home page",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Homepage - Functional Tests Can visit the home page",
+                  "timedOut": null,
+                  "duration": 5065,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visitSite(\"app\");\ncy.url().should(\"include\", \"acrisure\");\ncy.xpath(selectors.theme_container).should(\"exist\");",
+                  "err": {},
+                  "uuid": "d588ed00-03de-45a4-a132-d9e962526d26",
+                  "parentUUID": "6e4ab467-642d-4126-8559-f0c0f1a54b17",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [
+                {
+                  "uuid": "94422ae7-2eed-45bf-97e6-a11625e15c36",
+                  "title": "Testing Hyperlinks within the App",
+                  "fullFile": "",
+                  "file": "",
+                  "beforeHooks": [],
+                  "afterHooks": [],
+                  "tests": [
+                    {
+                      "title": "Checking Nav Bar Hyperlinks",
+                      "fullTitle": "Acrisure Cloud Website - Dev Environment Homepage - Functional Tests Testing Hyperlinks within the App Checking Nav Bar Hyperlinks",
+                      "timedOut": null,
+                      "duration": 14825,
+                      "state": "failed",
+                      "speed": null,
+                      "pass": false,
+                      "fail": true,
+                      "pending": false,
+                      "context": "\"../screenshots/homepage.cy.js/Acrisure Cloud Website - Dev Environment -- Homepage - Functional Tests -- Testing Hyperlinks within the App -- Checking Nav Bar Hyperlinks (failed).png\"",
+                      "code": "cy.visitSite(\"app\");\ncy.url().should(\"include\", \"acrisure\");\ncy.xpath(selectors.topnav.header_component, {\n  timeout: 10000\n}).within($navbar => {\n  // Get all the links within the nav bar that aren't part of a submenu\n  // This will target the Acrisure logo, \"Why Acrisure\", and \"Insights\" links\n  cy.get('a').each(link => {\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n});\ncy.wait(10000);\n//if(isMobile || isTablet){\nif (isMobile) {\n  cy.get(cy_selectors.topnav.mobile_menu_button).click();\n  cy.wait(10000);\n  cy.get('.mobile .menu-link li[data-index] > a').each(link => {\n    // Get all the links within the mobile menu\n    // Skips buttons that don't have a href attribute\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n}\ncy.get(cy_selectors.topnav.personal_solutions).should(\"be.visible\").click();\ncy.get(cy_selectors.topnav.personal_solutions_submenu).within($submenu => {\n  // Get all the links within the sub menu for \"Personal Solutions\"\n  cy.get('a').each(link => {\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n});\nif (isMobile) {\n  //if(isMobile || isTablet){\n  cy.get(cy_selectors.topnav.submenu_back_button).click();\n}\ncy.get(cy_selectors.topnav.business_solutions).should(\"be.visible\").click();\ncy.get(cy_selectors.topnav.business_solutions_submenu).within($submenu => {\n  // Get all the links within the sub menu for \"Business Solutions\"\" \n  cy.get('a').each(link => {\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n});",
+                      "err": {
+                        "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//div[@class='theme-Acrisure']//header[@data-testid='HEADER_COMPONENT']`, but never found it.",
+                        "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `//div[@class='theme-Acrisure']//header[@data-testid='HEADER_COMPONENT']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/homepage.cy.js:27:11)",
+                        "diff": null
+                      },
+                      "uuid": "690fd42d-257f-4a43-bcf0-8ef7aa63ec94",
+                      "parentUUID": "94422ae7-2eed-45bf-97e6-a11625e15c36",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Checking Main Homepage Hyperlinks",
+                      "fullTitle": "Acrisure Cloud Website - Dev Environment Homepage - Functional Tests Testing Hyperlinks within the App Checking Main Homepage Hyperlinks",
+                      "timedOut": null,
+                      "duration": 15553,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.visitSite(\"app\");\ncy.url().should(\"include\", \"acrisure\");\ncy.xpath(selectors.main_container).within($mainWebpage => {\n  // Get all the links within the main webpage\n  cy.get('a').each(link => {\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n});",
+                      "err": {},
+                      "uuid": "5706226b-ae45-4ce2-a4fe-6536b87b3480",
+                      "parentUUID": "94422ae7-2eed-45bf-97e6-a11625e15c36",
+                      "isHook": false,
+                      "skipped": false
+                    },
+                    {
+                      "title": "Checking Footer Hyperlinks",
+                      "fullTitle": "Acrisure Cloud Website - Dev Environment Homepage - Functional Tests Testing Hyperlinks within the App Checking Footer Hyperlinks",
+                      "timedOut": null,
+                      "duration": 13968,
+                      "state": "passed",
+                      "speed": "slow",
+                      "pass": true,
+                      "fail": false,
+                      "pending": false,
+                      "context": null,
+                      "code": "cy.visitSite(\"app\");\ncy.url().should(\"include\", \"acrisure\");\ncy.xpath(selectors.footer_container).within($footer => {\n  // Get all the links within the main webpage\n  cy.get(\"a:not([href*='javascript:'])\").each(link => {\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n});",
+                      "err": {},
+                      "uuid": "8bf47c31-871a-4a20-b7cf-36dd0d428ca0",
+                      "parentUUID": "94422ae7-2eed-45bf-97e6-a11625e15c36",
+                      "isHook": false,
+                      "skipped": false
+                    }
+                  ],
+                  "suites": [],
+                  "passes": [
+                    "5706226b-ae45-4ce2-a4fe-6536b87b3480",
+                    "8bf47c31-871a-4a20-b7cf-36dd0d428ca0"
+                  ],
+                  "failures": [
+                    "690fd42d-257f-4a43-bcf0-8ef7aa63ec94"
+                  ],
+                  "pending": [],
+                  "skipped": [],
+                  "duration": 44346,
+                  "root": false,
+                  "rootEmpty": false,
+                  "_timeout": 2000
+                }
+              ],
+              "passes": [
+                "d588ed00-03de-45a4-a132-d9e962526d26"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5065,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5d3ad588-536e-4764-96af-74a980bfdeff",
+              "title": "Homepage - Design Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate Acrisure Homepage",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Homepage - Design Tests Validate Acrisure Homepage",
+                  "timedOut": null,
+                  "duration": 167216,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "\"../screenshots/homepage.cy.js/Acrisure Cloud Website - Dev Environment -- Homepage - Design Tests -- Validate Acrisure Homepage (failed).png\"",
+                  "code": "cy.visitSite(\"app\");\ncy.url().should(\"include\", \"acrisure\");\n``;\n/* ---------------------------------------------------------\n * Homepage Hero Component - Carousel & Corner-Cut Container\n * ---------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.homepage.hero_component_hero_video).should(\"exist\");\n  // Corner-cut container over hero image\n  cy.get(cy_selectors.homepage.corner_cut_container_hero_component).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.corner_cut_container_caption).should(\"have.text\", acm_constants.homepage.corner_cut_container_caption);\n  cy.get(cy_selectors.homepage.corner_cut_container_h4_header).should(\"have.text\", acm_constants.homepage.corner_cut_container_h4_header);\n  cy.get(cy_selectors.homepage.corner_cut_container_body_text).should(\"have.text\", acm_constants.homepage.corner_cut_container_body_text);\n  cy.get(cy_selectors.homepage.corner_cut_container_primary_button).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.corner_cut_container_primary_button).click({\n    force: true\n  });\n  cy.wait(3000);\n  cy.title().should('eq', 'Business Solutions');\n  cy.go('back');\n  cy.get(cy_selectors.homepage.corner_cut_container_secondary_button).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.corner_cut_container_secondary_button).click({\n    force: true\n  });\n  cy.title().should('eq', 'Personal Insurance Solutions | Get Your Personalized Quote');\n  cy.go('back');\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* ----------------------------------------------------\n * Homepage Hero Component - Illustration & Banner Text\n * ----------------------------------------------------\n */\n{\n  // Illustration Banner\n  cy.wait(3000);\n  cy.get(cy_selectors.homepage.hero_section).scrollIntoView();\n  cy.get(cy_selectors.homepage.hero_image).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.hero_banner_pills_1).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.hero_banner_pills_2).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.hero_banner_pills_3).should(\"be.visible\");\n  // Banner Text\n  cy.get(cy_selectors.homepage.hero_banner_body_text1).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.hero_banner_body_text1);\n  cy.get(cy_selectors.homepage.hero_banner_body_text2).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.hero_banner_body_text2);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* ----------------------------------------------------\n * Homepage Hero Component - Business Solutions\n * ----------------------------------------------------\n */\n{\n  // Business Solution Captions\n  cy.get(cy_selectors.homepage.bentobox_section).scrollIntoView();\n  cy.get(cy_selectors.homepage.business_component_caption).should(\"have.text\", acm_constants.homepage.business_component_caption);\n  // Top Content Text (header and body text)\n  cy.get(cy_selectors.homepage.business_component_h3_header).should(\"have.text\", acm_constants.homepage.business_component_h3_header);\n  cy.get(cy_selectors.homepage.business_component_body_text).contains(acm_constants.homepage.business_component_body_text);\n}\n// Business Coverage Cards (Button, Header, Body Text)\ncy.get(cy_selectors.homepage.business_coverage_card_container).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n}).find(cy_selectors.homepage.business_coverage_card).each(($ele, coverageCardIndex) => {\n  cy.wrap($ele).find(cy_selectors.homepage.business_coverage_card_h6_headers).should(\"have.text\", acm_constants.homepage.business_coverage_card_h6_headers[coverageCardIndex]);\n  cy.wrap($ele).find(cy_selectors.homepage.business_coverage_card_body_text).should(\"have.text\", acm_constants.homepage.business_coverage_card_body_text[coverageCardIndex]);\n  cy.wrap($ele).find(cy_selectors.homepage.business_coverage_card_button).scrollIntoView({\n    offset: {\n      top: -120,\n      left: 0\n    }\n  });\n  //.click({ scrollBehavior: false });\n  cy.wait(1500);\n  if (!(isTablet || isMobile)) {\n    cy.wrap($ele).find(cy_selectors.homepage.business_coverage_card_body_text).should(\"be.visible\");\n  }\n});\n// Business Solutions - Card Navigations \ncy.get(cy_selectors.homepage.business_coverage_card_container).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.business_coverage_card_button1).click({\n  force: true\n});\ncy.title().should('eq', 'Small Business Insurance | Request a Personalized Quote');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.business_coverage_card_container).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.business_coverage_card_button2).click({\n  force: true\n});\ncy.title().should('eq', 'Large Business Solutions');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.business_coverage_card_container).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.business_coverage_card_button3).click({\n  force: true\n});\ncy.title().should('eq', 'Cybersecurity');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.business_coverage_card_container).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.business_coverage_card_button4).click({\n  force: true\n});\ncy.title().should('eq', 'Employee Benefit Services | Request A Personalized Quote');\ncy.go('back');\ncy.wait(2000);\n/* ------------------------------------------------\n * Homepage Carousel Component - Personal Solution\n * ------------------------------------------------\n */\n{\n  // Personal Solution\n  cy.get(cy_selectors.homepage.carousel_component).scrollIntoView();\n  cy.get(cy_selectors.homepage.carousel_component_caption).should(\"have.text\", acm_constants.homepage.carousel_component_caption).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.carousel_component_h3_header).should(\"have.text\", acm_constants.homepage.carousel_component_h3_header).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.carousel_component_large_body_text).should(\"have.text\", acm_constants.homepage.carousel_component_large_body_text).should(\"be.visible\");\n  // Cards within the slide carousel\n  // Cards in Slide : 5\n  cy.get(cy_selectors.homepage.card_slide_wrapper).children().then($slides => {\n    return $slides.length;\n  }).as(\"slideCount\");\n  // Loop through slideCount and validate the active card in the slide\n  cy.get(cy_selectors.homepage.carousel_component_large_body_text).scrollIntoView({\n    offset: {\n      top: -30,\n      left: 0\n    }\n  });\n  cy.get(\"@slideCount\").then(slideCount => {\n    for (let index = 0; index < slideCount; index++) {\n      cy.get(cy_selectors.homepage.active_card_slide).should(\"have.attr\", \"data-swiper-slide-index\", index);\n      cy.get(cy_selectors.homepage.active_card_slide).find(cy_selectors.homepage.card_slide_cards).should(\"have.class\", acm_constants.homepage.card_slide_class[index]).should(\"be.visible\");\n      cy.get(cy_selectors.homepage.active_card_slide).find(cy_selectors.homepage.card_slide_image).should(\"have.attr\", \"alt\", acm_constants.homepage.card_slide_alt_text[index]).should(\"be.visible\");\n      cy.get(cy_selectors.homepage.active_card_slide).find(cy_selectors.homepage.card_slide_h6_header).should(\"have.text\", acm_constants.homepage.card_slide_h6_header[index]).should(\"be.visible\");\n      cy.get(cy_selectors.homepage.active_card_slide).find(cy_selectors.homepage.card_slide_body_text).should(\"have.text\", acm_constants.homepage.card_slide_body_text[index]).should(\"be.visible\");\n      cy.get(cy_selectors.homepage.active_card_slide).find(cy_selectors.homepage.card_slide_button).should(\"have.text\", acm_constants.homepage.card_slide_button_text).should(\"be.visible\");\n      cy.wait(10000);\n      cy.get(cy_selectors.homepage.card_slide_next_button).should(\"be.visible\").click({\n        scrollBehavior: true\n      });\n      cy.wait(1750);\n    }\n  });\n}\n// Personal Solutions - Card Navigations \ncy.get(cy_selectors.homepage.carousel_component).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.card_slide_home_button).click({\n  force: true\n});\ncy.title().should('eq', 'Homeowners Insurance | Get Your Personalized Quote');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.carousel_component).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.card_slide_auto_button).click({\n  force: true\n});\ncy.title().should('eq', 'Auto Insurance | Get Your Personalized Quote');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.carousel_component).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.card_slide_flood_button).click({\n  force: true\n});\ncy.title().should('eq', 'Flood Insurance | Get Your Personalized Quote');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.carousel_component).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.card_slide_health_button).click({\n  force: true\n});\ncy.title().should('eq', 'Health Insurance | Get Your Personalized Quote');\ncy.go('back');\ncy.wait(2000);\ncy.get(cy_selectors.homepage.carousel_component).scrollIntoView({\n  offset: {\n    top: -100,\n    left: 0\n  }\n});\ncy.get(cy_selectors.homepage.card_slide_life_button).click({\n  force: true\n});\ncy.title().should('eq', 'Term Life Insurance | Get Your Personalized Quote');\ncy.go('back');\ncy.wait(2000);\n/* ------------------------------------------------\n * Homepage Logo Parade Component - Company Logos\n * ------------------------------------------------\n */\n{\n  // Logo Text\n  cy.get(cy_selectors.homepage.logo_parade_body_text).should(\"have.text\", acm_constants.homepage.logo_parade_body_text);\n  cy.get(cy_selectors.homepage.logo_parade_body_text).scrollIntoView({\n    offset: {\n      top: -100,\n      left: 0\n    }\n  });\n  //cy.wait(5000);\n  // Confirm Order of Logos as it displays on the app\n  cy.get(cy_selectors.homepage.logo_list).children().then($listEl => {\n    const getIMG = el => Array.from(el.children)[0];\n    const getALTTtext = img => img.getAttribute(\"alt\");\n    return Cypress._.map($listEl, el => getALTTtext(getIMG(el)));\n  }).as(\"imageArray\");\n  cy.get(\"@imageArray\").then(array => {\n    expect(array).to.include.ordered.members(acm_constants.homepage.company_logos, \"Checking order of company logos\");\n  });\n  cy.get(cy_selectors.homepage.logo_parade).scrollIntoView();\n  if (isMobile) {\n    cy.get(cy_selectors.homepage.logo_parade_image).scrollIntoView();\n  }\n}\n/* --------------------------------------------------------------------\n * Homepage States and Quotes Component - Why Acrisure and Testimonials\n * --------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.homepage.stats_component).scrollIntoView();\n  // Component Headers and Text\n  cy.get(cy_selectors.homepage.stats_component_caption).should(\"have.text\", acm_constants.homepage.stats_component_caption);\n  cy.get(cy_selectors.homepage.stats_component_h2_header).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.stats_component_h2_header);\n  cy.get(cy_selectors.homepage.stats_component_body_text).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.stats_component_body_text);\n  // Stat List Sections\n  cy.get(cy_selectors.homepage.stat_box_wrapper).find(cy_selectors.homepage.stat_box).each(($statBox, index) => {\n    cy.wrap($statBox).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    }).should(\"be.visible\");\n    cy.wrap($statBox).find(cy_selectors.homepage.stat_box_count).should(\"have.text\", acm_constants.homepage.stat_list_counts[index]).should(\"be.visible\");\n    cy.wrap($statBox).find(cy_selectors.homepage.stat_box_data_count).should(\"have.text\", acm_constants.homepage.stat_list_data_counts[index]).should(\"be.visible\");\n    cy.wrap($statBox).find(cy_selectors.homepage.stat_box_h7_header).should(\"have.text\", acm_constants.homepage.stat_list_h7_headers[index]).should(\"be.visible\");\n    cy.wrap($statBox).find(cy_selectors.homepage.stat_box_medium_body_text).should(\"have.text\", acm_constants.homepage.stat_list_medium_body_texts[index]).should(\"be.visible\");\n  });\n}\n/* --------------------------------------\n * Homepage Insights Component - Insights\n * --------------------------------------\n */\n{\n  // Insights top section\n  cy.get(cy_selectors.homepage.insights_component).scrollIntoView();\n  cy.get(cy_selectors.homepage.insights_component_caption).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.insights_component_caption);\n  cy.get(cy_selectors.homepage.insights_component_h4_header).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.insights_component_h4_header);\n  // Insights - Central Blog Link\n  cy.get(cy_selectors.homepage.insights_central_blog_container).should(\"be.visible\");\n  cy.get(cy_selectors.homepage.insights_central_blog_h5_header).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.insights_central_blog_h5_header);\n  cy.get(cy_selectors.homepage.insights_central_blog_body_text).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.insights_central_blog_body_text);\n  cy.get(cy_selectors.homepage.insights_central_blog_image).should(\"be.visible\");\n  // Blog Links\n  // Blog link count: 3\n  cy.get(\".card-list > .MuiList-root\").children().each(($blogLink, index) => {\n    cy.wrap($blogLink).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    }).should(\"be.visible\");\n    cy.wrap($blogLink).find(\"img\").should(\"be.visible\");\n    cy.wrap($blogLink).find(\".h7\").should(\"have.text\", acm_constants.homepage.blog_link_h7_headers[index]);\n  });\n  // See More Insights Button\n  cy.get(cy_selectors.homepage.see_more_insights_button).should(\"be.visible\").should(\"have.text\", acm_constants.homepage.see_more_insights_button);\n}\n/* -----------------------------------\n * Homepage Global Component - Nav Bar\n * -----------------------------------\n */\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n{\n  // Acrisure Logo\n  cy.xpath(selectors.topnav.acrisure_logo).should(\"be.visible\");\n  //if(isMobile || isTablet){\n  if (isMobile) {\n    cy.get(cy_selectors.topnav.mobile_menu_button).click();\n  }\n  // Personal Solutions Button and Links\n  cy.get(cy_selectors.topnav.personal_solutions).should(\"have.text\", acm_constants.topnav.personal_solutions).click();\n  cy.get(cy_selectors.topnav.mortgage_origination_card_title).should(\"have.text\", acm_constants.topnav.mortgage_origination_card_title);\n  cy.get(cy_selectors.topnav.mortgage_origination_description).should(\"have.text\", acm_constants.topnav.mortgage_origination_description);\n  cy.get(cy_selectors.topnav.mortgage_origination_image).should(\"be.visible\");\n  cy.get(cy_selectors.topnav.personal_insurance_card_title).should(\"have.text\", acm_constants.topnav.personal_insurance_card_title);\n  cy.get(cy_selectors.topnav.personal_insurance_description).should(\"have.text\", acm_constants.topnav.personal_insurance_description);\n  cy.get(cy_selectors.topnav.personal_insurance_image).should(\"be.visible\");\n  cy.get(cy_selectors.topnav.homeowners_insurance_link).should(\"have.text\", acm_constants.topnav.homeowners_insurance_link);\n  cy.get(cy_selectors.topnav.flood_insurance_link).should(\"have.text\", acm_constants.topnav.flood_insurance_link);\n  cy.get(cy_selectors.topnav.auto_insurance_link).should(\"have.text\", acm_constants.topnav.auto_insurance_link);\n  cy.get(cy_selectors.topnav.health_insurance_link).should(\"have.text\", acm_constants.topnav.health_insurance_link);\n  cy.get(cy_selectors.topnav.life_insurance_link).should(\"have.text\", acm_constants.topnav.life_insurance_link);\n  //if(isMobile || isTablet){\n  if (isMobile) {\n    cy.get(cy_selectors.topnav.submenu_back_button).click();\n  }\n  // Business Solutions Button and Links\n  cy.get(cy_selectors.topnav.business_solutions).should(\"have.text\", acm_constants.topnav.business_solutions).click();\n  cy.get(cy_selectors.topnav.employee_benefits_origination_card_title).should(\"have.text\", acm_constants.topnav.employee_benefits_origination_card_title);\n  cy.get(cy_selectors.topnav.employee_benefits_origination_description).should(\"have.text\", acm_constants.topnav.employee_benefits_origination_description);\n  cy.get(cy_selectors.topnav.employee_benefits_origination_image).should(\"be.visible\");\n  cy.get(cy_selectors.topnav.business_insurance_card_title).should(\"have.text\", acm_constants.topnav.business_insurance_card_title);\n  cy.get(cy_selectors.topnav.business_insurance_description).should(\"have.text\", acm_constants.topnav.business_insurance_description);\n  cy.get(cy_selectors.topnav.business_insurance_image).should(\"be.visible\");\n  cy.get(cy_selectors.topnav.commercial_general_liability_insurance_link).should(\"have.text\", acm_constants.topnav.commercial_general_liability_insurance_link);\n  cy.get(cy_selectors.topnav.professional_liability_insurance_link).should(\"have.text\", acm_constants.topnav.professional_liability_insurance_link);\n  cy.get(cy_selectors.topnav.business_owners_policy_link).should(\"have.text\", acm_constants.topnav.business_owners_policy_link);\n  cy.get(cy_selectors.topnav.cyber_insurance_link).should(\"have.text\", acm_constants.topnav.cyber_insurance_link);\n  cy.get(cy_selectors.topnav.workers_compensation_insurance_link).should(\"have.text\", acm_constants.topnav.workers_compensation_insurance_link);\n  //if(isMobile || isTablet){\n  if (isMobile) {\n    cy.get(cy_selectors.topnav.submenu_back_button).click();\n  } else {\n    cy.xpath(selectors.topnav.business_solutions).click();\n  }\n  // Why Acrisure Link\n  cy.get(cy_selectors.topnav.why_acrisure_link).should(\"have.text\", acm_constants.topnav.why_acrisure_link);\n  // Insights Link\n  cy.get(cy_selectors.topnav.insights_link).should(\"have.text\", acm_constants.topnav.insights_link);\n  //if(isMobile || isTablet){\n  if (isMobile) {\n    cy.get(cy_selectors.topnav.mobile_menu_button).click();\n  }\n}\n/* ----------------------------------\n * Homepage Global Component - Footer\n * ----------------------------------\n */\n{\n  cy.xpath(selectors.footer.footer_component).scrollIntoView();\n  // Company related links\n  cy.get(cy_selectors.footer.footer_column_title_1).should(\"have.text\", acm_constants.footer.footer_column_title_1);\n  cy.xpath(selectors.footer.about_us).should(\"have.text\", acm_constants.footer.about_us);\n  cy.xpath(selectors.footer.leadership).should(\"have.text\", acm_constants.footer.leadership);\n  cy.xpath(selectors.footer.contact_us).should(\"have.text\", acm_constants.footer.contact_us);\n  // Solutions related links\n  cy.get(cy_selectors.footer.footer_column_title_2).should(\"have.text\", acm_constants.footer.footer_column_title_2);\n  cy.xpath(selectors.footer.personal_insurance).should(\"have.text\", acm_constants.footer.personal_insurance);\n  cy.xpath(selectors.footer.mortgages).should(\"have.text\", acm_constants.footer.mortgages);\n  cy.xpath(selectors.footer.small_business).should(\"have.text\", acm_constants.footer.small_business);\n  cy.xpath(selectors.footer.large_business).should(\"have.text\", acm_constants.footer.large_business);\n  cy.xpath(selectors.footer.employee_benefits).should(\"have.text\", acm_constants.footer.employee_benefits);\n  cy.xpath(selectors.footer.managed_cybersecurity).should(\"have.text\", acm_constants.footer.managed_cybersecurity);\n  // Resources related links\n  cy.get(cy_selectors.footer.footer_column_title_3).should(\"have.text\", acm_constants.footer.footer_column_title_3);\n  cy.xpath(selectors.footer.insights).should(\"have.text\", acm_constants.footer.insights);\n  cy.xpath(selectors.footer.newsroom).should(\"have.text\", acm_constants.footer.newsroom);\n  // Footer copyright links\n  cy.xpath(selectors.footer.terms_of_use).should(\"have.text\", acm_constants.footer.terms_of_use);\n  cy.xpath(selectors.footer.privacy).should(\"have.text\", acm_constants.footer.privacy);\n  cy.xpath(selectors.footer.your_privacy).should(\"have.text\", acm_constants.footer.your_privacy);\n  cy.xpath(selectors.footer.legal).should(\"have.text\", acm_constants.footer.legal);\n  cy.get(cy_selectors.footer.copyright).should(\"have.text\", acm_constants.footer.copyright);\n}",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `.medium-body-text`, but never found it. Queried from:\n\n              > <div.stats-box.MuiBox-root.css-0>",
+                    "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `.medium-body-text`, but never found it. Queried from:\n\n              > <div.stats-box.MuiBox-root.css-0>\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/homepage.cy.js:443:15)\n    at Context.callback (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119851:26)\n    at getRet (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119616:20)\n    at tryCatcher (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:4285:29)\n    at thenFn (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119627:66)\n    at yieldItem (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:119859:16)\n    at tryCatcher (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://www.acrisureinnovation.com/__cypress/runner/cypress_runner.js:6446:18)",
+                    "diff": null
+                  },
+                  "uuid": "ab567a2b-b5f0-4c84-9763-9206e710dfd8",
+                  "parentUUID": "5d3ad588-536e-4764-96af-74a980bfdeff",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "ab567a2b-b5f0-4c84-9763-9206e710dfd8"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 167216,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-375x667",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-14T14:59:46.352Z",
+    "end": "2025-05-14T15:01:02.265Z",
+    "duration": 75913,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88f9831d-d530-48af-a112-c0d74965fa52",
+      "title": "",
+      "fullFile": "cypress/e2e/app/in-construction.cy.js",
+      "file": "cypress/e2e/app/in-construction.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7eb87d68-5b1f-4715-93bb-f718a161c8de",
+          "title": "Acrisure Cloud Website - Dev Environment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "512c9166-7e23-46e6-a499-db5376ef60da",
+              "title": "Construction - Design Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate Construction Page",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Construction - Design Tests Validate Construction Page",
+                  "timedOut": null,
+                  "duration": 73917,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": "\"../screenshots/in-construction.cy.js/Acrisure Cloud Website - Dev Environment -- Construction - Design Tests -- Validate Construction Page (failed).png\"",
+                  "code": "cy.visitSite(\"app\", \"industries/construction\");\ncy.url().should(\"include\", \"industries/construction\");\ncy.xpath(selectors.main_container, {\n  timeout: 10000\n}).should(\"exist\");\n/* ================================\n * Construction Webpage\n * ================================\n */\n/* ----------------------------------------------------------\n * Construction Splash Component - Text and Image\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.hero_splash_caption).should(\"have.text\", acm_constants.construction.hero_splash_caption);\n  cy.get(cy_selectors.construction.hero_splash_header).should(\"have.text\", acm_constants.construction.hero_splash_header);\n  cy.get(cy_selectors.construction.hero_splash_body_text).should(\"have.text\", acm_constants.construction.hero_splash_body_text);\n  cy.get(cy_selectors.construction.hero_splash_getconnected_button).should(\"have.text\", acm_constants.construction.hero_splash_getconnected_button);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* ----------------------------------------------------------\n * construction How We Work - Text\n * ----------------------------------------------------------\n */\n{\n  // Caption/Header/Body Text\n  cy.get(cy_selectors.construction.howwework_header_text).scrollIntoView();\n  cy.get(cy_selectors.construction.howwework_caption_text).should(\"have.text\", acm_constants.construction.howwework_caption_text);\n  cy.get(cy_selectors.construction.howwework_header_text).should(\"have.text\", acm_constants.construction.howwework_header_text);\n  cy.get(cy_selectors.construction.howwework_body_text1).should(\"have.text\", acm_constants.construction.howwework_body_text1);\n  cy.get(cy_selectors.construction.howwework_body_text2).should(\"have.text\", acm_constants.construction.howwework_body_text2);\n  cy.get(cy_selectors.construction.howwework_body_text3).should(\"have.text\", acm_constants.construction.howwework_body_text3);\n  cy.get(cy_selectors.construction.howwework_body_text4).should(\"have.text\", acm_constants.construction.howwework_body_text4);\n  cy.get(cy_selectors.construction.howwework_body_text_para1).scrollIntoView();\n  cy.get(cy_selectors.construction.howwework_body_text_para1).should(\"have.text\", acm_constants.construction.howwework_body_text_para1);\n  cy.get(cy_selectors.construction.howwework_body_text_para2).should(\"have.text\", acm_constants.construction.howwework_body_text_para2);\n  cy.get(cy_selectors.construction.howwework_body_text_para3).should(\"have.text\", acm_constants.construction.howwework_body_text_para3);\n  cy.get(cy_selectors.construction.howwework_getconnected_button).should(\"have.text\", acm_constants.construction.howwework_getconnected_button);\n}\n/* ---------------------------------------------------------\n * construction - Services\n * ---------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.services_component).scrollIntoView();\n  // Component Headers and Text\n  cy.get(cy_selectors.construction.services_component_caption).should(\"have.text\", acm_constants.construction.services_component_caption);\n  cy.get(cy_selectors.construction.services_h3_header).should(\"be.visible\").should(\"have.text\", acm_constants.construction.services_h3_header);\n  cy.get(cy_selectors.construction.services_body_text).should(\"be.visible\").should(\"have.text\", acm_constants.construction.services_body_text);\n  cy.get(cy_selectors.construction.service_expl_sol_largebusiness_link).should(\"be.visible\").should(\"have.text\", acm_constants.construction.service_expl_sol_largebusiness_link);\n  cy.get(cy_selectors.construction.service_expl_sol_largebusiness_link).click({\n    force: true\n  });\n  cy.title().should('eq', 'Large Business Solutions');\n  cy.wait(2000);\n  //cy.xpath(selectors.common.onetrust1).click({ force: true });    \n  cy.go('back');\n  cy.wait(3000);\n  cy.get(cy_selectors.construction.services_component).scrollIntoView();\n  cy.get(cy_selectors.construction.seemorebtn).should(\"be.visible\");\n  cy.get(cy_selectors.construction.seemorebtn).click({\n    force: true\n  });\n  // services List Sections\n  cy.get(\"[data-testid='SOLUTIONS_COMPONENT'] > .MuiContainer-root > .inner-content > .bottom > ul\").children().each(($services, index) => {\n    cy.wrap($services).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.wrap($services).find(cy_selectors.construction.services_list_h6_header).scrollIntoView({\n      offset: {\n        top: -50,\n        left: 0\n      }\n    }).should(\"have.text\", acm_constants.construction.services_list_h6_headers[index]);\n    cy.wait(5000), cy.wrap($services).find(cy_selectors.construction.services_list_body_text).should(\"have.text\", acm_constants.construction.services_list_body_texts[index]);\n  });\n}\n/* ---------------------------------------------------------\n * construction - Specialities\n * ---------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.specialities_component).scrollIntoView();\n  if (isTablet || isMobile) {\n    cy.wait(2000);\n    cy.get(cy_selectors.construction.specialities_component).scrollIntoView({\n      offset: {\n        top: -50,\n        left: 0\n      }\n    });\n    cy.wait(1000);\n  }\n  // Specialities -  Caption\n  cy.get(cy_selectors.construction.specialities_component_caption).should(\"have.text\", acm_constants.construction.specialities_component_caption);\n  cy.get(cy_selectors.construction.specialities_component_text).should(\"have.text\", acm_constants.construction.specialities_component_text);\n  //cy.get(cy_selectors.construction.load_more_button).click( {force : true} );\n  // Inner Content (Header, Specialities List)\n  cy.get(cy_selectors.construction.specialities_component_text).scrollIntoView({\n    offset: {\n      top: -50,\n      left: 0\n    }\n  }).should(\"have.text\", acm_constants.construction.specialities_component_text);\n  cy.get(\".accordion-list\").children().each(($specialities, index) => {\n    cy.wrap($specialities).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.wrap($specialities).find(cy_selectors.construction.specialities_list_h6_header).scrollIntoView({\n      offset: {\n        top: -50,\n        left: 0\n      }\n    }).should(\"have.text\", acm_constants.construction.specialities_list_h6_headers[index]);\n    cy.wait(5000), cy.wrap($specialities).find(cy_selectors.construction.specialities_list_body_text).should(\"have.text\", acm_constants.construction.specialities_list_body_texts[index]);\n  });\n}\n/* ---------------------------------------------------------\n * construction - Coverage\n * ---------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.coverage_component).scrollIntoView();\n  if (isTablet || isMobile) {\n    cy.wait(2000);\n    cy.get(cy_selectors.construction.coverage_component).scrollIntoView({\n      offset: {\n        top: -50,\n        left: 0\n      }\n    });\n    cy.wait(1000);\n  }\n  // Coverage -  Caption\n  cy.get(cy_selectors.construction.coverage_component_caption).should(\"have.text\", acm_constants.construction.coverage_component_caption);\n  // Inner Content (Header, Coverage List)\n  cy.get(cy_selectors.construction.coverage_h2_header).should(\"have.text\", acm_constants.construction.coverage_h2_header);\n  cy.get(cy_selectors.construction.coverage_body_text).should(\"have.text\", acm_constants.construction.coverage_body_text);\n  cy.get(cy_selectors.construction.coverage_getaquotebtn).should(\"have.text\", acm_constants.construction.coverage_getaquotebtn);\n  cy.get(cy_selectors.construction.coverage_getaquotebtn).click({\n    force: true\n  });\n  cy.title().should('eq', 'Acrisure - You');\n  cy.wait(2000);\n  cy.xpath(selectors.common.onetrust1).click({\n    force: true\n  });\n  cy.go('back');\n  cy.go('back');\n  cy.wait(3000);\n  cy.xpath(selectors.common.onetrust1).click({\n    force: true\n  });\n  cy.wait(5000);\n  cy.get(cy_selectors.construction.two_column_component_image).scrollIntoView();\n  //cy.get(cy_selectors.construction.coverage_body_text).scrollIntoView({ offset: { top: -200, left: 0 } });\n  cy.wait(3000);\n  cy.get(cy_selectors.construction.coverage_seemorebtn).click({\n    force: true\n  });\n  if (isMobile) {\n    cy.get(cy_selectors.construction.two_column_component_image).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    });\n    cy.wait(3000);\n    cy.get(\"#content > div:nth-child(6) > .MuiContainer-root > .inner-content > .right > .MuiList-root\").children().each(($coverage, index) => {\n      cy.wrap($coverage).scrollIntoView({\n        offset: {\n          top: -100,\n          left: 0\n        }\n      });\n      cy.wrap($coverage).find(cy_selectors.construction.coverage_list_h6_header).scrollIntoView({\n        offset: {\n          top: -50,\n          left: 0\n        }\n      }).should(\"have.text\", acm_constants.construction.coverage_list_h6_headers[index]);\n      cy.wait(5000), cy.wrap($coverage).find(cy_selectors.construction.coverage_list_body_text).should(\"have.text\", acm_constants.construction.coverage_list_body_texts[index]);\n    });\n  }\n  if (!isMobile) {\n    cy.get(\"#content > div:nth-child(6) > .MuiContainer-root > .inner-content > .right > .MuiList-root\").children().each(($coverage, index) => {\n      cy.wrap($coverage).scrollIntoView({\n        offset: {\n          top: -100,\n          left: 0\n        }\n      });\n      cy.wrap($coverage).find(cy_selectors.construction.coverage_list_h6_header).scrollIntoView({\n        offset: {\n          top: -50,\n          left: 0\n        }\n      }).should(\"have.text\", acm_constants.construction.coverage_list_h6_headers[index]);\n      cy.wait(5000), cy.wrap($coverage).find(cy_selectors.construction.coverage_list_body_text).should(\"have.text\", acm_constants.construction.coverage_list_body_texts[index]);\n    });\n  }\n}\n/* ------------------------------------------------------\n * construction - Why Acrisure\n * ------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.two_column_component_container).scrollIntoView({\n    offset: {\n      top: -70,\n      left: 0\n    }\n  });\n  // Left Column Image\n  cy.get(cy_selectors.construction.two_column_component_image).should(\"be.visible\").click({\n    scrollBehavior: false\n  });\n  cy.wait(5000);\n  // Get outer pill container and traverse elements to confirm the pill text in the middle \n  cy.xpath(cy_selectors.construction.pill_box_text_strategic).should(\"have.text\", acm_constants.construction.pill_box_text_strategic);\n  cy.xpath(cy_selectors.construction.pill_box_text_and).should(\"have.text\", acm_constants.construction.pill_box_text_and);\n  cy.xpath(cy_selectors.construction.pill_box_text_proactive).should(\"have.text\", acm_constants.construction.pill_box_text_proactive);\n  cy.get(cy_selectors.construction.whyacrisure_slides).its(\"length\").as(\"numberOfSlides\");\n  cy.get(\"@numberOfSlides\").then(slides => {\n    for (let slideIndex = 0; slideIndex < slides; slideIndex++) {\n      cy.get(cy_selectors.construction.whyacrisure_active_slide, {\n        timeout: 15000\n      }).should(\"have.attr\", \"data-swiper-slide-index\", slideIndex).should(\"be.visible\");\n      cy.get(cy_selectors.construction.whyacrisure_active_slide).find(cy_selectors.construction.whyacrisure_slide_caption).should(\"have.text\", acm_constants.construction.whyacrisure_slide_caption);\n      cy.get(cy_selectors.construction.whyacrisure_active_slide).find(cy_selectors.construction.whyacrisure_slide_h4_header).should(\"have.text\", acm_constants.construction.whyacrisure_slide_h4_header[slideIndex]);\n      cy.get(cy_selectors.construction.whyacrisure_active_slide).find(cy_selectors.construction.whyacrisure_slide_body_text).should(\"have.text\", acm_constants.construction.whyacrisure_slide_body_text[slideIndex]);\n      cy.get(cy_selectors.construction.whyacrisure_slide_pagination_bullet).eq(slideIndex).should(\"have.class\", \"swiper-pagination-bullet-active\");\n    }\n  });\n}\n/* ------------------------------------------------------\n * construction - Let's get started.\n * ------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.banner_component).scrollIntoView();\n  cy.get(cy_selectors.construction.banner_caption).should(\"have.text\", acm_constants.construction.banner_caption);\n  cy.get(cy_selectors.construction.banner_body_text).should(\"have.text\", acm_constants.construction.banner_body_text);\n  cy.get(cy_selectors.construction.banner_connectwithus_link).should(\"have.text\", acm_constants.construction.banner_connectwithus_link);\n  cy.get(cy_selectors.construction.banner_connectwithus_link).click({\n    force: true\n  });\n  cy.title().should('eq', 'Acrisure - You');\n  cy.wait(2000);\n  cy.xpath(selectors.common.onetrust1).click({\n    force: true\n  });\n  cy.go('back');\n  cy.go('back');\n  cy.wait(3000);\n}\n/* --------------------------------------------------------------------\n * construction - Insights\n * --------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.construction.insights_component).scrollIntoView();\n  cy.get(cy_selectors.construction.insights_card_insights).should(\"have.text\", acm_constants.construction.insights_card_insights);\n  cy.get(cy_selectors.construction.insights_card_insights_link).should(\"have.text\", acm_constants.construction.insights_card_insights_link);\n  cy.get(cy_selectors.construction.insights_card_insights_link).click({\n    force: true\n  });\n  cy.title().should('eq', 'Insurance, Cybersecurity and Business Solutions Insights');\n  cy.wait(2000);\n  cy.xpath(selectors.common.onetrust1).click({\n    force: true\n  });\n  cy.go('back');\n  cy.wait(3000);\n  cy.get(cy_selectors.construction.insights_component).scrollIntoView();\n  cy.get(cy_selectors.construction.insights_card_growboldly).should(\"have.text\", acm_constants.construction.insights_card_growboldly);\n  cy.get(cy_selectors.construction.insights_card_growboldly_link).should(\"have.text\", acm_constants.construction.insights_card_growboldly_link);\n  cy.get(cy_selectors.construction.insights_card_growboldly_link).click({\n    force: true\n  });\n  cy.title().should('eq', 'Business Solutions');\n  cy.wait(2000);\n  cy.xpath(selectors.common.onetrust1).click({\n    force: true\n  });\n  cy.go('back');\n  cy.wait(3000);\n  cy.get(cy_selectors.construction.insights_component).scrollIntoView();\n  /* --------------------------------------------------\n   * construction - FAQ\n   * --------------------------------------------------\n   */\n  cy.get(cy_selectors.construction.accordion_component).scrollIntoView();\n  // FAQ Text (Caption and Header)\n  cy.get(cy_selectors.construction.accordion_component_caption).should(\"have.text\", acm_constants.construction.accordion_component_caption);\n  cy.get(cy_selectors.construction.faq_header).should(\"have.text\", acm_constants.construction.faq_header);\n  cy.get(cy_selectors.construction.faq_load_more).should(\"have.text\", acm_constants.construction.faq_load_more);\n  cy.wait(5000);\n  cy.get(cy_selectors.construction.faq_load_more).click({\n    force: true\n  });\n  cy.wait(5000);\n  /* \n    First close the first expanded tab. Then for each tab, expand the tab and\n    confirm the contents within each tab\n   */\n  cy.get(cy_selectors.construction.faq_expanded_tab).scrollIntoView({\n    offset: {\n      top: -60,\n      left: 0\n    }\n  }).find(cy_selectors.construction.faq_panel_header);\n  //.click({ scrollBehavior: false });\n  cy.wait(5000);\n  cy.get(cy_selectors.construction.faq_regular_tab).each(($ele, panelIndex) => {\n    cy.wrap($ele).find(cy_selectors.construction.faq_panel_header).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    }).click({\n      scrollBehavior: false\n    });\n    // Confirm the tab text\n    cy.wrap($ele).find(cy_selectors.construction.faq_panel_header_text).should(\"have.text\", acm_constants.construction.faq_section_i_panel_headers[panelIndex]);\n    // Confirm each bullet point text\n    cy.wrap($ele).find(cy_selectors.construction.faq_panel_bullet_points).each(($ele, bulletIndex) => {\n      const bulletArray = acm_constants.construction[`faq_section_i_panel_header_${panelIndex + 1}_bullet_points`];\n      cy.wrap($ele).should(\"have.text\", bulletArray[bulletIndex]);\n    });\n    cy.wait(1500);\n  });\n}",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `.hero-section > a`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `.hero-section > a`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/in-construction.cy.js:64:74)",
+                    "diff": null
+                  },
+                  "uuid": "29a09d6b-336e-4841-ac0c-b2c9ce3528ab",
+                  "parentUUID": "512c9166-7e23-46e6-a499-db5376ef60da",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "29a09d6b-336e-4841-ac0c-b2c9ce3528ab"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 73917,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1920x1080",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

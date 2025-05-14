@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-14T15:54:04.043Z",
+    "end": "2025-05-14T15:55:49.861Z",
+    "duration": 105818,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f13ebfd4-78ec-4c6c-b30e-ffdbfc655abc",
+      "title": "",
+      "fullFile": "cypress/e2e/app/life-insurance.cy.js",
+      "file": "cypress/e2e/app/life-insurance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ab42bd6e-c675-46a9-a841-c0ac89aa3aea",
+          "title": "Life Insurance",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate life insurance page components",
+              "fullTitle": "Life Insurance Validate life insurance page components",
+              "timedOut": null,
+              "duration": 86479,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"../screenshots/life-insurance.cy.js/Life Insurance -- Validate life insurance page components (failed).png\"",
+              "code": "const isLargeDesktop = Cypress.config().viewportWidth < 2000 && Cypress.config().viewportWidth >= 1441;\nconst isTablet = Cypress.config().viewportWidth < 1441 && Cypress.config().viewportWidth >= 768;\nconst isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"life-insurance\");\n// Main header section\ncy.xpath(selectors.life.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.life.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.life.caption).should(\"be.visible\");\ncy.xpath(selectors.life.pill_life).should(\"be.visible\");\ncy.xpath(selectors.life.pill_simple).should(\"be.visible\");\n// Quick Quote\ncy.xpath(selectors.common.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.life.quick_quote_sm).should(\"be.visible\");\ncy.xpath(selectors.life.quick_quote_lg).should(\"be.visible\");\ncy.xpath(selectors.life.state_label).should(\"be.visible\");\ncy.xpath(selectors.life.state_select).should(\"be.visible\");\ncy.xpath(selectors.life.get_a_quote).should(\"be.visible\");\n// What is term life insurance?\ncy.xpath(selectors.life.card_what).scrollIntoView();\ncy.xpath(selectors.life.what_heading_sm).should(\"be.visible\");\ncy.xpath(selectors.life.what_heading_lg).should(\"be.visible\");\ncy.xpath(selectors.life.what_caption_1).should(\"be.visible\");\ncy.xpath(selectors.life.learn_more).should(\"be.visible\");\ncy.xpath(selectors.life.pill_years).should(\"be.visible\");\ncy.xpath(selectors.life.pill_afford).should(\"be.visible\");\n// Why Acrisure\ncy.xpath(selectors.common.card_why1).scrollIntoView();\ncy.xpath(selectors.life.pill_options).should(\"be.visible\");\ncy.xpath(selectors.life.pill_easy).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\ncy.xpath(selectors.life.why_heading_1).should(\"be.visible\");\ncy.xpath(selectors.life.why_caption_1).should(\"be.visible\");\ncy.xpath(selectors.life.why_heading_2).should(\"be.visible\");\ncy.xpath(selectors.life.why_caption_2).should(\"be.visible\");\ncy.xpath(selectors.life.why_heading_3).should(\"be.visible\");\ncy.xpath(selectors.life.why_caption_3).should(\"be.visible\");\n// FAQ\ncy.xpath(selectors.common.card_faq).scrollIntoView();\ncy.xpath(selectors.common.faq_header).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_1).should(\"be.visible\");\ncy.xpath(selectors.life.faq_bullet_1).should(\"be.visible\");\ncy.xpath(selectors.life.faq_bullet_2).should(\"be.visible\");\ncy.xpath(selectors.life.faq_bullet_3).should(\"be.visible\");\ncy.xpath(selectors.life.faq_bullet_4).should(\"be.visible\");\ncy.xpath(selectors.life.faq_bullet_5).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_2).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_3).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_4).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_5).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_6).should(\"be.visible\");\ncy.xpath(selectors.common.faq_load_more_btn).should(\"be.visible\");\ncy.xpath(selectors.common.faq_load_more_btn).click();\ncy.wait(2000);\ncy.xpath(selectors.life.faq_question_7).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_8).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_9).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_10).should(\"be.visible\");\ncy.xpath(selectors.life.faq_question_11).should(\"be.visible\");\nif (isMobile) {\n  // Insights\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.life.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.life.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.life.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.life.card_term).should(\"be.visible\");\n  cy.xpath(selectors.life.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.life.card_whole).should(\"be.visible\");\n  cy.xpath(selectors.life.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.life.card_barrow).should(\"be.visible\");\n  cy.xpath(selectors.life.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.life.card_agentvsbroker).should(\"be.visible\");\n}\nif (isTablet) {\n  // Insights\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.life.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.life.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.life.card_term).should(\"be.visible\");\n  cy.xpath(selectors.life.card_whole).should(\"be.visible\");\n  cy.xpath(selectors.life.card_barrow).should(\"be.visible\");\n  cy.xpath(selectors.life.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.life.card_agentvsbroker).should(\"be.visible\");\n}\nif (isLargeDesktop) {\n  // Insights\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.life.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.life.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.life.card_term).should(\"be.visible\");\n  cy.xpath(selectors.life.card_whole).should(\"be.visible\");\n  cy.xpath(selectors.life.card_barrow).should(\"be.visible\");\n  cy.xpath(selectors.life.card_agentvsbroker).should(\"be.visible\");\n}\ncy.xpath(selectors.common.read_more).should(\"be.visible\");\n// Explore\ncy.xpath(selectors.common.card_explore).scrollIntoView();\n// Needs to scroll down slightly to trigger explore visibility on mobile\nif (isMobile) {\n  cy.scrollTo(0, 50);\n  cy.xpath(selectors.life.explore_home_header).scrollIntoView();\n}\ncy.xpath(selectors.life.explore_home_header).should(\"be.visible\");\ncy.xpath(selectors.life.explore_home_link).should(\"be.visible\");\ncy.xpath(selectors.life.explore_auto_header).should(\"be.visible\");\ncy.xpath(selectors.life.explore_auto_link).should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//li[contains(text(), 'Term life insurance provides coverage for a specific term or period of time')]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//li[contains(text(), 'Term life insurance provides coverage for a specific term or period of time')]`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/life-insurance.cy.js:56:42)",
+                "diff": null
+              },
+              "uuid": "7514dbdd-8b17-46ad-aa16-f9d3b9d5b351",
+              "parentUUID": "ab42bd6e-c675-46a9-a841-c0ac89aa3aea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate life insurance quote flow",
+              "fullTitle": "Life Insurance Validate life insurance quote flow",
+              "timedOut": null,
+              "duration": 17467,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"life-insurance\");\ncy.xpath(selectors.life.state_select).type(form_data.home_insurance.state, {\n  force: true\n});\ncy.xpath(selectors.flood.address_option1).click();\ncy.xpath(selectors.life.get_a_quote).click({\n  force: true\n});\nconst altwayUrl = envUtil.getAltwayUrl();\ncy.origin(altwayUrl, {\n  args: {\n    altwayUrl\n  }\n}, ({\n  altwayUrl\n}) => {\n  cy.url().should(\"include\", `${altwayUrl}/life`);\n});",
+              "err": {},
+              "uuid": "804d75a4-f839-4f19-9683-a3d96ad65f76",
+              "parentUUID": "ab42bd6e-c675-46a9-a841-c0ac89aa3aea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "804d75a4-f839-4f19-9683-a3d96ad65f76"
+          ],
+          "failures": [
+            "7514dbdd-8b17-46ad-aa16-f9d3b9d5b351"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 103946,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-14T16:16:07.675Z",
+    "end": "2025-05-14T16:17:33.514Z",
+    "duration": 85839,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "690b61ae-349c-49dd-bcea-b196985303a9",
+      "title": "",
+      "fullFile": "cypress/e2e/app/privacy-choices-dialog.cy.js",
+      "file": "cypress/e2e/app/privacy-choices-dialog.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9b5e4da6-a3a2-4db5-a9c8-f845c35dac64",
+          "title": "Your Privacy Choices (Cookie Dialog)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate privacy choices functionality",
+              "fullTitle": "Your Privacy Choices (Cookie Dialog) Validate privacy choices functionality",
+              "timedOut": null,
+              "duration": 84227,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"../screenshots/privacy-choices-dialog.cy.js/Your Privacy Choices (Cookie Dialog) -- Validate privacy choices functionality (failed).png\"",
+              "code": "cy.visitSite(\"app\", \"\");\n// The privacy center pop-up has an issue where it only loads correctly on refresh\nreloadAndOpenDialog();\n// Validate header and accordians\ncy.xpath(selectors.privacy_pref_dialog.header).should(\"be.visible\");\ncy.xpath(selectors.privacy_pref_dialog.accordians).each($el => {\n  cy.wrap($el).click();\n});\n// cy.xpath(selectors.privacy_pref_dialog.performance_desc)\n//   .scrollIntoView()\n//   .should(\"be.visible\");\ncy.xpath(selectors.privacy_pref_dialog.necessary_desc).scrollIntoView();\ncy.xpath(selectors.privacy_pref_dialog.necessary_desc).should(\"be.visible\");\n// cy.xpath(selectors.privacy_pref_dialog.targeting_desc)\n//   .scrollIntoView()\n//   .should(\"be.visible\");\ncy.xpath(selectors.privacy_pref_dialog.functional_desc).scrollIntoView();\ncy.xpath(selectors.privacy_pref_dialog.functional_desc).should(\"be.visible\");\n// Toggle the targeting cookie off and confirm\n// cy.xpath(selectors.privacy_pref_dialog.targeting_toggle_on).click({\n//   force: true,\n// });\n// cy.xpath(selectors.privacy_pref_dialog.targeting_toggle_off).should(\n//   \"exist\"\n// );\n// cy.xpath(selectors.privacy_pref_dialog.btn_confirm).click();\n// Verify the targeting cookie is still set to off, toggle on and confirm\nreloadAndOpenDialog();\n// cy.xpath(selectors.privacy_pref_dialog.targeting_toggle_off).click({\n//   force: true,\n// });\n// cy.xpath(selectors.privacy_pref_dialog.targeting_toggle_on).should(\"exist\");\n// cy.xpath(selectors.privacy_pref_dialog.btn_confirm).click();\n// Verify the toggle is still set to on and the dialog can be closed\nreloadAndOpenDialog();\ncy.xpath(selectors.privacy_pref_dialog.header).should(\"be.visible\");\n// cy.xpath(selectors.privacy_pref_dialog.targeting_toggle_on).should(\"exist\");\ncy.xpath(selectors.privacy_pref_dialog.close).click();\ncy.xpath(selectors.privacy_pref_dialog.header).should(\"not.be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//h2[text() = 'Privacy Preference Center']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 60000ms: Expected to find element: `//h2[text() = 'Privacy Preference Center']`, but never found it.\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/privacy-choices-dialog.cy.js:11:51)",
+                "diff": null
+              },
+              "uuid": "8d2cff78-8fee-45dd-b3fa-e7f9314a411b",
+              "parentUUID": "9b5e4da6-a3a2-4db5-a9c8-f845c35dac64",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "8d2cff78-8fee-45dd-b3fa-e7f9314a411b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 84227,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1920x1080",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

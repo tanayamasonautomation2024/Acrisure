@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T16:13:10.467Z",
+    "end": "2025-05-14T16:13:38.663Z",
+    "duration": 28196,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "551d0c80-0201-4a65-af72-eb6e984604fe",
+      "title": "",
+      "fullFile": "cypress/e2e/app/re-renumeration-disclosure.cy.js",
+      "file": "cypress/e2e/app/re-renumeration-disclosure.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7370d07c-dad2-45de-97de-90384f53ad6e",
+          "title": "Acrisure Cloud Website - Dev Environment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "48de5378-cc5f-4598-b7d0-1e736fcffd07",
+              "title": "Renumeration-Disclosure - Design Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate Renumeration-Disclosure Page",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Renumeration-Disclosure - Design Tests Validate Renumeration-Disclosure Page",
+                  "timedOut": null,
+                  "duration": 26352,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visitSite(\"app\", \"reinsurance\");\ncy.url().should(\"include\", \"reinsurance\");\ncy.xpath(selectors.main_container, {\n  timeout: 10000\n}).should(\"exist\");\n/* ================================\n * Renumeration Disclosure - Webpage\n * ================================\n */\ncy.get(cy_selectors.reinsurance.corporate_advisory_header).scrollIntoView();\nif (isMobile) {\n  cy.scrollTo(0, 50);\n  cy.get(cy_selectors.reinsurance.corporate_advisory_header).scrollIntoView();\n}\ncy.get(cy_selectors.reinsurance.corporate_advisory_explore_link).should(\"be.visible\");\ncy.get(cy_selectors.reinsurance.corporate_advisory_explore_link).click({\n  force: true\n});\ncy.title().should('eq', 'Acrisure Re Corporate Advisory & Solutions');\ncy.wait(5000);\ncy.get(cy_selectors.corporate_advisory.acrisurere_disclaimer).scrollIntoView();\ncy.get(cy_selectors.corporate_advisory.arcas_disclosure).should(\"have.text\", acm_constants.corporate_advisory.arcas_disclosure);\ncy.get(cy_selectors.corporate_advisory.arcas_disclosure).click({\n  force: true\n});\ncy.title().should('eq', \"Remuneration Disclosure\");\ncy.wait(3000);\n/* ----------------------------------------------------------\n * Renumeration Disclosure Splash Component - Text and Image\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.remuneration_disclosure.hero_splash_caption).should(\"have.text\", acm_constants.remuneration_disclosure.hero_splash_caption);\n  cy.get(cy_selectors.remuneration_disclosure.hero_splash_header).should(\"have.text\", acm_constants.remuneration_disclosure.hero_splash_header);\n  cy.get(cy_selectors.remuneration_disclosure.hero_splash_body_text1).should(\"have.text\", acm_constants.remuneration_disclosure.hero_splash_body_text1);\n  cy.get(cy_selectors.remuneration_disclosure.hero_splash_body_text2).should(\"have.text\", acm_constants.remuneration_disclosure.hero_splash_body_text2);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* ----------------------------------------------------------\n * Renumeration Disclosure - Principle\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_principles_info1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_principles_info1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_principles_info1).click({\n    force: true\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_principles_info1).scrollIntoView({\n    offset: {\n      top: -200,\n      left: 0\n    }\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_principles_info1_header).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_principles_info1_header);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_principles_info1_body1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_principles_info1_body1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_principles_info1_body2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_principles_info1_body2);\n}\n/* ----------------------------------------------------------\n * Renumeration Disclosure - Goverance\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2).click({\n    force: true\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_header).scrollIntoView({\n    offset: {\n      top: -300,\n      left: 0\n    }\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_header).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_header);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_body1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_body1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_body1_bullet1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_body1_bullet1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_body1_bullet2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_body1_bullet2);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_body1_bullet3).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_body1_bullet3);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_body1_bullet4).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_body1_bullet4);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_governance_info2_body2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_governance_info2_body2);\n}\n/* ----------------------------------------------------------\n * Renumeration Disclosure - Variable Pay and Link to Performance\n * ----------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_variablepay_info3).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_variablepay_info3);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_variablepay_info3).click({\n    force: true\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_variablepay_info3_header).scrollIntoView({\n    offset: {\n      top: -350,\n      left: 0\n    }\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_variablepay_info3_header).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_variablepay_info3_header);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_variablepay_info3_body1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_variablepay_info3_body1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_variablepay_info3_body2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_variablepay_info3_body2);\n}\n// /* ----------------------------------------------------------\n//  * Renumeration Disclosure - Remuneration Adjustment\n//  * ----------------------------------------------------------\n// */\n{\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_adjustment_info4);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4).click({\n    force: true\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4_header).scrollIntoView({\n    offset: {\n      top: -350,\n      left: 0\n    }\n  });\n  cy.wait(10000);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4_header).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_adjustment_info4_header);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4_body1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_adjustment_info4_body1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4_body2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_adjustment_info4_body2);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4_body3).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_adjustment_info4_body3);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_adjustment_info4_body4).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_adjustment_info4_body4);\n}\n// /* ----------------------------------------------------------\n//  * Renumeration Disclosure - Quantitative Disclosure\n//  * ----------------------------------------------------------\n// */\n{\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5).click({\n    force: true\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5).scrollIntoView({\n    offset: {\n      top: -200,\n      left: 0\n    }\n  });\n  //cy.wait(9000);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5_header).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5_header);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5_body1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5_body1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5_body2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5_body2);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5_body3).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5_body3);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5_body4).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5_body4);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_quantitative_info5_body5).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_quantitative_info5_body5);\n}\n// /* ----------------------------------------------------------\n//  * Renumeration Disclosure - Specific Remuneration Structures\n//  * ----------------------------------------------------------\n// */\n{\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_specific_info6).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_specific_info6);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_specific_info6).click({\n    force: true\n  });\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_specific_info6).scrollIntoView({\n    offset: {\n      top: -200,\n      left: 0\n    }\n  });\n  //cy.wait(10000);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_specific_info6_header).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_specific_info6_header);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_specific_info6_body1).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_specific_info6_body1);\n  cy.get(cy_selectors.remuneration_disclosure.remuneration_specific_info6_body2).should(\"have.text\", acm_constants.remuneration_disclosure.remuneration_specific_info6_body2);\n}",
+                  "err": {},
+                  "uuid": "13cccbc8-a476-4e94-8534-5bbd64fd30b1",
+                  "parentUUID": "48de5378-cc5f-4598-b7d0-1e736fcffd07",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "13cccbc8-a476-4e94-8534-5bbd64fd30b1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 26352,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-375x667",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

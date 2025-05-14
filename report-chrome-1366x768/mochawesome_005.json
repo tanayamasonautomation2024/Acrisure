@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T13:13:30.658Z",
+    "end": "2025-05-14T13:14:06.008Z",
+    "duration": 35350,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "32bae5c6-e0a8-419d-97e6-981aa56ab05a",
+      "title": "",
+      "fullFile": "cypress/e2e/app/contact-us.cy.js",
+      "file": "cypress/e2e/app/contact-us.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e715e307-0a8e-4c8f-866a-033fc8c29f64",
+          "title": "Contact Us Page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate Contact Us page components",
+              "fullTitle": "Contact Us Page Validate Contact Us page components",
+              "timedOut": null,
+              "duration": 16746,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"contact-us\");\n// Main section\ncy.xpath(selectors.contact_us.header_hello).should(\"be.visible\");\ncy.xpath(selectors.contact_us.caption).should(\"be.visible\");\n// Contact Us Form\ncy.xpath(selectors.contact_us.card_form).scrollIntoView();\ncy.xpath(selectors.contact_us.header_sm).should(\"be.visible\");\ncy.xpath(selectors.contact_us.header_lg).should(\"be.visible\");\ncy.xpath(selectors.contact_us.body_text).should(\"be.visible\");\ncy.xpath(selectors.contact_us.first_name_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.first_name_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.last_name_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.last_name_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.email_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.email_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.phone_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.phone_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.city_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.city_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.state_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.state_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.interested_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.interested_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.help_label).should(\"be.visible\");\ncy.xpath(selectors.contact_us.help_input).should(\"be.visible\");\ncy.xpath(selectors.contact_us.btn_submit).should(\"be.visible\");\n// Careers\ncy.xpath(selectors.contact_us.card_careers).scrollIntoView();\ncy.xpath(selectors.contact_us.join_team).should(\"be.visible\");\ncy.xpath(selectors.contact_us.explore_carriers).should(\"be.visible\");\ncy.xpath(selectors.contact_us.pill_network).should(\"be.visible\");",
+              "err": {},
+              "uuid": "a2d6ebd7-0976-40ae-98de-ee17dce69f93",
+              "parentUUID": "e715e307-0a8e-4c8f-866a-033fc8c29f64",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate Contact Us form submission",
+              "fullTitle": "Contact Us Page Validate Contact Us form submission",
+              "timedOut": null,
+              "duration": 16237,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"contact-us\");\ncy.xpath(selectors.contact_us.card_form).scrollIntoView();\ncy.xpath(selectors.contact_us.first_name_input).type(form_data.home_insurance.first_name, {\n  force: true\n});\ncy.xpath(selectors.contact_us.last_name_input).type(form_data.home_insurance.last_name, {\n  force: true\n});\ncy.xpath(selectors.contact_us.email_input).type(form_data.home_insurance.email, {\n  force: true\n});\ncy.xpath(selectors.contact_us.phone_input).type(form_data.home_insurance.phone, {\n  force: true\n});\ncy.xpath(selectors.contact_us.city_input).type(form_data.home_insurance.city, {\n  force: true\n});\ncy.xpath(selectors.contact_us.state_input).type(form_data.home_insurance.state, {\n  force: true\n});\ncy.xpath(selectors.home_insurance.select_first_option).click();\ncy.xpath(selectors.contact_us.interested_input).type(form_data.contact.interested, {\n  force: true\n});\ncy.xpath(selectors.home_insurance.select_first_option).click();\ncy.xpath(selectors.contact_us.help_input).type(form_data.contact.help, {\n  force: true\n});\ncy.xpath(selectors.contact_us.btn_submit).click({\n  force: true\n});\ncy.xpath(selectors.contact_us.response_recorded).should(\"be.visible\");\ncy.xpath(selectors.contact_us.response_recorded_desc).should(\"be.visible\");",
+              "err": {},
+              "uuid": "f0543c4c-d306-47c5-8eb4-58e933b222c5",
+              "parentUUID": "e715e307-0a8e-4c8f-866a-033fc8c29f64",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a2d6ebd7-0976-40ae-98de-ee17dce69f93",
+            "f0543c4c-d306-47c5-8eb4-58e933b222c5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 32983,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

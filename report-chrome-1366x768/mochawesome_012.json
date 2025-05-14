@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-14T14:55:46.464Z",
+    "end": "2025-05-14T14:57:26.896Z",
+    "duration": 100432,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "552ac1da-1166-420e-9bce-a16bedebea6c",
+      "title": "",
+      "fullFile": "cypress/e2e/app/home-insurance.cy.js",
+      "file": "cypress/e2e/app/home-insurance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d7d7800-302d-472d-9ae7-48326e1ad2c0",
+          "title": "Home Insurance (Personal)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate home insurance landing page",
+              "fullTitle": "Home Insurance (Personal) Validate home insurance landing page",
+              "timedOut": null,
+              "duration": 78545,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"../screenshots/home-insurance.cy.js/Home Insurance (Personal) -- Validate home insurance landing page (failed).png\"",
+              "code": "const isLargeDesktop = Cypress.config().viewportWidth < 2000 && Cypress.config().viewportWidth >= 1441;\nconst isTablet = Cypress.config().viewportWidth < 1441 && Cypress.config().viewportWidth >= 768;\nconst isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"home\");\n// Main section\ncy.xpath(selectors.home_insurance.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.caption).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.pill_personalized).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.pill_coverage).should(\"be.visible\");\n// Quick Quotes\ncy.xpath(selectors.common.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.home_insurance.quick_quote_sm).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.quick_quote_lg).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.address_label).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.address_input).should(\"be.visible\");\ncy.wait(3000);\ncy.xpath(selectors.home_insurance.get_a_quote).should(\"be.visible\");\n// Coverage\n//cy.xpath(selectors.home_insurance.card_coverage).scrollIntoView();\nif (isMobile) {\n  cy.xpath(selectors.home_insurance.coverage_heading_lg).scrollIntoView();\n  cy.xpath(selectors.home_insurance.coverage_heading_lg).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.coverage_caption).should(\"be.visible\");\n}\nif (!isMobile) {\n  cy.xpath(selectors.home_insurance.coverage_heading_lg1).scrollIntoView();\n  cy.xpath(selectors.home_insurance.coverage_heading_lg1).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.coverage_caption1).should(\"be.visible\");\n}\ncy.xpath(selectors.home_insurance.coverage_heading_sm).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.coverage_dwelling_heading).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.coverage_dwelling_caption).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.coverage_property_heading).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.coverage_other_heading).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.coverage_loss_heading).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.coverage_liability_heading).should(\"be.visible\");\n// Compare\ncy.xpath(selectors.common.card_logos).scrollIntoView();\ncy.xpath(selectors.common.compare_heading).should(\"be.visible\");\n// Why Acrisure\ncy.xpath(selectors.common.card_why1).scrollIntoView();\ncy.xpath(selectors.common.pill_options).should(\"be.visible\");\ncy.xpath(selectors.common.pill_easy).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure1).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.why_caption1).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure2).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.why_caption2).should(\"be.visible\");\ncy.xpath(selectors.common.why_acrisure3).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.why_caption3).should(\"be.visible\");\n// FAQ\ncy.xpath(selectors.common.card_faq).scrollIntoView();\ncy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\ncy.xpath(selectors.common.faq_header).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_question_1).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_bullet_1).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_bullet_2).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_bullet_3).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_question_4).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_question_5).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.faq_question_6).should(\"be.visible\");\ncy.xpath(selectors.common.faq_load_more_btn).should(\"be.visible\");\nif (isMobile) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_agent).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.home_insurance.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.home_insurance.card_broker2).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.home_insurance.card_types).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.home_insurance.card_benefits).should(\"be.visible\");\n}\nif (isTablet) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_agent).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_broker2).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_types).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.home_insurance.card_benefits).should(\"be.visible\");\n}\nif (isLargeDesktop) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView();\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_agent).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_broker2).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_types).should(\"be.visible\");\n  cy.xpath(selectors.home_insurance.card_benefits).should(\"be.visible\");\n}\nif (!isMobile) {\n  cy.xpath(selectors.home_insurance.card_types).should(\"be.visible\");\n}\ncy.xpath(selectors.home_insurance.read_more).should(\"be.visible\");\n// Explore\ncy.xpath(selectors.common.card_explore).scrollIntoView();\nif (isMobile) {\n  cy.scrollTo(0, 50);\n  cy.xpath(selectors.home_insurance.explore_flood_header).scrollIntoView();\n}\ncy.xpath(selectors.home_insurance.explore_flood_header).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.explore_flood_link).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.explore_auto_header).should(\"be.visible\");\ncy.xpath(selectors.home_insurance.explore_auto_link).should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 60000ms: expected '<h3>' to be 'visible'\n\nThis element `<h3>` is not visible because its parent `<div.coverage-component.desktop.Persimmon_10.no-list.MuiBox-root.css-0>` has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 60000ms: expected '<h3>' to be 'visible'\n\nThis element `<h3>` is not visible because its parent `<div.coverage-component.desktop.Persimmon_10.no-list.MuiBox-root.css-0>` has CSS property: `display: none`\n    at Context.eval (webpack://svn-automation/./cypress/e2e/app/home-insurance.cy.js:41:62)",
+                "diff": null
+              },
+              "uuid": "bab074c2-409c-4890-8e44-dc5956a0fc1f",
+              "parentUUID": "0d7d7800-302d-472d-9ae7-48326e1ad2c0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate home insurance quote workflow",
+              "fullTitle": "Home Insurance (Personal) Validate home insurance quote workflow",
+              "timedOut": null,
+              "duration": 20208,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"home\");\ncy.xpath(selectors.home_insurance.address).type(form_data.home_insurance.street, {\n  force: true\n});\ncy.wait(3000);\ncy.xpath(selectors.home_insurance.get_a_quote).click({\n  force: true\n});\n//  Assert the URLs?\nconst altwayUrl = envUtil.getAltwayUrl();\ncy.origin(altwayUrl, {\n  args: {\n    altwayUrl\n  }\n}, ({\n  altwayUrl\n}) => {\n  cy.url().should(\"include\", `${altwayUrl}/home`);\n});\n// 1. Getting Started\n// cy.xpath(selectors.home_insurance.city).type(\n//   form_data.home_insurance.city,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.state).click({ force: true });\n// cy.xpath(selectors.home_insurance.state).type(\n//   form_data.home_insurance.state,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.select_first_option).click();\n// cy.xpath(selectors.home_insurance.zip_code).type(\n//   form_data.home_insurance.zip,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.county).type(\n//   form_data.home_insurance.county,\n//   { force: true }\n// );\n// cy.wait(5000);\n// cy.xpath(selectors.home_insurance.onetrust1).click({ force: true });\n// cy.xpath(selectors.home_insurance.first_name).type(\n//   form_data.home_insurance.first_name,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.last_name).type(\n//   form_data.home_insurance.last_name,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.date_of_birth).type(\n//   form_data.home_insurance.date_of_birth,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.marital_status).click({ force: true });\n// cy.xpath(selectors.home_insurance.select_first_option).click();\n//   cy.xpath(selectors.home_insurance.email).type(\n//   form_data.home_insurance.email,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.mobile_phone).type(\n//   form_data.home_insurance.phone,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.areyouinterestedtext).scrollIntoView();\n// cy.xpath(selectors.home_insurance.areyouinterestedtext).should(\"be.visible\")\n// cy.xpath(selectors.home_insurance.bundlingNoradiobutton).check('false')\n// cy.xpath(selectors.home_insurance.bundlingNoradiobutton).check('true')\n// cy.xpath(selectors.home_insurance.bundlePolicies).should(\"be.exist\");\n// cy.xpath(selectors.home_insurance.fantastictext).should(\"be.visible\");   \n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// // 2. Getting Started - II\n// cy.xpath(selectors.home_insurance.whatcanhelptext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.telluswhichoption).should(\"be.visible\"); \n// cy.xpath(selectors.home_insurance.purchasingahome).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.lookingforabetterpolicy).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.refinancingmyhome).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.purchasingahomeradiobutton).click({ force: true });\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// // 3. Home Details - I\n// cy.xpath(selectors.home_insurance.whataddresstext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.tellusthetext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.street1).clear()\n// cy.xpath(selectors.home_insurance.street1).type(\n//   form_data.home_insurance.street,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.unit1).type(\n//   form_data.home_insurance.unit,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.city1).type(\n//   form_data.home_insurance.city,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.state1).type(\n//   form_data.home_insurance.state,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.zip_code1).type(\n//   form_data.home_insurance.zip,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.county1).type(\n//   form_data.home_insurance.county,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.yourmailingtext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.sometimesyourtext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.mymailingtext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.street2).type(\n//   form_data.home_insurance.street,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.unit2).type(\n//   form_data.home_insurance.unit,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.city2).type(\n//   form_data.home_insurance.city,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.state2).type(\n//   form_data.home_insurance.state,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.zip_code2).type(\n//   form_data.home_insurance.zip,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.county2).type(\n//   form_data.home_insurance.county,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.yourmailingcheckbox).check()\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// cy.xpath(selectors.home_insurance.canyouverifytext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.yes_continuebutton).click({ force: true });\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// // // 4. Details about your Property \n// cy.xpath(selectors.home_insurance.detailsabouttext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.tellusmoretext).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.home_type).click({ force: true });\n// cy.xpath(selectors.home_insurance.select_first_option).click();\n// cy.xpath(selectors.home_insurance.property_use).click({ force: true });\n// cy.xpath(selectors.home_insurance.select_first_option).click();\n// cy.xpath(selectors.home_insurance.year_built).type(\n//   form_data.home_insurance.year_built,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.sq_ft).type(\n//   form_data.home_insurance.sq_ft,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.num_stories).click({ force: true });\n// cy.xpath(selectors.home_insurance.select_first_option).click();\n// cy.xpath(selectors.home_insurance.roof_age).type(\n//   form_data.home_insurance.roofage,\n//   { force: true }\n// );\n// // cy.xpath(selectors.home_insurance.est_closing_date).type(\n// //   form_data.home_insurance.closing_date,\n// //   { force: true }\n// // );\n// cy.xpath(selectors.home_insurance.est_closing_date).type(\n//   form_data.home_insurance.closing_date,\n//   { force: true }\n// );\n// cy.xpath(selectors.home_insurance.calendar_Icon).click({ force: true });\n// setDatePicker();\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// // cy.xpath(selectors.home_insurance.next_month).click({ force: true });\n// // cy.xpath(selectors.home_insurance.previous_month).click({ force: true });\n// // cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// // 5. Get a Quote - Final Page\n// // cy.xpath(selectors.home_insurance.afewmoretext).should(\"be.visible\");\n// // cy.xpath(selectors.home_insurance.letusknowtext).should(\"be.visible\"); \n// // cy.xpath(selectors.home_insurance.getaquotepage_radiobutton).check()\n// cy.xpath(selectors.home_insurance.pool_question).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.pool_radiobutton).check()\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// cy.xpath(selectors.home_insurance.trampoline_question).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.trampoline_radiobutton).check()\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// cy.xpath(selectors.home_insurance.stove_question).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.stove_radiobutton).check()\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// cy.xpath(selectors.home_insurance.homeinsurance_question).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.homeinsurance_radiobutton).check()\n// cy.xpath(selectors.home_insurance.continue).click({ force: true });\n// cy.xpath(selectors.home_insurance.last5years_question).should(\"be.visible\");\n// cy.xpath(selectors.home_insurance.last5years_radiobutton).check()    \n// cy.xpath(selectors.home_insurance.claimslast5years_question).should(\"be.visible\");    \n// cy.xpath(selectors.home_insurance.plus_icon).click({ force: true });     \n// cy.xpath(selectors.home_insurance.minus_icon).click({ force: true });   \n// cy.xpath(selectors.home_insurance.noof_claims).type(\n//   form_data.home_insurance.noofclaims,\n//   { force: true }\n// );\n// //cy.xpath(selectors.home_insurance.getaquote_button).click({ force: true })\n// //cy.wait(30000);\n// //cy.xpath(selectors.home_insurance.lookslike_msg).should(\"be.visible\");\n// //cy.xpath(selectors.home_insurance.toreceivequote_msg).should(\"be.visible\");",
+              "err": {},
+              "uuid": "d82c6475-5a58-4688-9a7b-05dbde31e48a",
+              "parentUUID": "0d7d7800-302d-472d-9ae7-48326e1ad2c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d82c6475-5a58-4688-9a7b-05dbde31e48a"
+          ],
+          "failures": [
+            "bab074c2-409c-4890-8e44-dc5956a0fc1f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 98753,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1366x768",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

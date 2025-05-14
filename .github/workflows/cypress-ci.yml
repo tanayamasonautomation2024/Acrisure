@@ -1,4 +1,4 @@
-name: Run Cypress Tests and Deploy Report
+name: Run Cypress Tests and Deploy Reports
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome]  # You can add firefox or electron if supported
+        browser: [chrome]
         resolution: ['1920x1080', '1366x768', '375x667']
 
     steps:
@@ -46,21 +46,32 @@ jobs:
           RES="${{ matrix.resolution }}"
           WIDTH="${RES%x*}"
           HEIGHT="${RES#*x}"
-          echo "Running tests at ${WIDTH}x${HEIGHT} on ${{ matrix.browser }}"
+          REPORT_DIR="cypress/results/${{ matrix.browser }}-${RES}"
 
+          echo "Running tests at ${WIDTH}x${HEIGHT} on ${{ matrix.browser }}"
+          
           npx cypress run \
             --headless \
             --browser ${{ matrix.browser }} \
             --spec "cypress/e2e/**/*.cy.js" \
             --config viewportWidth=$WIDTH,viewportHeight=$HEIGHT \
             --reporter mochawesome \
-            --reporter-options reportDir=cypress/results/${{ matrix.browser }}-${RES},overwrite=false,html=false,json=true
+            --reporter-options reportDir=${REPORT_DIR},overwrite=false,html=false,json=true
 
-      - name: Merge Mochawesome Reports
+          echo "Generating HTML report for $REPORT_DIR"
+          npx mochawesome-merge ${REPORT_DIR}/mochawesome*.json > ${REPORT_DIR}/merged.json
+          npx mochawesome-report-generator ${REPORT_DIR}/merged.json -o ${REPORT_DIR}/html
+
+      - name: Create index.html for navigation
         if: always()
         run: |
-          npx mochawesome-merge cypress/results/**/mochawesome*.json > cypress/results/merged-report.json
-          npx mochawesome-report-generator cypress/results/merged-report.json -o cypress/results/html
+          mkdir -p cypress/results/html
+          echo "<html><body><h1>Cypress Test Reports</h1><ul>" > cypress/results/html/index.html
+          for dir in cypress/results/*-*; do
+            COMBO=$(basename "$dir")
+            echo "<li><a href=\"../${COMBO}/html/index.html\">${COMBO}</a></li>" >> cypress/results/html/index.html
+          done
+          echo "</ul></body></html>" >> cypress/results/html/index.html
 
       - name: Publish test reports
         uses: peaceiris/actions-gh-pages@v4
@@ -68,8 +79,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: cypress/results/html
-          commit_message: "Deploy Cypress test report"
+          publish_dir: cypress/results
+          commit_message: "Deploy separate Cypress test reports"
           user_name: 'GitHub Actions'
           user_email: 'github-actions@users.noreply.github.com'
           force: true

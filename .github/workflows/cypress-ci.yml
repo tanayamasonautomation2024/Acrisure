@@ -14,7 +14,7 @@ jobs:
 
     strategy:
       matrix:
-        browser: [chrome, firefox]  # You can add firefox or electron if supported
+        browser: [chrome]  # You can add firefox or electron if supported
         resolution: ['1920x1080', '1366x768', '375x667']
 
     steps:
@@ -62,13 +62,14 @@ jobs:
           npx mochawesome-merge cypress/results/**/mochawesome*.json > cypress/results/merged-report.json
           npx mochawesome-report-generator cypress/results/merged-report.json -o cypress/results/html
 
-      - name: Deploy Cypress Report to GitHub Pages
-        if: always()
+      - name: Publish test reports
         uses: peaceiris/actions-gh-pages@v4
+        if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
           publish_dir: cypress/results/html
-          target_branch: gh-pages
           commit_message: "Deploy Cypress test report"
           user_name: 'GitHub Actions'
           user_email: 'github-actions@users.noreply.github.com'
+          force: true

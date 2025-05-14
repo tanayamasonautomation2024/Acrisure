@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T07:25:02.285Z",
+    "end": "2025-05-14T07:26:05.012Z",
+    "duration": 62727,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c18ab362-3acb-4683-9b96-25b339298ec7",
+      "title": "",
+      "fullFile": "cypress/e2e/app/employee-benefit-services.cy.js",
+      "file": "cypress/e2e/app/employee-benefit-services.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1a0426f-bff6-420c-b66d-aec6f40856e9",
+          "title": "Acrisure Cloud Website - Dev Environment",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "350a857d-064c-4d76-bf84-d84ecd29c3bf",
+              "title": "Employee Benefits Services - Functional Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Visiting the Employee Benefits Services page",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Employee Benefits Services - Functional Tests Visiting the Employee Benefits Services page",
+                  "timedOut": null,
+                  "duration": 5060,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visitSite(\"app\", \"employee-benefit-services\");\ncy.url().should(\"include\", \"employee-benefit-services\");\ncy.xpath(selectors.theme_container).should(\"exist\");",
+                  "err": {},
+                  "uuid": "6af283fb-66ea-4b11-8647-90ad0ba7c05b",
+                  "parentUUID": "350a857d-064c-4d76-bf84-d84ecd29c3bf",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Checking Employee Benefits Services Hyperlinks",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Employee Benefits Services - Functional Tests Checking Employee Benefits Services Hyperlinks",
+                  "timedOut": null,
+                  "duration": 5787,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visitSite(\"app\", \"employee-benefit-services\");\ncy.url().should(\"include\", \"employee-benefit-services\");\ncy.xpath(selectors.main_container).within($mainWebpage => {\n  // Get all the links within the main webpage\n  cy.get(cy_selectors.global.target_links).each(link => {\n    if (link.prop('href')) {\n      cy.request({\n        url: link.prop('href'),\n        failOnStatusCode: true\n      });\n      cy.log(link.prop('href'));\n    }\n  });\n});",
+                  "err": {},
+                  "uuid": "08316e29-e571-47a9-aabe-f97d004e1810",
+                  "parentUUID": "350a857d-064c-4d76-bf84-d84ecd29c3bf",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "6af283fb-66ea-4b11-8647-90ad0ba7c05b",
+                "08316e29-e571-47a9-aabe-f97d004e1810"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 10847,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "b40ff8ad-abb7-4e09-8d46-525edd54e51b",
+              "title": "Employee Benefits Services - Design Tests",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate Employee Benefits Services Webpage",
+                  "fullTitle": "Acrisure Cloud Website - Dev Environment Employee Benefits Services - Design Tests Validate Employee Benefits Services Webpage",
+                  "timedOut": null,
+                  "duration": 49938,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visitSite(\"app\", \"employee-benefit-services\");\ncy.url().should(\"include\", \"employee-benefit-services\");\n/* ================================\n * Employee Benefits Services Webpage\n * ================================\n */\n/* ----------------------------------------------------------\n * Employee Benefits Services Hero Component - Text and Image\n * ----------------------------------------------------------\n */\n{\n  //  Left Side Portion (Caption, Paragraph Header, Body Text, and Button)\n  cy.get(cy_selectors.employee_benefit_services.hero_component_caption).should(\"have.text\", acm_constants.employee_benefit_services.hero_component_caption);\n  cy.get(cy_selectors.employee_benefit_services.hero_component_header).should(\"have.text\", acm_constants.employee_benefit_services.hero_component_header);\n  cy.get(cy_selectors.employee_benefit_services.hero_component_body_text).should(\"have.text\", acm_constants.employee_benefit_services.hero_component_body_text);\n  cy.get(cy_selectors.employee_benefit_services.hero_component_button).should(\"have.text\", acm_constants.employee_benefit_services.hero_component_button);\n  // Right Side Portion (Image and Text)\n  cy.get(cy_selectors.employee_benefit_services.hero_component_image).should(\"be.visible\");\n  cy.get(cy_selectors.employee_benefit_services.hero_component_image_text0).should(\"have.text\", acm_constants.employee_benefit_services.hero_component_image_text0);\n  cy.get(cy_selectors.employee_benefit_services.hero_component_image_text1).should(\"have.text\", acm_constants.employee_benefit_services.hero_component_image_text1);\n}\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n/* --------------------------------------------------------------------\n * Employee Benefits Services Webform Component - Benefits Consultation\n * --------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.employee_benefit_services.webform_component_container).scrollIntoView();\n  //cy.get(cy_selectors.employee_benefit_services.webform_component_container).scrollIntoView({ offset: { top: -50, left: 0 } });\n  cy.wait(1500);\n  cy.get(cy_selectors.employee_benefit_services.webform_component_title).should(\"have.text\", acm_constants.employee_benefit_services.webform_component_title);\n  cy.get(cy_selectors.employee_benefit_services.webform_component_body_text).should(\"have.text\", acm_constants.employee_benefit_services.webform_component_body_text);\n  // Right Side Form \n  cy.get(cy_selectors.employee_benefit_services.webform_employee_benefits_insurance_options_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_employee_benefits_insurance_options_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_employee_benefits_insurance_options_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_employee_benefits_insurance_options_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_first_name_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_first_name_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_first_name_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_first_name_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_last_name_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_last_name_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_last_name_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_last_name_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_company_name_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_company_name_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_company_name_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_company_name_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_number_of_employees_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_number_of_employees_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_number_of_employees_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_number_of_employees_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_state_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_state_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_state_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_state_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_email_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_email_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_email_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_email_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_phone_label).should(\"have.text\", acm_constants.employee_benefit_services.webform_phone_label);\n  cy.get(cy_selectors.employee_benefit_services.webform_phone_placeholder).should(\"have.attr\", \"placeholder\", acm_constants.employee_benefit_services.webform_phone_placeholder);\n  cy.get(cy_selectors.employee_benefit_services.webform_submit_button).should(\"have.text\", acm_constants.employee_benefit_services.webform_submit_button);\n}\n/* -------------------------------------------------------------------------\n * Employee Benefits Services Desktop Coverages Component - Benefit Services\n * -------------------------------------------------------------------------\n */\nif (isMobile) {\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_caption).scrollIntoView();\n  // Benefits Services (Caption, Header, Body Text)\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_caption).should(\"have.text\", acm_constants.employee_benefit_services.coverage_component_caption);\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_h3_header).should(\"have.text\", acm_constants.employee_benefit_services.coverage_component_h3_header).should(\"be.visible\");\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_body_text).should(\"have.text\", acm_constants.employee_benefit_services.coverage_component_body_text).should(\"be.visible\");\n  // Benefits Services Coverage Cards (Button, Header, Body Text)\n  cy.get(cy_selectors.employee_benefit_services.benefit_services_coverage_card_container).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card).each(($ele, coverageCardIndex) => {\n    if (coverageCardIndex === 0) {\n      cy.wrap($ele).click({\n        force: true\n      });\n      cy.wait(500);\n    }\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_button).should(\"be.visible\").click({\n      force: true\n    });\n    cy.wait(750);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_h6_headers).should(\"have.text\", acm_constants.employee_benefit_services.benefit_services_coverage_card_h6_headers[coverageCardIndex]);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_body_text).should(\"have.text\", acm_constants.employee_benefit_services.benefit_services_coverage_card_body_text[coverageCardIndex]);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_button).scrollIntoView({\n      offset: {\n        top: -120,\n        left: 0\n      }\n    }).click({\n      force: true\n    });\n    cy.wait(1500);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_h6_headers).should(\"be.visible\");\n    if (!(isTablet || isMobile)) {\n      cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_body_text).should(\"be.visible\");\n    }\n  });\n}\nif (!isMobile) {\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_caption1).scrollIntoView();\n  // Benefits Services (Caption, Header, Body Text)\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_caption1).should(\"have.text\", acm_constants.employee_benefit_services.coverage_component_caption);\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_h3_header1).should(\"have.text\", acm_constants.employee_benefit_services.coverage_component_h3_header);\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_h3_header1).should(\"be.visible\");\n  cy.get(cy_selectors.employee_benefit_services.coverage_component_body_text1).should(\"have.text\", acm_constants.employee_benefit_services.coverage_component_body_text).should(\"be.visible\");\n  // Benefits Services Coverage Cards (Button, Header, Body Text)\n  cy.get(cy_selectors.employee_benefit_services.benefit_services_coverage_card_container1).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card).each(($ele, coverageCardIndex) => {\n    if (coverageCardIndex === 0) {\n      cy.wrap($ele).click({\n        force: true\n      });\n      cy.wait(500);\n    }\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_button).should(\"be.visible\").click({\n      force: true\n    });\n    cy.wait(750);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_h6_headers).should(\"have.text\", acm_constants.employee_benefit_services.benefit_services_coverage_card_h6_headers[coverageCardIndex]);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_body_text).should(\"have.text\", acm_constants.employee_benefit_services.benefit_services_coverage_card_body_text[coverageCardIndex]);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_button).scrollIntoView({\n      offset: {\n        top: -120,\n        left: 0\n      }\n    }).click({\n      force: true\n    });\n    cy.wait(1500);\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_h6_headers).should(\"be.visible\");\n    if (!(isTablet || isMobile)) {\n      cy.wrap($ele).find(cy_selectors.employee_benefit_services.benefit_services_coverage_card_body_text).should(\"be.visible\");\n    }\n  });\n}\n//}\n/* --------------------------------------------------------------\n * Employee Benefits Services Two Column Component - Why Acrisure\n * --------------------------------------------------------------\n */\n{\n  //cy.get(cy_selectors.employee_benefit_services.two_column_component_container).scrollIntoView({ offset: { top: -70, left: 0 } });\n  cy.get(cy_selectors.employee_benefit_services.two_column_component_container).scrollIntoView();\n  // Left Column Image\n  cy.get(cy_selectors.employee_benefit_services.two_column_component_image).should(\"be.visible\").click({\n    scrollBehavior: false\n  });\n  cy.get(cy_selectors.employee_benefit_services.pill_box_text_QuickQuotes).should(\"have.text\", acm_constants.employee_benefit_services.pill_box_text_QuickQuotes);\n  cy.get(cy_selectors.employee_benefit_services.pill_box_text_and1).should(\"have.text\", acm_constants.employee_benefit_services.pill_box_text_and1);\n  cy.get(cy_selectors.employee_benefit_services.pill_box_text_PersonalizedService).should(\"have.text\", acm_constants.employee_benefit_services.pill_box_text_PersonalizedService);\n  cy.get(cy_selectors.employee_benefit_services.why_acrisure_slides).its(\"length\").as(\"numberOfSlides\");\n  cy.get(\"@numberOfSlides\").then(slides => {\n    for (let slideIndex = 0; slideIndex < slides; slideIndex++) {\n      cy.get(cy_selectors.employee_benefit_services.why_acrisure_active_slide, {\n        timeout: 20000\n      }).should(\"have.attr\", \"data-swiper-slide-index\", slideIndex).should(\"be.visible\");\n      cy.get(cy_selectors.employee_benefit_services.why_acrisure_active_slide).find(cy_selectors.employee_benefit_services.why_acrisure_slide_caption).should(\"have.text\", acm_constants.employee_benefit_services.why_acrisure_slide_caption);\n      cy.get(cy_selectors.employee_benefit_services.why_acrisure_active_slide).find(cy_selectors.employee_benefit_services.why_acrisure_slide_h4_header).should(\"have.text\", acm_constants.employee_benefit_services.why_acrisure_h4_headers[slideIndex]);\n      cy.get(cy_selectors.employee_benefit_services.why_acrisure_active_slide).find(cy_selectors.employee_benefit_services.why_acrisure_slide_body_text).should(\"have.text\", acm_constants.employee_benefit_services.why_acrisure_body_text[slideIndex]);\n      cy.get(cy_selectors.employee_benefit_services.why_acrisure_slide_pagination_bullet).eq(slideIndex).should(\"have.class\", \"swiper-pagination-bullet-active\");\n    }\n  });\n}\n/* ----------------------------------------------------\n * Employee Benefits Services Accordion Component - FAQ\n * ----------------------------------------------------\n */\n{\n  cy.get(cy_selectors.employee_benefit_services.accordion_component).scrollIntoView();\n  // FAQ Text (Caption and Header)\n  cy.get(cy_selectors.employee_benefit_services.accordion_component_caption).should(\"have.text\", acm_constants.employee_benefit_services.accordion_component_caption);\n  cy.get(cy_selectors.employee_benefit_services.faq_header).should(\"have.text\", acm_constants.employee_benefit_services.faq_header);\n  /* \n    Handle entire section of the FAQ Tabs.\n     First close the first expanded tab. Then for each tab, expand the tab and\n    confirm the contents within each tab\n    */\n  cy.get(cy_selectors.employee_benefit_services.faq_expanded_tab).find(cy_selectors.employee_benefit_services.faq_panel_header).scrollIntoView({\n    offset: {\n      top: -60,\n      left: 0\n    }\n  });\n  //.click({ scrollBehavior: false });\n  cy.get(cy_selectors.employee_benefit_services.faq_regular_tab).each(($ele, panelIndex) => {\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.faq_panel_header).scrollIntoView({\n      offset: {\n        top: -100,\n        left: 0\n      }\n    }).click({\n      scrollBehavior: false\n    });\n    // Confirm the tab text\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.faq_panel_header_text).should(\"have.text\", acm_constants.employee_benefit_services.faq_section_panel_headers[panelIndex]);\n    // Confirm each bullet point text\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.faq_panel_bullet_points).each(($ele, bulletIndex) => {\n      const bulletArray = acm_constants.employee_benefit_services[`faq_section_panel_header_${panelIndex + 1}_bullet_points`];\n      cy.wrap($ele).should(\"have.text\", bulletArray[bulletIndex]);\n    });\n    cy.wait(1500);\n  });\n}\n/* ----------------------------------------------------------------------\n * Employee Benefits Services Insights Component - Insights and Resources\n * ----------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.employee_benefit_services.insights_component).scrollIntoView();\n  // Insights Text (Caption, Header, and Body Text)\n  cy.get(cy_selectors.employee_benefit_services.insights_caption).should(\"have.text\", acm_constants.employee_benefit_services.insights_caption);\n  cy.get(cy_selectors.employee_benefit_services.insights_h4_header).should(\"have.text\", acm_constants.employee_benefit_services.insights_h4_header);\n  cy.get(cy_selectors.employee_benefit_services.insights_body_text).should(\"have.text\", acm_constants.employee_benefit_services.insights_body_text);\n  // Resource Cards (Check each image and card title)\n  cy.get(cy_selectors.employee_benefit_services.resource_card).each(($ele, cardIndex) => {\n    if (isMobile && cardIndex > 0) {\n      cy.get(cy_selectors.employee_benefit_services.resource_next_card_button).scrollIntoView({\n        offset: {\n          top: -550,\n          left: 0\n        }\n      }).click({\n        scrollBehavior: false\n      });\n    }\n    if (isTablet && cardIndex > 3) {\n      cy.get(cy_selectors.employee_benefit_services.resource_next_card_button).scrollIntoView({\n        offset: {\n          top: -550,\n          left: 0\n        }\n      }).click({\n        scrollBehavior: false\n      });\n    }\n    if (isLargeDesktop && cardIndex > 3) {\n      cy.get(cy_selectors.employee_benefit_services.resource_next_card_button).scrollIntoView({\n        offset: {\n          top: -800,\n          left: 0\n        }\n      }).click({\n        scrollBehavior: false\n      });\n    }\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.resource_card_image).should(\"be.visible\");\n    cy.wrap($ele).find(cy_selectors.employee_benefit_services.resource_card_h7_header).should(\"be.visible\").should(\"have.text\", acm_constants.employee_benefit_services.resource_article_titles[cardIndex]);\n  });\n  // Read More Button\n  cy.get(cy_selectors.employee_benefit_services.read_more_button).should(\"have.text\", acm_constants.employee_benefit_services.read_more_button);\n}\n/* ---------------------------------------------------------------------\n * Employee Benefits Services Promotion Component - Image and Text Cards\n * ---------------------------------------------------------------------\n */\n{\n  cy.get(cy_selectors.employee_benefit_services.promotion_component).scrollIntoView();\n  // Left Card (Image, Text, and Button)\n  cy.get(cy_selectors.employee_benefit_services.left_card_image).should(\"be.visible\");\n  cy.get(cy_selectors.employee_benefit_services.left_card_text).should(\"have.text\", acm_constants.employee_benefit_services.left_card_text);\n  cy.get(cy_selectors.employee_benefit_services.left_card_button).should(\"have.text\", acm_constants.employee_benefit_services.left_card_button);\n  cy.get(cy_selectors.employee_benefit_services.left_card_button).click({\n    force: true\n  });\n  cy.title().should('eq', \"Workers' Comp Insurance | Request A Personalized Quote\");\n  cy.go('back');\n  cy.wait(2000);\n  // Right Card (Image, Text, and Button)\n  cy.get(cy_selectors.employee_benefit_services.right_card_image).should(\"exist\");\n  cy.get(cy_selectors.employee_benefit_services.right_card_text).should(\"have.text\", acm_constants.employee_benefit_services.right_card_text);\n  cy.get(cy_selectors.employee_benefit_services.right_card_button).should(\"have.text\", acm_constants.employee_benefit_services.right_card_button);\n  cy.get(cy_selectors.employee_benefit_services.right_card_button).click({\n    force: true\n  });\n  cy.title().should('eq', \"Business Owner's Policy | Request A Personalized Quote\");\n  cy.go('back');\n  cy.wait(2000);\n}",
+                  "err": {},
+                  "uuid": "fefd7142-86d8-4ab1-a522-051a779d0a6f",
+                  "parentUUID": "b40ff8ad-abb7-4e09-8d46-525edd54e51b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "fefd7142-86d8-4ab1-a522-051a779d0a6f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 49938,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1920x1080",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

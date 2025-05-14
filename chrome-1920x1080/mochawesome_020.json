@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T09:49:16.096Z",
+    "end": "2025-05-14T09:49:24.473Z",
+    "duration": 8377,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "dba4639c-10e7-4596-9562-68c543cf0cb1",
+      "title": "",
+      "fullFile": "cypress/e2e/app/legal.cy.js",
+      "file": "cypress/e2e/app/legal.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "71542f22-7a62-4d96-8864-a96439530dc1",
+          "title": "Legal Notice",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate legal notice page components",
+              "fullTitle": "Legal Notice Validate legal notice page components",
+              "timedOut": null,
+              "duration": 6681,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"legal\");\ncy.xpath(selectors.legal.main_header).should(\"be.visible\");\n// Products and services\ncy.xpath(selectors.legal.link_products).scrollIntoView().click();\ncy.xpath(selectors.legal.header_products).should(\"be.visible\");\n// U.S. Producer Compensation Disclosure\ncy.xpath(selectors.legal.link_us_producer).click();\ncy.xpath(selectors.legal.header_us_producer).should(\"be.visible\");\n// California Producer License\ncy.xpath(selectors.legal.link_ca_producer).click();\ncy.xpath(selectors.legal.header_ca_producer).should(\"be.visible\");\ncy.xpath(selectors.legal.link_ca_license).should(\"be.visible\");\ncy.xpath(selectors.legal.link_ca_license_disclosure).should(\"be.visible\");\n// Disclosure and Agreement to Conduct Electronic Transactions\ncy.xpath(selectors.legal.link_transactions).click();\ncy.xpath(selectors.legal.header_transactions).should(\"be.visible\");\n// Acrisure International Holdings Limited – UK Tax Strategy\ncy.xpath(selectors.legal.link_uk_strategy).click();\ncy.xpath(selectors.legal.header_uk).should(\"be.visible\");\n// Acrisure International - Section 54 Modern Slavery Act Statement\ncy.xpath(selectors.legal.link_section54).click();\ncy.xpath(selectors.legal.header_section54).should(\"be.visible\");",
+              "err": {},
+              "uuid": "c4dc6381-1d5d-4f2c-a4b1-b95b75f68bc7",
+              "parentUUID": "71542f22-7a62-4d96-8864-a96439530dc1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c4dc6381-1d5d-4f2c-a4b1-b95b75f68bc7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6681,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1920x1080",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-05-14T08:50:41.971Z",
+    "end": "2025-05-14T08:51:33.056Z",
+    "duration": 51085,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "62273517-ff68-4ea1-8ecf-2a759831d072",
+      "title": "",
+      "fullFile": "cypress/e2e/app/health-insurance.cy.js",
+      "file": "cypress/e2e/app/health-insurance.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7502716f-c86e-4fff-b0f9-175bbd3b6acc",
+          "title": "Health Insurance (Personal)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate health insurance page components",
+              "fullTitle": "Health Insurance (Personal) Validate health insurance page components",
+              "timedOut": null,
+              "duration": 41730,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const isLargeDesktop = Cypress.config().viewportWidth < 2000 && Cypress.config().viewportWidth >= 1441;\nconst isTablet = Cypress.config().viewportWidth < 1441 && Cypress.config().viewportWidth >= 768;\nconst isMobile = Cypress.config().viewportWidth < 768;\ncy.visitSite(\"app\", \"health-insurance\");\n// Main section\ncy.xpath(selectors.health.heading_sm).should(\"be.visible\");\ncy.xpath(selectors.health.heading_lg).should(\"be.visible\");\ncy.xpath(selectors.health.caption).should(\"be.visible\");\ncy.xpath(selectors.health.pill_health).should(\"be.visible\");\ncy.xpath(selectors.health.pill_simple).should(\"be.visible\");\n// Quick Quotes\ncy.xpath(selectors.common.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.health.quick_quote_sm).should(\"be.visible\");\ncy.xpath(selectors.health.quick_quote_lg).should(\"be.visible\");\ncy.xpath(selectors.health.get_a_quote).should(\"be.visible\");\ncy.xpath(selectors.common.onetrust1).click({\n  force: true\n});\n// Coverage\nif (isMobile) {\n  cy.xpath(selectors.health.coverage_heading_lg).scrollIntoView();\n  cy.xpath(selectors.health.coverage_heading_lg).should(\"be.visible\");\n  cy.xpath(selectors.health.coverage_caption).should(\"be.visible\");\n}\nif (!isMobile) {\n  cy.xpath(selectors.health.coverage_heading_lg1).scrollIntoView();\n  cy.xpath(selectors.health.coverage_heading_lg1).should(\"be.visible\");\n  cy.xpath(selectors.health.coverage_caption1).should(\"be.visible\");\n}\ncy.xpath(selectors.health.coverage_heading_sm).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_exist_heading).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_exist_caption).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_drugs_heading).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_maternal_heading).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_emergency_heading).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_mental_heading).should(\"be.visible\");\ncy.xpath(selectors.health.coverage_add_heading).should(\"be.visible\");\n// Why Acrisure 1\ncy.xpath(selectors.health.card_why1).scrollIntoView();\ncy.xpath(selectors.health.why_acrisure_1).should(\"be.visible\");\ncy.xpath(selectors.health.why_aca_header).should(\"be.visible\");\ncy.xpath(selectors.health.why_aca_caption).should(\"be.visible\");\n// Why Acrisure 2\ncy.xpath(selectors.health.card_why2).scrollIntoView();\ncy.wait(5000);\ncy.xpath(selectors.health.why_header1).should(\"be.visible\");\ncy.xpath(selectors.health.why_caption1).should(\"be.visible\");\ncy.xpath(selectors.health.why_header2).should(\"be.visible\");\ncy.xpath(selectors.health.why_caption2).should(\"be.visible\");\ncy.xpath(selectors.health.why_header3).should(\"be.visible\");\ncy.xpath(selectors.health.why_caption3).should(\"be.visible\");\ncy.xpath(selectors.health.pill_options).should(\"be.visible\");\ncy.xpath(selectors.health.pill_easy).should(\"be.visible\");\n// FAQ\ncy.xpath(selectors.health.card_faq).scrollIntoView();\ncy.xpath(selectors.common.faq_header_sm).should(\"be.visible\");\ncy.xpath(selectors.common.faq_header).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_1).should(\"be.visible\");\ncy.xpath(selectors.health.faq_bullet_1).should(\"be.visible\");\ncy.xpath(selectors.health.faq_bullet_2).should(\"be.visible\");\ncy.xpath(selectors.health.faq_bullet_3).should(\"be.visible\");\ncy.xpath(selectors.health.faq_bullet_4).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_2).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_3).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_4).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_5).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_6).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_6).scrollIntoView();\ncy.xpath(selectors.common.faq_load_more_btn).should(\"be.visible\");\ncy.xpath(selectors.common.faq_load_more_btn).click();\ncy.xpath(selectors.health.faq_question_7).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_8).should(\"be.visible\");\ncy.xpath(selectors.health.faq_question_9).should(\"be.visible\");\nif (isMobile) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView({\n    offset: {\n      top: -20,\n      left: 0\n    }\n  });\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.health.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.health.card_issue).should(\"be.visible\");\n  cy.xpath(selectors.health.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.health.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.health.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.health.card_broker2).should(\"be.visible\");\n  cy.xpath(selectors.health.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.health.card_job).should(\"be.visible\");\n  cy.xpath(selectors.health.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.health.card_cost).should(\"be.visible\");\n  //cy.xpath(selectors.health.nextbutton).click({ force: true });\n  //cy.xpath(selectors.health.card_selfemployed).should(\"be.visible\");\n  //cy.xpath(selectors.health.nextbutton).click({ force: true });\n  //cy.xpath(selectors.health.card_college).should(\"be.visible\");\n}\nif (isTablet) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView({\n    offset: {\n      top: -20,\n      left: 0\n    }\n  });\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.health.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.health.card_issue).should(\"be.visible\");\n  cy.xpath(selectors.health.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.health.card_broker2).should(\"be.visible\");\n  cy.xpath(selectors.health.card_job).should(\"be.visible\");\n  cy.xpath(selectors.health.nextbutton).click({\n    force: true\n  });\n  cy.xpath(selectors.health.card_cost).should(\"be.visible\");\n  //cy.xpath(selectors.health.card_selfemployed).should(\"be.visible\");\n  //cy.xpath(selectors.health.nextbutton).click({ force: true });\n  //cy.xpath(selectors.health.card_college).should(\"be.visible\");\n}\nif (isLargeDesktop) {\n  // More Resources\n  cy.xpath(selectors.common.card_insights).scrollIntoView({\n    offset: {\n      top: -20,\n      left: 0\n    }\n  });\n  cy.wait(5000);\n  cy.xpath(selectors.common.insights_sm).should(\"be.visible\");\n  cy.xpath(selectors.common.more_resources).should(\"be.visible\");\n  cy.xpath(selectors.health.insights_caption).should(\"be.visible\");\n  cy.xpath(selectors.health.card_issue).should(\"be.visible\");\n  cy.xpath(selectors.health.card_broker).should(\"be.visible\");\n  cy.xpath(selectors.health.card_broker2).should(\"be.visible\");\n  cy.xpath(selectors.health.card_job).should(\"be.visible\");\n  cy.xpath(selectors.health.card_cost).should(\"be.visible\");\n  //cy.xpath(selectors.health.card_selfemployed).should(\"be.visible\");        \n  //cy.xpath(selectors.health.card_college).should(\"be.visible\");\n}\ncy.xpath(selectors.common.read_more).should(\"be.visible\");\n// Explore\ncy.xpath(selectors.health.card_explore).scrollIntoView();\nif (isMobile) {\n  cy.scrollTo(0, 50);\n  cy.xpath(selectors.health.explore_life_header).scrollIntoView();\n}\ncy.xpath(selectors.health.explore_life_header).should(\"be.visible\");\ncy.xpath(selectors.health.explore_life_link).should(\"be.visible\");\ncy.xpath(selectors.health.explore_auto_header).should(\"be.visible\");\ncy.xpath(selectors.health.explore_auto_link).should(\"be.visible\");",
+              "err": {},
+              "uuid": "57a5dde9-ac0a-4187-86f0-5a1a161373f1",
+              "parentUUID": "7502716f-c86e-4fff-b0f9-175bbd3b6acc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate health insurance quote flow",
+              "fullTitle": "Health Insurance (Personal) Validate health insurance quote flow",
+              "timedOut": null,
+              "duration": 7454,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visitSite(\"app\", \"health-insurance\");\ncy.xpath(selectors.common.card_quick_quote).scrollIntoView();\ncy.xpath(selectors.health.get_a_quote).click({\n  force: true\n});\nconst altwayUrl = envUtil.getAltwayUrl();\ncy.origin(altwayUrl, {\n  args: {\n    altwayUrl\n  }\n}, ({\n  altwayUrl\n}) => {\n  cy.url().should(\"include\", `${altwayUrl}/health`);\n});",
+              "err": {},
+              "uuid": "dd691be2-a24d-403d-b9e5-67c1974c3e5b",
+              "parentUUID": "7502716f-c86e-4fff-b0f9-175bbd3b6acc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "57a5dde9-ac0a-4187-86f0-5a1a161373f1",
+            "dd691be2-a24d-403d-b9e5-67c1974c3e5b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 49184,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results/chrome-1920x1080",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

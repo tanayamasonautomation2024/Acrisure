@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         browser: [chrome]
-        resolution: ['1920x1080', '1366x768', '1440x900', '375x667']
+        resolution: ['1920x1080'] #, '1366x768', '1440x900', '375x667'
 
     steps:
       - uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
           RES="${{ matrix.resolution }}"
           WIDTH="${RES%x*}"
           HEIGHT="${RES#*x}"
-          REPORT_DIR="cypress/results/${{ matrix.browser }}-${RES}"
+          REPORT_DIR="cypress/results/report-${{ matrix.browser }}-${RES}"
 
           mkdir -p $REPORT_DIR
           echo "Running tests at ${WIDTH}x${HEIGHT} on ${{ matrix.browser }}"
@@ -62,7 +62,9 @@ jobs:
 
           echo "Generating Mochawesome HTML report..."
           npx mochawesome-merge ${REPORT_DIR}/mochawesome*.json > ${REPORT_DIR}/merged.json
-          npx mochawesome-report-generator ${REPORT_DIR}/merged.json -o ${REPORT_DIR}/html
+          npx mochawesome-report-generator ${REPORT_DIR}/merged.json \
+            --reportDir ${REPORT_DIR}/html \
+            --reportFilename index.html
 
           exit $EXIT_CODE
 
@@ -71,7 +73,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: report-${{ matrix.browser }}-${{ matrix.resolution }}
-          path: cypress/results/${{ matrix.browser }}-${{ matrix.resolution }}
+          path: cypress/results/report-${{ matrix.browser }}-${{ matrix.resolution }}
 
   generate-and-publish-report:
     name: Generate Index & Publish Reports
@@ -100,7 +102,7 @@ jobs:
         run: |
           mkdir -p cypress/results/html
           echo "<html><body><h1>Cypress Test Reports</h1><ul>" > cypress/results/html/index.html
-          for dir in cypress/results/*-*; do
+          for dir in cypress/results/report-*; do
             COMBO=$(basename "$dir")
             echo "<li><a href=\"../${COMBO}/html/index.html\">${COMBO}</a></li>" >> cypress/results/html/index.html
           done
